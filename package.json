@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "node --test",
-    "validate": "node scripts/validate.mjs"
+    "validate": "node scripts/validate.mjs",
+    "test:public": "python3 scripts/test-public-pricing.py"
   },
   "dependencies": {
     "ajv": "8.20.0",

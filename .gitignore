@@ -4,3 +4,7 @@ node_modules/
 !.env.example
 *.pem
 .DS_Store
+
+# Local Python adapter caches and bytecode
+__pycache__/
+*.pyc

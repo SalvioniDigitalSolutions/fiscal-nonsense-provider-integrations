@@ -1,0 +1,616 @@
+[
+  {
+    "id": "cler",
+    "name": "Bank Cler",
+    "url": "https://www.cler.ch/de/hypotheken-und-kredite/hypotheken/aktuelle-hypothekarzinsen",
+    "country": "CH",
+    "currency": "CHF",
+    "sections": [
+      {
+        "id": "fixed",
+        "label": "Fixed mortgage",
+        "start": "\\nFesthypothek \\*\\n",
+        "end": "\\nSupercard-Hypothek \\*\\n",
+        "pattern": "(?P<term>\\d+)\\s+(?:Jahre?|ans|years?)[\\s|]*(?P<rate>\\d+[.,]\\d+)\\s*%",
+        "terms": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      {
+        "id": "supercard",
+        "label": "Supercard fixed mortgage",
+        "start": "\\nSupercard-Hypothek \\*\\n",
+        "end": "\\nNachhaltigkeitshypothek \\*\\n",
+        "pattern": "(?P<term>\\d+)\\s+Jahre?[\\s|]*(?P<rate>\\d+[.,]\\d+)\\s*%",
+        "terms": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "conditions": "Indicative first mortgage on owner-occupied property. Requires transfer of 20,000 Superpoints. Additional securities discount not calculated."
+      },
+      {
+        "id": "sustainable",
+        "label": "Sustainable fixed mortgage",
+        "start": "\\nNachhaltigkeitshypothek \\*\\n",
+        "end": "\\nSARON-Hypothek \\*\\n",
+        "pattern": "(?P<term>\\d+)\\s+Jahre?[\\s|]*(?P<rate>\\d+[.,]\\d+)\\s*%",
+        "terms": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "conditions": "Indicative first mortgage; qualifying sustainable construction required. Additional securities discount not calculated."
+      }
+    ],
+    "conditions": "Indicative first mortgages on owner-occupied property; individual approval and rate apply.",
+    "datePattern": "Stand: (\\d{2}\\.\\d{2}\\.\\d{4})"
+  },
+  {
+    "id": "bsu",
+    "name": "Bank BSU",
+    "url": "https://www.bankbsu.ch/hypozinsen/",
+    "country": "CH",
+    "currency": "CHF",
+    "sections": [
+      {
+        "id": "fixed",
+        "label": "Fixed mortgage",
+        "start": "Auf dieser Seite finden Sie die aktuellen Hypothekarzinsen[^\\n]+\\nFesthypothek\\n",
+        "end": "\\nHypothek eco\\n",
+        "pattern": "(?P<term>\\d+)\\s+(?:Jahre?|ans|years?):\\s*(?P<rate>\\d+[.,]\\d+)\\s*%",
+        "terms": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      }
+    ],
+    "conditions": "Indicative first mortgages; property, financial circumstances and credit standing affect the final offer."
+  },
+  {
+    "id": "viac",
+    "name": "VIAC / Bank WIR",
+    "url": "https://viac.ch/produkte/hypothek/",
+    "country": "CH",
+    "currency": "CHF",
+    "sections": [
+      {
+        "id": "fixed",
+        "label": "Fixed mortgage",
+        "start": "Welche VIAC Hypotheken stehen zur Auswahl\\?",
+        "end": "\\nHinweis:",
+        "pattern": "Fest-Hypothek\\s+(?P<rate>\\d+[.,]\\d+)\\s*%\\s+Laufzeit (?P<term>\\d+)\\s+(?:Jahre?|ans|years?)",
+        "terms": [
+          5,
+          10
+        ]
+      }
+    ],
+    "conditions": "VIAC customers only; definitive rate confirmed after complete dossier reaches Bank WIR. Full eligibility criteria apply.",
+    "conditionsUrl": "https://viac.ch/know-how/faq/hypothek/",
+    "lenderGroup": "Bank WIR"
+  },
+  {
+    "id": "hypomat",
+    "name": "Hypomat / Glarner Kantonalbank",
+    "url": "https://glkb.ch/hypomat/aktuelle-zinsen",
+    "country": "CH",
+    "currency": "CHF",
+    "sections": [
+      {
+        "id": "fixed",
+        "label": "Fixed mortgage",
+        "start": "Unsere aktuellen Festhypothekenzinssätze",
+        "end": "\\nRollover-Hypothek\\n",
+        "pattern": "(?P<term>\\d+)\\s+(?:Jahre?|ans|years?)[\\s|]*ab\\s*(?P<rate>\\d+[.,]\\d+)\\s*%",
+        "terms": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "qualifier": "from"
+      }
+    ],
+    "conditions": "Indicative from-rates based on standard assumptions including LTV below 50%; actual rate depends on property, use, amount, affordability and credit."
+  },
+  {
+    "id": "postfinance",
+    "name": "PostFinance",
+    "url": "https://www.postfinance.ch/de/privat/finanzieren/hypotheken/zinssaetze-hypotheken.html",
+    "country": "CH",
+    "currency": "CHF",
+    "sections": [
+      {
+        "id": "fixed",
+        "label": "Fixed mortgage",
+        "start": "\\nFesthypothek Zinssätze\\nZinssätze für Neugeschäfte gültig per",
+        "end": "\\nMehr zur Festhypothek\\n",
+        "pattern": "(?P<term>\\d+)\\s+(?:Jahre?|ans|years?)[\\s|]*Zinssatz\\s+ab\\s*(?P<rate>\\d+[.,]\\d+)\\s*%",
+        "terms": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "qualifier": "from"
+      }
+    ],
+    "conditions": "Indicative from-rates for new business, best credit quality and owner-occupied residential property.",
+    "datePattern": "gültig per (\\d{2}\\.\\d{2}\\.\\d{4})"
+  },
+  {
+    "id": "migros",
+    "name": "Migros Bank",
+    "url": "https://www.migrosbank.ch/fr/personnes-privees/prets-hypothecaires/taux-hypothecaires-actuels.html",
+    "country": "CH",
+    "currency": "CHF",
+    "sections": [
+      {
+        "id": "fixed",
+        "label": "Fixed mortgage",
+        "start": "\\nTaux des prêts hypothécaires en ligne\\n",
+        "end": "\\nTaux des prêts hypothécaires à taux fixe\\n",
+        "pattern": "(?P<term>\\d+)\\s+(?:Jahre?|ans|years?)[\\s|]*\\d+[.,]\\d+\\s*%[\\s|]*(?P<rate>\\d+[.,]\\d+)\\s*%",
+        "terms": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "headerPattern": "\\| Durée\\s+\\| Taux d’intérêt préférentiel du prêt hypothécaire en ligne\\*\\s+\\| Taux d’intérêt standard"
+      },
+      {
+        "id": "online",
+        "label": "Online preferential fixed mortgage",
+        "start": "\\nTaux des prêts hypothécaires en ligne\\n",
+        "end": "\\nTaux des prêts hypothécaires à taux fixe\\n",
+        "pattern": "(?P<term>\\d+)\\s+ans[\\s|]*(?P<rate>\\d+[.,]\\d+)\\s*%[\\s|]*\\d+[.,]\\d+\\s*%",
+        "terms": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "conditions": "Owner-occupied purchase or transfer from another lender. Requires private account with salary/pension deposits, payment business and pillar3a assets at Migros Bank. Published discount already included.",
+        "headerPattern": "\\| Durée\\s+\\| Taux d’intérêt préférentiel du prêt hypothécaire en ligne\\*\\s+\\| Taux d’intérêt standard"
+      }
+    ],
+    "conditions": "Standard owner-occupied residential mortgage rates; final lending approval required.",
+    "datePattern": "(\\d{4}-\\d{2}-\\d{2}), \\d{2}:\\d{2}"
+  },
+  {
+    "id": "valiant",
+    "name": "Valiant",
+    "url": "https://www.valiant.ch/de/privatkunden/finanzieren-zinsen-hypotheken",
+    "country": "CH",
+    "currency": "CHF",
+    "sections": [
+      {
+        "id": "fixed",
+        "label": "Fixed mortgage",
+        "start": "\\nFesthypothek\\n",
+        "end": "\\nLila SARON-Hypothek Plus\\n",
+        "pattern": "(?P<rate>\\d+[.,]\\d+)\\s*%\\s*p\\.a\\. für (?P<term>\\d+)\\s+(?:Jahre?|ans|years?)",
+        "terms": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      }
+    ],
+    "conditions": "Indicative CHF 500,000 first mortgage on owner-occupied property, impeccable credit and first-class property.",
+    "datePattern": "Letzte Zinssatzänderung: ([^–\\n]+)"
+  },
+  {
+    "id": "lukb",
+    "name": "Luzerner Kantonalbank",
+    "url": "https://boersenundmaerkte.lukb.ch/lukb/lists/CUSTOMER?custom=interestRate&q=EA8273E24C56D99A080C6A889AFC6CC4",
+    "country": "CH",
+    "currency": "CHF",
+    "sections": [
+      {
+        "id": "fixed",
+        "label": "Fixed mortgage",
+        "start": "\\nLUKB Zinssätze Hypotheken\\n",
+        "end": "Variable Hypothek, 1\\. Hypothek",
+        "pattern": "Fest-Hypothek, (?P<term>\\d+)\\s+(?:Jahre?|ans|years?)[\\s|]*(?P<rate>\\d+[.,]\\d+)\\s*%",
+        "terms": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      }
+    ],
+    "conditions": "Published mortgage rate table; individual lending terms require confirmation.",
+    "datePattern": "LUKB Zinssätze Hypotheken\\s+(\\d{2}\\.\\d{2}\\.\\d{4})",
+    "lenderGroup": "Luzerner Kantonalbank"
+  },
+  {
+    "id": "swissquote",
+    "name": "Swissquote",
+    "url": "https://www.swissquote.com/en-ch/private/bank/products/mortgage",
+    "country": "CH",
+    "currency": "CHF",
+    "sections": [
+      {
+        "id": "fixed",
+        "label": "Fixed mortgage",
+        "start": "\\nFixed rate\\n",
+        "end": "\\nThe key to your dream home\\n",
+        "pattern": "to (?P<term>\\d+)\\s+(?:Jahre?|ans|years?) from:[\\s|]*(?P<rate>\\d+[.,]\\d+)\\s*%",
+        "terms": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "qualifier": "from"
+      }
+    ],
+    "conditions": "Indicative first mortgages up to 80% of property market value; forward charges can apply. Partner: Luzerner Kantonalbank.",
+    "datePattern": "Latest update of our rates: ([^\\n]+)",
+    "lenderGroup": "Luzerner Kantonalbank"
+  },
+  {
+    "id": "bps",
+    "name": "BPS (SUISSE)",
+    "url": "https://www.bps-suisse.ch/de/festhypothek.jsp",
+    "country": "CH",
+    "currency": "CHF",
+    "sections": [
+      {
+        "id": "fixed",
+        "label": "Fixed mortgage",
+        "start": "Derzeit geltende \\(indikative\\) Festhypothekenzinsen",
+        "end": "Für Laufzeiten von über 10 Jahren",
+        "pattern": "\\| (?P<term>\\d+)[\\s|]*(?P<rate>\\d+[.,]\\d+)\\s*%",
+        "terms": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "headerPattern": "\\| Laufzeit in Jahren\\s+\\| Zins bis zu 75-80% \\(Belehnungssatz\\)"
+      }
+    ],
+    "conditions": "Owner-occupied residential property; minimum CHF 100,000; published indicative LTV band 75–80%."
+  },
+  {
+    "id": "hbl",
+    "name": "Hypothekarbank Lenzburg",
+    "url": "https://www.hbl.ch/de/zinssaetze-hypotheken/",
+    "country": "CH",
+    "currency": "CHF",
+    "sections": [
+      {
+        "id": "fixed",
+        "label": "Fixed mortgage",
+        "start": "\\nFesthypotheken\\n",
+        "end": "\\nStufenhypotheken\\n",
+        "pattern": "(?P<rate>\\d+[.,]\\d+)\\s*%[\\s|]*(?P<term>\\d+)\\s+(?:Jahre?|ans|years?)",
+        "terms": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      }
+    ],
+    "conditions": "Indicative owner-occupied property up to 80% LTV, subject to credit standing; 10-year rate includes a published special offer."
+  },
+  {
+    "id": "aek",
+    "name": "AEK BANK 1826",
+    "url": "https://www.aekbank.ch/privatkunden/Finanzierungen/Zinsen",
+    "country": "CH",
+    "currency": "CHF",
+    "sections": [
+      {
+        "id": "fixed",
+        "label": "Fixed mortgage",
+        "start": "\\| Festhypotheken \\| Zins in %",
+        "end": "Geldmarkthypothek",
+        "pattern": "(?P<term>\\d+)\\s+(?:Jahre?|ans|years?)\\s+für 1\\. Hypotheken ab CHF 100\\x27000\\.00[\\s|]*(?P<rate>\\d+[.,]\\d+)",
+        "terms": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      }
+    ],
+    "conditions": "First mortgages from CHF 100,000; personalised offer available from lender."
+  },
+  {
+    "id": "acrevis",
+    "name": "acrevis Bank",
+    "url": "https://www.acrevis.ch/zinssaetze-hypotheken",
+    "country": "CH",
+    "currency": "CHF",
+    "sections": [
+      {
+        "id": "fixed",
+        "label": "Fixed mortgage",
+        "start": "\\nFesthypothek\\nKonditionen vom",
+        "end": "\\nVariable Hypothek\\n",
+        "pattern": "(?P<term>\\d+)\\s+(?:Jahre?|ans|years?)[\\s|]*(?P<rate>\\d+[.,]\\d+)\\s*%",
+        "terms": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      }
+    ],
+    "conditions": "First mortgages at 65% LTV on owner-occupied property, first-class property, proven affordability and impeccable credit.",
+    "datePattern": "Konditionen vom (\\d{2}\\.\\d{2}\\.\\d{4})"
+  },
+  {
+    "id": "bvk",
+    "name": "BVK",
+    "url": "https://bvk.ch/de/zinssaetze-hypotheken",
+    "country": "CH",
+    "currency": "CHF",
+    "sections": [
+      {
+        "id": "fixed",
+        "label": "Fixed mortgage",
+        "start": "Unsere aktuellen Zinsen für Festhypotheken",
+        "end": "Formular «Antrag Hypothek",
+        "pattern": "(?P<term>\\d+)\\s+(?:Jahre?|ans|years?)[\\s|]*(?P<rate>\\d+[.,]\\d+)\\s*%",
+        "terms": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    ],
+    "conditions": "Lender approval required; forward-start mortgages attract an additional charge not included here.",
+    "validUntilPattern": "Zinssatz gültig bis (\\d{2}\\.\\d{2}\\.\\d{4})"
+  },
+  {
+    "id": "apk",
+    "name": "Aargauische Pensionskasse",
+    "url": "https://www.apk.ch/de/hypotheken/apk-hypotheken/zinssaetze",
+    "country": "CH",
+    "currency": "CHF",
+    "sections": [
+      {
+        "id": "fixed",
+        "label": "Fixed mortgage",
+        "start": "\\nZinssätze für Festhypotheken\\n",
+        "end": "\\nZinssätze für variable Hypotheken\\n",
+        "pattern": "(?P<term>\\d+)\\s+(?:Jahre?|ans|years?)[\\s|]*(?P<rate>\\d+[.,]\\d+)\\s*%",
+        "terms": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      }
+    ],
+    "conditions": "Available to insured members and third parties; excludes TI, VS, GE, FR, VD, NE, JU and GR. Published rates apply to approved applications until new conditions; forward charges excluded.",
+    "datePattern": "Datum der letzten Zinsfestlegung für Festhypotheken: ([^\\n]+)"
+  },
+  {
+    "id": "ca-nextbank",
+    "name": "Crédit Agricole next bank",
+    "url": "https://www.ca-nextbank.ch/de/privatpersonen/hypotheken-kredite/zinssaetze",
+    "country": "CH",
+    "currency": "CHF",
+    "sections": [
+      {
+        "id": "fixed",
+        "label": "Fixed mortgage",
+        "start": "\\nFeste Hypothekarzinssätze\\n",
+        "end": "\\n\\| 3 Jahre\\n",
+        "pattern": "(?P<term>\\d+)\\s+(?:Jahre?|ans|years?)[\\s|]*Ab\\s*(?P<rate>\\d+[.,]\\d+)\\s*%[\\s|]*Ab\\s*\\d+[.,]\\d+%[\\s|]*Ab\\s*\\d+[.,]\\d+%",
+        "terms": [
+          3,
+          5,
+          7,
+          10
+        ],
+        "qualifier": "from",
+        "headerPattern": "\\| Jahre \\| Schweiz\\*\\* \\| Frankreich \\(CHF\\)\\*\\*\\* \\| Frankreich \\(EUR\\)\\*\\*\\*"
+      }
+    ],
+    "conditions": "Swiss property Ecoprêt offer only; indicative and conditional; promotions cannot be combined. French property columns excluded.",
+    "datePattern": "Zinssätze gültig ab dem (\\d{2}\\.\\d{2}\\.\\d{4})"
+  },
+  {
+    "id": "pksl",
+    "name": "Pensionskasse Stadt Luzern",
+    "url": "https://www.pksl.ch/hypotheken/finanzierung-von-wohneigentum",
+    "country": "CH",
+    "currency": "CHF",
+    "conditions": "Indicative nonbinding owner-occupied mortgage rates; members and nonmembers may apply. ECO discount is not calculated.",
+    "sections": [
+      {
+        "id": "fixed",
+        "label": "Fixed mortgage",
+        "start": "Aktuell gültige Zinssätze für Festhypotheken",
+        "end": "Für die \"PKSL Festhypothek ECO\"",
+        "pattern": "(?P<term>\\d+)\\s+Jahre?[\\s|]*(?P<rate>\\d+[.,]\\d+)\\s*%",
+        "terms": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      }
+    ]
+  },
+  {
+    "id": "zkb",
+    "name": "Zürcher Kantonalbank",
+    "url": "https://www.zkb.ch/de/private/hypotheken-immobilien/hypotheken-zinsen/festhypothek.html",
+    "country": "CH",
+    "currency": "CHF",
+    "conditions": "Indicative rates; final rate depends on credit, property type/quality/use, amount, LTV and affordability.",
+    "sections": [
+      {
+        "id": "fixed",
+        "label": "Fixed mortgage",
+        "start": "\\nZinsen nach Laufzeit\\n",
+        "end": "\\nLetzte Änderung:",
+        "pattern": "(?P<term>\\d+)\\s+Jahre?[\\s|]*(?P<rate>\\d+[.,]\\d+)\\s*%",
+        "terms": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      }
+    ],
+    "datePattern": "Letzte Änderung: (\\d{2}\\.\\d{2}\\.\\d{4})"
+  }
+]

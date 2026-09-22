@@ -1,0 +1,152 @@
+{
+  "verifiedAt": "2026-09-22T08:23:25.197799Z",
+  "historicalVerificationOnly": true,
+  "providerCount": 18,
+  "rateCount": 219,
+  "providers": [
+    {
+      "providerId": "cler",
+      "status": "ok",
+      "rateCount": 35,
+      "sourceUrl": "https://www.cler.ch/de/hypotheken-und-kredite/hypotheken/aktuelle-hypothekarzinsen",
+      "sourceSha256": "9ae08aa23c1398a071ab789caa6955fa35ccf9f9e35285cf20bb896632182bdb",
+      "retrievedAt": "2026-09-22T08:23:15.414542Z"
+    },
+    {
+      "providerId": "bsu",
+      "status": "ok",
+      "rateCount": 9,
+      "sourceUrl": "https://www.bankbsu.ch/hypozinsen/",
+      "sourceSha256": "a30b1cfbf92beed4a8abfc199984a5cb23877905f03c90789217a711b19c0b15",
+      "retrievedAt": "2026-09-22T08:23:15.307384Z"
+    },
+    {
+      "providerId": "viac",
+      "status": "ok",
+      "rateCount": 2,
+      "sourceUrl": "https://viac.ch/produkte/hypothek/",
+      "sourceSha256": "433002167c7e2468a2c5fd4a6c60a4fe00ba6c0e49fdd1ca2a54c0f35b6f9703",
+      "retrievedAt": "2026-09-22T08:23:15.291836Z"
+    },
+    {
+      "providerId": "hypomat",
+      "status": "ok",
+      "rateCount": 19,
+      "sourceUrl": "https://glkb.ch/hypomat/aktuelle-zinsen",
+      "sourceSha256": "126796273d2e26ba6ba8d30ae185850032c2f62e8118c5504d507da89578beb3",
+      "retrievedAt": "2026-09-22T08:23:15.342401Z"
+    },
+    {
+      "providerId": "postfinance",
+      "status": "ok",
+      "rateCount": 14,
+      "sourceUrl": "https://www.postfinance.ch/de/privat/finanzieren/hypotheken/zinssaetze-hypotheken.html",
+      "sourceSha256": "1f71361ae61227ffbad88e2be3360cfa7ee54ce606f58836a4cb7adfa8fc14d1",
+      "retrievedAt": "2026-09-22T08:23:15.609716Z"
+    },
+    {
+      "providerId": "migros",
+      "status": "ok",
+      "rateCount": 18,
+      "sourceUrl": "https://www.migrosbank.ch/fr/personnes-privees/prets-hypothecaires/taux-hypothecaires-actuels.html",
+      "sourceSha256": "52f1c2ebaf681e4057cf4efd28f5c3579948aecd0a26e9d59f0bf2e9b7219885",
+      "retrievedAt": "2026-09-22T08:23:15.511505Z"
+    },
+    {
+      "providerId": "valiant",
+      "status": "ok",
+      "rateCount": 9,
+      "sourceUrl": "https://www.valiant.ch/de/privatkunden/finanzieren-zinsen-hypotheken",
+      "sourceSha256": "7280db29daf20d844d2d0164f3952459b10952d47e51b27407293f93a04df61e",
+      "retrievedAt": "2026-09-22T08:23:15.637620Z"
+    },
+    {
+      "providerId": "lukb",
+      "status": "ok",
+      "rateCount": 9,
+      "sourceUrl": "https://boersenundmaerkte.lukb.ch/lukb/lists/CUSTOMER?custom=interestRate&q=EA8273E24C56D99A080C6A889AFC6CC4",
+      "sourceSha256": "6d7b29a5022dbd126e2cdcf47cc98eef0a3d9004be310cfbd8a0bb758f6500ed",
+      "retrievedAt": "2026-09-22T08:23:25.191406Z"
+    },
+    {
+      "providerId": "swissquote",
+      "status": "ok",
+      "rateCount": 9,
+      "sourceUrl": "https://www.swissquote.com/en-ch/private/bank/products/mortgage",
+      "sourceSha256": "b94b049bef27f475062db2f1347ce4bbe7dbef86139437b969181161bb9e1a2d",
+      "retrievedAt": "2026-09-22T08:23:15.809679Z"
+    },
+    {
+      "providerId": "bps",
+      "status": "ok",
+      "rateCount": 10,
+      "sourceUrl": "https://www.bps-suisse.ch/de/festhypothek.jsp",
+      "sourceSha256": "219cbc0590f91bfb2667293c947ea1e8b34a533a2b124dcea18dbd27bb12fba1",
+      "retrievedAt": "2026-09-22T08:23:15.697980Z"
+    },
+    {
+      "providerId": "hbl",
+      "status": "ok",
+      "rateCount": 9,
+      "sourceUrl": "https://www.hbl.ch/de/zinssaetze-hypotheken/",
+      "sourceSha256": "2235126e3299a4b5e76e7bac73c731778011620495528e3b0bca86204a6d6e66",
+      "retrievedAt": "2026-09-22T08:23:15.749754Z"
+    },
+    {
+      "providerId": "aek",
+      "status": "ok",
+      "rateCount": 10,
+      "sourceUrl": "https://www.aekbank.ch/privatkunden/Finanzierungen/Zinsen",
+      "sourceSha256": "0158d1d1ce978aa9da766b404c21d7826764b02343fb102e64bceca1246ac19f",
+      "retrievedAt": "2026-09-22T08:23:16.256785Z"
+    },
+    {
+      "providerId": "acrevis",
+      "status": "ok",
+      "rateCount": 9,
+      "sourceUrl": "https://www.acrevis.ch/zinssaetze-hypotheken",
+      "sourceSha256": "0de37faf15f30a677af98470ceb70927a079ddc43fe5971627d7d392415fcda8",
+      "retrievedAt": "2026-09-22T08:23:16.568784Z"
+    },
+    {
+      "providerId": "bvk",
+      "status": "ok",
+      "rateCount": 11,
+      "sourceUrl": "https://bvk.ch/de/zinssaetze-hypotheken",
+      "sourceSha256": "08b4990471b6f8484791945f9a477e82eae92f7d9b9ba73958d32bd295102278",
+      "retrievedAt": "2026-09-22T08:23:16.943726Z"
+    },
+    {
+      "providerId": "apk",
+      "status": "ok",
+      "rateCount": 14,
+      "sourceUrl": "https://www.apk.ch/de/hypotheken/apk-hypotheken/zinssaetze",
+      "sourceSha256": "e92f27dcdf28045d81395cb1fa8f99c8d45056298c49dead056d4cbac4b16e77",
+      "retrievedAt": "2026-09-22T08:23:16.387923Z"
+    },
+    {
+      "providerId": "ca-nextbank",
+      "status": "ok",
+      "rateCount": 4,
+      "sourceUrl": "https://www.ca-nextbank.ch/de/privatpersonen/hypotheken-kredite/zinssaetze",
+      "sourceSha256": "536287e74b9109409eb72be2fef9f63a53e54c6edb0cd121aedb977615b4e02f",
+      "retrievedAt": "2026-09-22T08:23:16.586509Z"
+    },
+    {
+      "providerId": "pksl",
+      "status": "ok",
+      "rateCount": 14,
+      "sourceUrl": "https://www.pksl.ch/hypotheken/finanzierung-von-wohneigentum",
+      "sourceSha256": "7aa35d7e7882942cccbf73016c6e7257c140da1c82329401f4fba3d68c746cb8",
+      "retrievedAt": "2026-09-22T08:23:16.824289Z"
+    },
+    {
+      "providerId": "zkb",
+      "status": "ok",
+      "rateCount": 14,
+      "sourceUrl": "https://www.zkb.ch/de/private/hypotheken-immobilien/hypotheken-zinsen/festhypothek.html",
+      "sourceSha256": "f894c95cf41ab0cf5008df3d3914baeb1acbf51a3536202291ec08de04e52ab2",
+      "retrievedAt": "2026-09-22T08:23:16.862074Z"
+    }
+  ]
+}

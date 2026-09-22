@@ -4,9 +4,13 @@
 
 An open contribution programme for insurers, lenders, pension providers and pricing-platform operators who want their quotes to appear on [Fiscal Nonsense](https://fiscalnonsense.com/providers/).
 
+## Public Swiss pricing adapters
+
+Working open-source adapters now retrieve exact public Swiss mortgage rates, consumer-loan pricing, savings/pension cash rates and official basic-health premiums. See **[public pricing documentation](docs/public-pricing.md)** for coverage, commands and limitations. These use first-party public sources and require no applicant information. They are separate from the personalised quote gateway and are not activated there.
+
 ## Status: accepting integration proposals
 
-This repository defines a **draft v0.1 interface** and an offline test kit. The production gateway is hosted at [api.fiscalnonsense.com](https://api.fiscalnonsense.com/), with its forms connected to the website provider directory. There are no active insurers or automatic activations from this repository. All example prices are fictional. Passing tests or merging a pull request does not enable an integration on the website.
+This repository defines a **draft v0.1 interface** and an offline test kit. The production gateway is hosted at [api.fiscalnonsense.com](https://api.fiscalnonsense.com/), with its forms connected to the website provider directory. There are no active insurers or automatic activations from this repository. All proposal example prices are fictional; the public-pricing modules fetch real published values and label historical verification artifacts separately. Passing tests or merging a pull request does not enable an integration on the website.
 
 We welcome proposals for Switzerland (CH), the United States (US), the United Kingdom (GB), Germany (DE) and Italy (IT). The taxonomy covers personal and business insurance, mortgages and other consumer/business credit. It is extensible: propose missing product types instead of forcing them into an unrelated category. Each product needs country-specific inputs and terms before activation.
 
@@ -40,6 +44,7 @@ An existing API does not have to match our draft exactly. Open an integration pr
 
 ## Repository map
 
+- `docs/public-pricing.md`: working public-data adapters, coverage and refresh instructions.
 - `docs/integration.md`: input/output contract, numerical conventions and operational requirements.
 - `schemas/contract.schema.json`: machine-readable structured request and response objects.
 - `docs/review-and-launch.md`: review and explicit activation process.

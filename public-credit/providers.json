@@ -1,0 +1,80 @@
+[
+  {
+    "id": "migros",
+    "name": "Migros Bank",
+    "lender_group": "Migros Bank",
+    "url": "https://www.migrosbank.ch/de/privatpersonen/kredite/privatkredit.html",
+    "range_anchor": "effektivem Jahreszins zwischen",
+    "conditions": [
+      "Online applications; rate depends on creditworthiness; approval required."
+    ],
+    "product": "Personal loan",
+    "access": "public-html",
+    "data_license": "No open-data licence verified; source rights remain with publisher"
+  },
+  {
+    "id": "bank-now",
+    "name": "BANK-now",
+    "lender_group": "BANK-now",
+    "url": "https://www.bank-now.ch/de",
+    "range_anchor": "effektiven Jahreszins zwischen",
+    "conditions": [
+      "Rate depends on creditworthiness and application assessment."
+    ],
+    "product": "Personal loan",
+    "access": "public-html",
+    "data_license": "No open-data licence verified; source rights remain with publisher"
+  },
+  {
+    "id": "bob",
+    "name": "bob Finance",
+    "lender_group": "bob Finance",
+    "url": "https://www.bob.ch/de/privatkredit/",
+    "range_anchor": "effektive Jahreszins bei bob Finance liegt zwischen",
+    "conditions": [
+      "Rate depends on creditworthiness; optional credit protection is separate."
+    ],
+    "product": "Personal loan",
+    "access": "public-html",
+    "data_license": "No open-data licence verified; source rights remain with publisher"
+  },
+  {
+    "id": "lend",
+    "name": "LEND",
+    "lender_group": "LEND",
+    "url": "https://lend.ch/de/darlehen",
+    "range_anchor": "effektive Jahreszins bewegt sich zwischen",
+    "conditions": [
+      "Crowdlending platform; rate depends on creditworthiness and term; published repayment terms 12\u201384 months."
+    ],
+    "product": "Personal loan",
+    "access": "public-html",
+    "data_license": "No open-data licence verified; source rights remain with publisher"
+  },
+  {
+    "id": "cembra",
+    "name": "Cembra",
+    "lender_group": "Cembra Money Bank AG",
+    "url": "https://www.cembra.ch/de/kredite/barkredit/",
+    "range_anchor": "effektiver Jahreszins zwischen",
+    "conditions": [
+      "Applicant must reside in Switzerland; approval and creditworthiness assessment required."
+    ],
+    "product": "Personal loan",
+    "access": "public-html",
+    "data_license": "No open-data licence verified; source rights remain with publisher"
+  },
+  {
+    "id": "cashgate",
+    "name": "cashgate",
+    "lender_group": "Cembra Money Bank AG",
+    "url": "https://www.cashgate.ch/de",
+    "range_anchor": "effektiven Jahreszins zwischen",
+    "conditions": [
+      "Swiss residents; published terms 12\u201384 months; all rates subject to credit approval. Cohort rows reproduce only the displayed conditions, not a complete eligibility assessment."
+    ],
+    "product": "Personal loan",
+    "access": "public-html",
+    "data_license": "No open-data licence verified; source rights remain with publisher"
+  }
+]

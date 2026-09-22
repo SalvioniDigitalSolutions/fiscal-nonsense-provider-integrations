@@ -1,0 +1,533 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-09-22T08:27:30.367896+00:00",
+  "status": "ok",
+  "rates": [
+    {
+      "provider_id": "migros",
+      "provider_name": "Migros Bank",
+      "lender_group": "Migros Bank",
+      "country": "CH",
+      "currency": "CHF",
+      "category": "personal-loan",
+      "product": "Personal loan",
+      "rate_unit": "percent-per-year",
+      "rate_basis": "effective-annual-interest",
+      "binding_quote": false,
+      "personalized": false,
+      "derived": false,
+      "source_url": "https://www.migrosbank.ch/de/privatpersonen/kredite/privatkredit.html",
+      "observed_at": "2026-09-22T08:27:28.939870+00:00",
+      "provider_effective_date": null,
+      "freshness_ttl_hours": 24,
+      "source_sha256": "f5a3960b53018c11d9b1c1be6638342f78c957dc8accd1489b1c9f7ff8525832",
+      "conditions": [
+        "Online applications; rate depends on creditworthiness; approval required."
+      ],
+      "id": "migros:published-range",
+      "rate_kind": "published-range",
+      "rate_min_percent": "4.9",
+      "rate_max_percent": "7.9",
+      "source_excerpt": "effektivem Jahreszins zwischen 4,9% und 7,9%"
+    },
+    {
+      "provider_id": "bank-now",
+      "provider_name": "BANK-now",
+      "lender_group": "BANK-now",
+      "country": "CH",
+      "currency": "CHF",
+      "category": "personal-loan",
+      "product": "Personal loan",
+      "rate_unit": "percent-per-year",
+      "rate_basis": "effective-annual-interest",
+      "binding_quote": false,
+      "personalized": false,
+      "derived": false,
+      "source_url": "https://www.bank-now.ch/de",
+      "observed_at": "2026-09-22T08:27:29.195665+00:00",
+      "provider_effective_date": null,
+      "freshness_ttl_hours": 24,
+      "source_sha256": "c8c57fe83c7c2b5fd914ef426a554d40286b87d6bb6121d6e8d60524a7b4e2e0",
+      "conditions": [
+        "Rate depends on creditworthiness and application assessment."
+      ],
+      "id": "bank-now:published-range",
+      "rate_kind": "published-range",
+      "rate_min_percent": "4.9",
+      "rate_max_percent": "9.9",
+      "source_excerpt": "effektiven Jahreszins zwischen 4.9 % und 9.9 %"
+    },
+    {
+      "provider_id": "bob",
+      "provider_name": "bob Finance",
+      "lender_group": "bob Finance",
+      "country": "CH",
+      "currency": "CHF",
+      "category": "personal-loan",
+      "product": "Personal loan",
+      "rate_unit": "percent-per-year",
+      "rate_basis": "effective-annual-interest",
+      "binding_quote": false,
+      "personalized": false,
+      "derived": false,
+      "source_url": "https://www.bob.ch/de/privatkredit/",
+      "observed_at": "2026-09-22T08:27:29.611873+00:00",
+      "provider_effective_date": null,
+      "freshness_ttl_hours": 24,
+      "source_sha256": "d38e6b303c4e5d8504e6de98e1d67d255e88ed34d4ebdcbc18e5ab25fe3a5096",
+      "conditions": [
+        "Rate depends on creditworthiness; optional credit protection is separate."
+      ],
+      "id": "bob:published-range",
+      "rate_kind": "published-range",
+      "rate_min_percent": "4.7",
+      "rate_max_percent": "9.9",
+      "source_excerpt": "effektive Jahreszins bei bob Finance liegt zwischen 4,7% und 9,9%"
+    },
+    {
+      "provider_id": "lend",
+      "provider_name": "LEND",
+      "lender_group": "LEND",
+      "country": "CH",
+      "currency": "CHF",
+      "category": "personal-loan",
+      "product": "Personal loan",
+      "rate_unit": "percent-per-year",
+      "rate_basis": "effective-annual-interest",
+      "binding_quote": false,
+      "personalized": false,
+      "derived": false,
+      "source_url": "https://lend.ch/de/darlehen",
+      "observed_at": "2026-09-22T08:27:29.960578+00:00",
+      "provider_effective_date": null,
+      "freshness_ttl_hours": 24,
+      "source_sha256": "71a3912e85fdc90d43d2172f19bc8e3576acad0dee5f78e5f869f714e907f0e5",
+      "conditions": [
+        "Crowdlending platform; rate depends on creditworthiness and term; published repayment terms 12–84 months."
+      ],
+      "id": "lend:published-range",
+      "rate_kind": "published-range",
+      "rate_min_percent": "4.30",
+      "rate_max_percent": "9.96",
+      "source_excerpt": "effektive Jahreszins bewegt sich zwischen 4.30% und 9.96%"
+    },
+    {
+      "provider_id": "cembra",
+      "provider_name": "Cembra",
+      "lender_group": "Cembra Money Bank AG",
+      "country": "CH",
+      "currency": "CHF",
+      "category": "personal-loan",
+      "product": "Personal loan",
+      "rate_unit": "percent-per-year",
+      "rate_basis": "effective-annual-interest",
+      "binding_quote": false,
+      "personalized": false,
+      "derived": false,
+      "source_url": "https://www.cembra.ch/de/kredite/barkredit/",
+      "observed_at": "2026-09-22T08:27:30.210251+00:00",
+      "provider_effective_date": null,
+      "freshness_ttl_hours": 24,
+      "source_sha256": "b938dd2fe5bfe4c2d3735b1575821e29595938018fc0610c3eedb65e3c2b7ed0",
+      "conditions": [
+        "Applicant must reside in Switzerland; approval and creditworthiness assessment required."
+      ],
+      "id": "cembra:published-range",
+      "rate_kind": "published-range",
+      "rate_min_percent": "5.95",
+      "rate_max_percent": "9.95",
+      "source_excerpt": "effektiver Jahreszins zwischen 5,95% und 9,95%"
+    },
+    {
+      "provider_id": "cashgate",
+      "provider_name": "cashgate",
+      "lender_group": "Cembra Money Bank AG",
+      "country": "CH",
+      "currency": "CHF",
+      "category": "personal-loan",
+      "product": "Personal loan",
+      "rate_unit": "percent-per-year",
+      "rate_basis": "effective-annual-interest",
+      "binding_quote": false,
+      "personalized": false,
+      "derived": false,
+      "source_url": "https://www.cashgate.ch/de",
+      "observed_at": "2026-09-22T08:27:30.361173+00:00",
+      "provider_effective_date": null,
+      "freshness_ttl_hours": 24,
+      "source_sha256": "35e0145aed660b6d8858d5a54c47b206f368ee49d0e36a7bbd3363fdd20899fc",
+      "conditions": [
+        "Swiss residents; published terms 12–84 months; all rates subject to credit approval. Cohort rows reproduce only the displayed conditions, not a complete eligibility assessment."
+      ],
+      "id": "cashgate:published-range",
+      "rate_kind": "published-range",
+      "rate_min_percent": "3.9",
+      "rate_max_percent": "9.9",
+      "source_excerpt": "effektiven Jahreszins zwischen 3.9% und 9.9%"
+    },
+    {
+      "provider_id": "cashgate",
+      "provider_name": "cashgate",
+      "lender_group": "Cembra Money Bank AG",
+      "country": "CH",
+      "currency": "CHF",
+      "category": "personal-loan",
+      "product": "Personal loan",
+      "rate_unit": "percent-per-year",
+      "rate_basis": "published-interest-rate",
+      "binding_quote": false,
+      "personalized": false,
+      "derived": false,
+      "source_url": "https://www.cashgate.ch/de",
+      "observed_at": "2026-09-22T08:27:30.361173+00:00",
+      "provider_effective_date": null,
+      "freshness_ttl_hours": 24,
+      "source_sha256": "35e0145aed660b6d8858d5a54c47b206f368ee49d0e36a7bbd3363fdd20899fc",
+      "conditions": [
+        "Swiss residents; published terms 12–84 months; all rates subject to credit approval. Cohort rows reproduce only the displayed conditions, not a complete eligibility assessment."
+      ],
+      "id": "cashgate:cohort-1:term-1",
+      "rate_kind": "published-conditional",
+      "rate_percent": "3.90",
+      "eligibility_cohort": {
+        "monthly_income_chf": ">=4500",
+        "residency": [
+          "Swiss citizen",
+          "C permit"
+        ],
+        "homeownership": true,
+        "income_basis": "not specified by source"
+      },
+      "term_months_source_label": "≤ 48",
+      "product_term_months_range": [
+        12,
+        84
+      ],
+      "source_excerpt": "≤ 48 months: 3.90%"
+    },
+    {
+      "provider_id": "cashgate",
+      "provider_name": "cashgate",
+      "lender_group": "Cembra Money Bank AG",
+      "country": "CH",
+      "currency": "CHF",
+      "category": "personal-loan",
+      "product": "Personal loan",
+      "rate_unit": "percent-per-year",
+      "rate_basis": "published-interest-rate",
+      "binding_quote": false,
+      "personalized": false,
+      "derived": false,
+      "source_url": "https://www.cashgate.ch/de",
+      "observed_at": "2026-09-22T08:27:30.361173+00:00",
+      "provider_effective_date": null,
+      "freshness_ttl_hours": 24,
+      "source_sha256": "35e0145aed660b6d8858d5a54c47b206f368ee49d0e36a7bbd3363fdd20899fc",
+      "conditions": [
+        "Swiss residents; published terms 12–84 months; all rates subject to credit approval. Cohort rows reproduce only the displayed conditions, not a complete eligibility assessment."
+      ],
+      "id": "cashgate:cohort-1:term-2",
+      "rate_kind": "published-conditional",
+      "rate_percent": "4.90",
+      "eligibility_cohort": {
+        "monthly_income_chf": ">=4500",
+        "residency": [
+          "Swiss citizen",
+          "C permit"
+        ],
+        "homeownership": true,
+        "income_basis": "not specified by source"
+      },
+      "term_months_source_label": "60",
+      "product_term_months_range": [
+        12,
+        84
+      ],
+      "source_excerpt": "60 months: 4.90%"
+    },
+    {
+      "provider_id": "cashgate",
+      "provider_name": "cashgate",
+      "lender_group": "Cembra Money Bank AG",
+      "country": "CH",
+      "currency": "CHF",
+      "category": "personal-loan",
+      "product": "Personal loan",
+      "rate_unit": "percent-per-year",
+      "rate_basis": "published-interest-rate",
+      "binding_quote": false,
+      "personalized": false,
+      "derived": false,
+      "source_url": "https://www.cashgate.ch/de",
+      "observed_at": "2026-09-22T08:27:30.361173+00:00",
+      "provider_effective_date": null,
+      "freshness_ttl_hours": 24,
+      "source_sha256": "35e0145aed660b6d8858d5a54c47b206f368ee49d0e36a7bbd3363fdd20899fc",
+      "conditions": [
+        "Swiss residents; published terms 12–84 months; all rates subject to credit approval. Cohort rows reproduce only the displayed conditions, not a complete eligibility assessment."
+      ],
+      "id": "cashgate:cohort-1:term-3",
+      "rate_kind": "published-conditional",
+      "rate_percent": "5.90",
+      "eligibility_cohort": {
+        "monthly_income_chf": ">=4500",
+        "residency": [
+          "Swiss citizen",
+          "C permit"
+        ],
+        "homeownership": true,
+        "income_basis": "not specified by source"
+      },
+      "term_months_source_label": "≥ 72",
+      "product_term_months_range": [
+        12,
+        84
+      ],
+      "source_excerpt": "≥ 72 months: 5.90%"
+    },
+    {
+      "provider_id": "cashgate",
+      "provider_name": "cashgate",
+      "lender_group": "Cembra Money Bank AG",
+      "country": "CH",
+      "currency": "CHF",
+      "category": "personal-loan",
+      "product": "Personal loan",
+      "rate_unit": "percent-per-year",
+      "rate_basis": "published-interest-rate",
+      "binding_quote": false,
+      "personalized": false,
+      "derived": false,
+      "source_url": "https://www.cashgate.ch/de",
+      "observed_at": "2026-09-22T08:27:30.361173+00:00",
+      "provider_effective_date": null,
+      "freshness_ttl_hours": 24,
+      "source_sha256": "35e0145aed660b6d8858d5a54c47b206f368ee49d0e36a7bbd3363fdd20899fc",
+      "conditions": [
+        "Swiss residents; published terms 12–84 months; all rates subject to credit approval. Cohort rows reproduce only the displayed conditions, not a complete eligibility assessment."
+      ],
+      "id": "cashgate:cohort-2:term-1",
+      "rate_kind": "published-conditional",
+      "rate_percent": "6.90",
+      "eligibility_cohort": {
+        "monthly_income_chf": ">=4500",
+        "residency": [
+          "Swiss citizen",
+          "C permit"
+        ],
+        "homeownership": false,
+        "income_basis": "not specified by source"
+      },
+      "term_months_source_label": "≤ 48",
+      "product_term_months_range": [
+        12,
+        84
+      ],
+      "source_excerpt": "≤ 48 months: 6.90%"
+    },
+    {
+      "provider_id": "cashgate",
+      "provider_name": "cashgate",
+      "lender_group": "Cembra Money Bank AG",
+      "country": "CH",
+      "currency": "CHF",
+      "category": "personal-loan",
+      "product": "Personal loan",
+      "rate_unit": "percent-per-year",
+      "rate_basis": "published-interest-rate",
+      "binding_quote": false,
+      "personalized": false,
+      "derived": false,
+      "source_url": "https://www.cashgate.ch/de",
+      "observed_at": "2026-09-22T08:27:30.361173+00:00",
+      "provider_effective_date": null,
+      "freshness_ttl_hours": 24,
+      "source_sha256": "35e0145aed660b6d8858d5a54c47b206f368ee49d0e36a7bbd3363fdd20899fc",
+      "conditions": [
+        "Swiss residents; published terms 12–84 months; all rates subject to credit approval. Cohort rows reproduce only the displayed conditions, not a complete eligibility assessment."
+      ],
+      "id": "cashgate:cohort-2:term-2",
+      "rate_kind": "published-conditional",
+      "rate_percent": "7.90",
+      "eligibility_cohort": {
+        "monthly_income_chf": ">=4500",
+        "residency": [
+          "Swiss citizen",
+          "C permit"
+        ],
+        "homeownership": false,
+        "income_basis": "not specified by source"
+      },
+      "term_months_source_label": "60",
+      "product_term_months_range": [
+        12,
+        84
+      ],
+      "source_excerpt": "60 months: 7.90%"
+    },
+    {
+      "provider_id": "cashgate",
+      "provider_name": "cashgate",
+      "lender_group": "Cembra Money Bank AG",
+      "country": "CH",
+      "currency": "CHF",
+      "category": "personal-loan",
+      "product": "Personal loan",
+      "rate_unit": "percent-per-year",
+      "rate_basis": "published-interest-rate",
+      "binding_quote": false,
+      "personalized": false,
+      "derived": false,
+      "source_url": "https://www.cashgate.ch/de",
+      "observed_at": "2026-09-22T08:27:30.361173+00:00",
+      "provider_effective_date": null,
+      "freshness_ttl_hours": 24,
+      "source_sha256": "35e0145aed660b6d8858d5a54c47b206f368ee49d0e36a7bbd3363fdd20899fc",
+      "conditions": [
+        "Swiss residents; published terms 12–84 months; all rates subject to credit approval. Cohort rows reproduce only the displayed conditions, not a complete eligibility assessment."
+      ],
+      "id": "cashgate:cohort-2:term-3",
+      "rate_kind": "published-conditional",
+      "rate_percent": "8.90",
+      "eligibility_cohort": {
+        "monthly_income_chf": ">=4500",
+        "residency": [
+          "Swiss citizen",
+          "C permit"
+        ],
+        "homeownership": false,
+        "income_basis": "not specified by source"
+      },
+      "term_months_source_label": "≥ 72",
+      "product_term_months_range": [
+        12,
+        84
+      ],
+      "source_excerpt": "≥ 72 months: 8.90%"
+    },
+    {
+      "provider_id": "cashgate",
+      "provider_name": "cashgate",
+      "lender_group": "Cembra Money Bank AG",
+      "country": "CH",
+      "currency": "CHF",
+      "category": "personal-loan",
+      "product": "Personal loan",
+      "rate_unit": "percent-per-year",
+      "rate_basis": "published-interest-rate",
+      "binding_quote": false,
+      "personalized": false,
+      "derived": false,
+      "source_url": "https://www.cashgate.ch/de",
+      "observed_at": "2026-09-22T08:27:30.361173+00:00",
+      "provider_effective_date": null,
+      "freshness_ttl_hours": 24,
+      "source_sha256": "35e0145aed660b6d8858d5a54c47b206f368ee49d0e36a7bbd3363fdd20899fc",
+      "conditions": [
+        "Swiss residents; published terms 12–84 months; all rates subject to credit approval. Cohort rows reproduce only the displayed conditions, not a complete eligibility assessment."
+      ],
+      "id": "cashgate:cohort-3:term-1",
+      "rate_kind": "published-conditional",
+      "rate_percent": "8.90",
+      "eligibility_cohort": {
+        "monthly_income_chf": "<4500",
+        "residency": [
+          "Swiss citizen",
+          "C permit",
+          "B permit"
+        ],
+        "homeownership": "not specified",
+        "income_basis": "not specified by source"
+      },
+      "term_months_source_label": "≤ 48",
+      "product_term_months_range": [
+        12,
+        84
+      ],
+      "source_excerpt": "≤ 48 months: 8.90%"
+    },
+    {
+      "provider_id": "cashgate",
+      "provider_name": "cashgate",
+      "lender_group": "Cembra Money Bank AG",
+      "country": "CH",
+      "currency": "CHF",
+      "category": "personal-loan",
+      "product": "Personal loan",
+      "rate_unit": "percent-per-year",
+      "rate_basis": "published-interest-rate",
+      "binding_quote": false,
+      "personalized": false,
+      "derived": false,
+      "source_url": "https://www.cashgate.ch/de",
+      "observed_at": "2026-09-22T08:27:30.361173+00:00",
+      "provider_effective_date": null,
+      "freshness_ttl_hours": 24,
+      "source_sha256": "35e0145aed660b6d8858d5a54c47b206f368ee49d0e36a7bbd3363fdd20899fc",
+      "conditions": [
+        "Swiss residents; published terms 12–84 months; all rates subject to credit approval. Cohort rows reproduce only the displayed conditions, not a complete eligibility assessment."
+      ],
+      "id": "cashgate:cohort-3:term-2",
+      "rate_kind": "published-conditional",
+      "rate_percent": "9.90",
+      "eligibility_cohort": {
+        "monthly_income_chf": "<4500",
+        "residency": [
+          "Swiss citizen",
+          "C permit",
+          "B permit"
+        ],
+        "homeownership": "not specified",
+        "income_basis": "not specified by source"
+      },
+      "term_months_source_label": "60",
+      "product_term_months_range": [
+        12,
+        84
+      ],
+      "source_excerpt": "60 months: 9.90%"
+    },
+    {
+      "provider_id": "cashgate",
+      "provider_name": "cashgate",
+      "lender_group": "Cembra Money Bank AG",
+      "country": "CH",
+      "currency": "CHF",
+      "category": "personal-loan",
+      "product": "Personal loan",
+      "rate_unit": "percent-per-year",
+      "rate_basis": "published-interest-rate",
+      "binding_quote": false,
+      "personalized": false,
+      "derived": false,
+      "source_url": "https://www.cashgate.ch/de",
+      "observed_at": "2026-09-22T08:27:30.361173+00:00",
+      "provider_effective_date": null,
+      "freshness_ttl_hours": 24,
+      "source_sha256": "35e0145aed660b6d8858d5a54c47b206f368ee49d0e36a7bbd3363fdd20899fc",
+      "conditions": [
+        "Swiss residents; published terms 12–84 months; all rates subject to credit approval. Cohort rows reproduce only the displayed conditions, not a complete eligibility assessment."
+      ],
+      "id": "cashgate:cohort-3:term-3",
+      "rate_kind": "published-conditional",
+      "rate_percent": "9.90",
+      "eligibility_cohort": {
+        "monthly_income_chf": "<4500",
+        "residency": [
+          "Swiss citizen",
+          "C permit",
+          "B permit"
+        ],
+        "homeownership": "not specified",
+        "income_basis": "not specified by source"
+      },
+      "term_months_source_label": "≥ 72",
+      "product_term_months_range": [
+        12,
+        84
+      ],
+      "source_excerpt": "≥ 72 months: 9.90%"
+    }
+  ],
+  "errors": []
+}

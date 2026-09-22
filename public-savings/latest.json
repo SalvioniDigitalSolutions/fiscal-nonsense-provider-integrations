@@ -1,0 +1,1011 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-22T08:27:48.613828+00:00",
+  "freshness_policy": "Fresh public HTTP retrieval on each run; no cached fallback. A successful fetch is not a rate guarantee. Treat saved data older than 24 hours as stale.",
+  "providers": [
+    {
+      "provider_id": "hbl",
+      "source_url": "https://www.hbl.ch/de/zinssaetze-konditionen",
+      "fetched_at": "2026-09-22T08:27:48.225672+00:00",
+      "status": "ok",
+      "published_date_labels": [],
+      "products": [
+        {
+          "provider_id": "hbl",
+          "provider_name": "Hypothekarbank Lenzburg",
+          "product": "Sparkonto",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "savings",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.025",
+              "published_text": "0,025 %",
+              "offset_in_evidence": 0
+            }
+          ],
+          "evidence_text": "0,025 %",
+          "source_url": "https://www.hbl.ch/de/zinssaetze-konditionen",
+          "provider_conditions": [],
+          "fetched_at": "2026-09-22T08:27:48.225672+00:00",
+          "source_sha256": "2850ebc7eeac15159089cbd2d56c008a2d28608ef1804fd8a58ef8ff0bcfa1af",
+          "personalized_quote": false,
+          "derived": false
+        },
+        {
+          "provider_id": "hbl",
+          "provider_name": "Hypothekarbank Lenzburg",
+          "product": "Sparkonto Extra",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "savings",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.250",
+              "published_text": "0,250 %",
+              "offset_in_evidence": 0
+            },
+            {
+              "percent": "0.025",
+              "published_text": "0,025 %",
+              "offset_in_evidence": 24
+            }
+          ],
+          "evidence_text": "0,250 % bis CHF 100'000 0,025 % über CHF 100'000",
+          "source_url": "https://www.hbl.ch/de/zinssaetze-konditionen",
+          "provider_conditions": [],
+          "fetched_at": "2026-09-22T08:27:48.225672+00:00",
+          "source_sha256": "2850ebc7eeac15159089cbd2d56c008a2d28608ef1804fd8a58ef8ff0bcfa1af",
+          "personalized_quote": false,
+          "derived": false
+        },
+        {
+          "provider_id": "hbl",
+          "provider_name": "Hypothekarbank Lenzburg",
+          "product": "Aktionärssparkonto",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "savings",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.500",
+              "published_text": "0,500 %",
+              "offset_in_evidence": 0
+            },
+            {
+              "percent": "0.025",
+              "published_text": "0,025 %",
+              "offset_in_evidence": 24
+            }
+          ],
+          "evidence_text": "0,500 % bis CHF 250'000 0,025 % über CHF 250'000",
+          "source_url": "https://www.hbl.ch/de/zinssaetze-konditionen",
+          "provider_conditions": [],
+          "fetched_at": "2026-09-22T08:27:48.225672+00:00",
+          "source_sha256": "2850ebc7eeac15159089cbd2d56c008a2d28608ef1804fd8a58ef8ff0bcfa1af",
+          "personalized_quote": false,
+          "derived": false
+        },
+        {
+          "provider_id": "hbl",
+          "provider_name": "Hypothekarbank Lenzburg",
+          "product": "Jugend-Sparkonto",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "savings",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.400",
+              "published_text": "0,400 %",
+              "offset_in_evidence": 0
+            },
+            {
+              "percent": "0.025",
+              "published_text": "0,025 %",
+              "offset_in_evidence": 23
+            }
+          ],
+          "evidence_text": "0,400 % bis CHF 20'000 0,025 % über CHF 20'000",
+          "source_url": "https://www.hbl.ch/de/zinssaetze-konditionen",
+          "provider_conditions": [],
+          "fetched_at": "2026-09-22T08:27:48.225672+00:00",
+          "source_sha256": "2850ebc7eeac15159089cbd2d56c008a2d28608ef1804fd8a58ef8ff0bcfa1af",
+          "personalized_quote": false,
+          "derived": false
+        },
+        {
+          "provider_id": "hbl",
+          "provider_name": "Hypothekarbank Lenzburg",
+          "product": "Mietkautionssparkonto",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "rental_deposit",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.000",
+              "published_text": "0,000 %",
+              "offset_in_evidence": 0
+            }
+          ],
+          "evidence_text": "0,000 %",
+          "source_url": "https://www.hbl.ch/de/zinssaetze-konditionen",
+          "provider_conditions": [],
+          "fetched_at": "2026-09-22T08:27:48.225672+00:00",
+          "source_sha256": "2850ebc7eeac15159089cbd2d56c008a2d28608ef1804fd8a58ef8ff0bcfa1af",
+          "personalized_quote": false,
+          "derived": false
+        },
+        {
+          "provider_id": "hbl",
+          "provider_name": "Hypothekarbank Lenzburg",
+          "product": "Vorsorgekonto 3a",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "pillar_3a_cash",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.125",
+              "published_text": "0,125 %",
+              "offset_in_evidence": 0
+            }
+          ],
+          "evidence_text": "0,125 %",
+          "source_url": "https://www.hbl.ch/de/zinssaetze-konditionen",
+          "provider_conditions": [],
+          "fetched_at": "2026-09-22T08:27:48.225672+00:00",
+          "source_sha256": "2850ebc7eeac15159089cbd2d56c008a2d28608ef1804fd8a58ef8ff0bcfa1af",
+          "personalized_quote": false,
+          "derived": false
+        },
+        {
+          "provider_id": "hbl",
+          "provider_name": "Hypothekarbank Lenzburg",
+          "product": "Freizügigkeitskonto 2. Säule",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "vested_benefits_cash",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.000",
+              "published_text": "0,000 %",
+              "offset_in_evidence": 0
+            }
+          ],
+          "evidence_text": "0,000 %",
+          "source_url": "https://www.hbl.ch/de/zinssaetze-konditionen",
+          "provider_conditions": [],
+          "fetched_at": "2026-09-22T08:27:48.225672+00:00",
+          "source_sha256": "2850ebc7eeac15159089cbd2d56c008a2d28608ef1804fd8a58ef8ff0bcfa1af",
+          "personalized_quote": false,
+          "derived": false
+        }
+      ]
+    },
+    {
+      "provider_id": "zkb",
+      "source_url": "https://www.zkb.ch/de/private/zinsen-preise.html",
+      "fetched_at": "2026-09-22T08:27:48.225980+00:00",
+      "status": "ok",
+      "published_date_labels": [
+        "01.08.2025, 07:00",
+        "01.03.2025, 07:00"
+      ],
+      "products": [
+        {
+          "provider_id": "zkb",
+          "provider_name": "Zürcher Kantonalbank",
+          "product": "ZKB Sparkonto",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "savings",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.050",
+              "published_text": "0,050%",
+              "offset_in_evidence": 63
+            },
+            {
+              "percent": "0.000",
+              "published_text": "0,000%",
+              "offset_in_evidence": 70
+            }
+          ],
+          "evidence_text": "Sparkapital bis CHF 25'000.‒ ab CHF 25'000.‒ Zinssatz pro Jahr 0,050% 0,000% Letzte Änderung: 01.08.2025, 07:00",
+          "source_url": "https://www.zkb.ch/de/private/zinsen-preise.html",
+          "provider_conditions": [],
+          "fetched_at": "2026-09-22T08:27:48.225980+00:00",
+          "source_sha256": "49cd59444c929eba29b6acc937cde8e82177060b48bfd2c38569e07c38a72c4f",
+          "personalized_quote": false,
+          "derived": false
+        },
+        {
+          "provider_id": "zkb",
+          "provider_name": "Zürcher Kantonalbank",
+          "product": "ZKB Umweltsparkonto",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "savings",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.000",
+              "published_text": "0,000%",
+              "offset_in_evidence": 10
+            }
+          ],
+          "evidence_text": "Zinsstufe 0,000% unbeschränkt Letzte Änderung: 01.03.2025, 07:00",
+          "source_url": "https://www.zkb.ch/de/private/zinsen-preise.html",
+          "provider_conditions": [],
+          "fetched_at": "2026-09-22T08:27:48.225980+00:00",
+          "source_sha256": "49cd59444c929eba29b6acc937cde8e82177060b48bfd2c38569e07c38a72c4f",
+          "personalized_quote": false,
+          "derived": false
+        },
+        {
+          "provider_id": "zkb",
+          "provider_name": "Zürcher Kantonalbank",
+          "product": "ZKB Sparkonto Young",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "savings",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.100",
+              "published_text": "0,100%",
+              "offset_in_evidence": 51
+            },
+            {
+              "percent": "0.000",
+              "published_text": "0,000%",
+              "offset_in_evidence": 58
+            }
+          ],
+          "evidence_text": "bis CHF 25'000.‒ ab CHF 25'000.‒ Zinssatz pro Jahr 0,100% 0,000% Letzte Änderung: 01.08.2025, 07:00",
+          "source_url": "https://www.zkb.ch/de/private/zinsen-preise.html",
+          "provider_conditions": [],
+          "fetched_at": "2026-09-22T08:27:48.225980+00:00",
+          "source_sha256": "49cd59444c929eba29b6acc937cde8e82177060b48bfd2c38569e07c38a72c4f",
+          "personalized_quote": false,
+          "derived": false
+        },
+        {
+          "provider_id": "zkb",
+          "provider_name": "Zürcher Kantonalbank",
+          "product": "ZKB Geschenksparkonto",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "savings",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.100",
+              "published_text": "0,100%",
+              "offset_in_evidence": 51
+            },
+            {
+              "percent": "0.000",
+              "published_text": "0,000%",
+              "offset_in_evidence": 58
+            }
+          ],
+          "evidence_text": "bis CHF 25'000.‒ ab CHF 25'000.‒ Zinssatz pro Jahr 0,100% 0,000% Letzte Änderung: 01.08.2025, 07:00",
+          "source_url": "https://www.zkb.ch/de/private/zinsen-preise.html",
+          "provider_conditions": [],
+          "fetched_at": "2026-09-22T08:27:48.225980+00:00",
+          "source_sha256": "49cd59444c929eba29b6acc937cde8e82177060b48bfd2c38569e07c38a72c4f",
+          "personalized_quote": false,
+          "derived": false
+        },
+        {
+          "provider_id": "zkb",
+          "provider_name": "Zürcher Kantonalbank",
+          "product": "ZKB Mieterkautionssparkonto",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "rental_deposit",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.000",
+              "published_text": "0,000%",
+              "offset_in_evidence": 10
+            }
+          ],
+          "evidence_text": "Zinsstufe 0,000% unbeschränkt Letzte Änderung: 01.03.2025, 07:00 Alle Angaben ohne Gewähr. Die gültigen Konditionen können jederzeit angefragt werden.",
+          "source_url": "https://www.zkb.ch/de/private/zinsen-preise.html",
+          "provider_conditions": [],
+          "fetched_at": "2026-09-22T08:27:48.225980+00:00",
+          "source_sha256": "49cd59444c929eba29b6acc937cde8e82177060b48bfd2c38569e07c38a72c4f",
+          "personalized_quote": false,
+          "derived": false
+        },
+        {
+          "provider_id": "zkb",
+          "provider_name": "Zürcher Kantonalbank",
+          "product": "ZKB Säule-3a Konto",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "pillar_3a_cash",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.150",
+              "published_text": "0,150%",
+              "offset_in_evidence": 10
+            }
+          ],
+          "evidence_text": "Zinsstufe 0,150% unbeschränkt Letzte Änderung: 01.08.2025, 07:00. Alle Angaben ohne Gewähr.",
+          "source_url": "https://www.zkb.ch/de/private/zinsen-preise.html",
+          "provider_conditions": [],
+          "fetched_at": "2026-09-22T08:27:48.225980+00:00",
+          "source_sha256": "49cd59444c929eba29b6acc937cde8e82177060b48bfd2c38569e07c38a72c4f",
+          "personalized_quote": false,
+          "derived": false
+        },
+        {
+          "provider_id": "zkb",
+          "provider_name": "Zürcher Kantonalbank",
+          "product": "ZKB Freizügigkeitskonto",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "vested_benefits_cash",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.010",
+              "published_text": "0,010%",
+              "offset_in_evidence": 10
+            }
+          ],
+          "evidence_text": "Zinsstufe 0,010% unbeschränkt Letzte Änderung: 01.08.2025, 07:00. Alle Angaben ohne Gewähr.",
+          "source_url": "https://www.zkb.ch/de/private/zinsen-preise.html",
+          "provider_conditions": [],
+          "fetched_at": "2026-09-22T08:27:48.225980+00:00",
+          "source_sha256": "49cd59444c929eba29b6acc937cde8e82177060b48bfd2c38569e07c38a72c4f",
+          "personalized_quote": false,
+          "derived": false
+        }
+      ]
+    },
+    {
+      "provider_id": "bsu",
+      "source_url": "https://www.bankbsu.ch/zinssaetze",
+      "fetched_at": "2026-09-22T08:27:48.226056+00:00",
+      "status": "ok",
+      "published_date_labels": [
+        "1. Januar 2026"
+      ],
+      "products": [
+        {
+          "provider_id": "bsu",
+          "provider_name": "Bank BSU",
+          "product": "Sparkonto",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "savings",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.050",
+              "published_text": "0.050%",
+              "offset_in_evidence": 0
+            },
+            {
+              "percent": "0.000",
+              "published_text": "0.000%",
+              "offset_in_evidence": 22
+            }
+          ],
+          "evidence_text": "0.050% bis CHF 25'000 0.000% über CHF 25'000",
+          "source_url": "https://www.bankbsu.ch/zinssaetze",
+          "provider_conditions": [],
+          "fetched_at": "2026-09-22T08:27:48.226056+00:00",
+          "source_sha256": "42357aa35c9ab6f68be3ac69b57b699f95c2405c823afcbc24d2ee1a792f31e0",
+          "personalized_quote": false,
+          "derived": false
+        },
+        {
+          "provider_id": "bsu",
+          "provider_name": "Bank BSU",
+          "product": "BSU Young Sparkonto",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "savings",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.500",
+              "published_text": "0.500%",
+              "offset_in_evidence": 0
+            },
+            {
+              "percent": "0.250",
+              "published_text": "0.250%",
+              "offset_in_evidence": 21
+            },
+            {
+              "percent": "0.000",
+              "published_text": "0.000%",
+              "offset_in_evidence": 43
+            }
+          ],
+          "evidence_text": "0.500% bis CHF 5'000 0.250% bis CHF 25'000 0.000% über CHF 25'000",
+          "source_url": "https://www.bankbsu.ch/zinssaetze",
+          "provider_conditions": [],
+          "fetched_at": "2026-09-22T08:27:48.226056+00:00",
+          "source_sha256": "42357aa35c9ab6f68be3ac69b57b699f95c2405c823afcbc24d2ee1a792f31e0",
+          "personalized_quote": false,
+          "derived": false
+        },
+        {
+          "provider_id": "bsu",
+          "provider_name": "Bank BSU",
+          "product": "Geschenksparkonto",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "savings",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.050",
+              "published_text": "0.050%",
+              "offset_in_evidence": 0
+            },
+            {
+              "percent": "0.000",
+              "published_text": "0.000%",
+              "offset_in_evidence": 22
+            }
+          ],
+          "evidence_text": "0.050% bis CHF 25'000 0.000% über CHF 25'000",
+          "source_url": "https://www.bankbsu.ch/zinssaetze",
+          "provider_conditions": [],
+          "fetched_at": "2026-09-22T08:27:48.226056+00:00",
+          "source_sha256": "42357aa35c9ab6f68be3ac69b57b699f95c2405c823afcbc24d2ee1a792f31e0",
+          "personalized_quote": false,
+          "derived": false
+        },
+        {
+          "provider_id": "bsu",
+          "provider_name": "Bank BSU",
+          "product": "Anlagesparkonto",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "savings",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.150",
+              "published_text": "0.150%",
+              "offset_in_evidence": 0
+            },
+            {
+              "percent": "0.050",
+              "published_text": "0.050%",
+              "offset_in_evidence": 22
+            },
+            {
+              "percent": "0.000",
+              "published_text": "0.000%",
+              "offset_in_evidence": 44
+            }
+          ],
+          "evidence_text": "0.150% bis CHF 25'000 0.050% bis CHF 50'000 0.000% über CHF 50'000",
+          "source_url": "https://www.bankbsu.ch/zinssaetze",
+          "provider_conditions": [],
+          "fetched_at": "2026-09-22T08:27:48.226056+00:00",
+          "source_sha256": "42357aa35c9ab6f68be3ac69b57b699f95c2405c823afcbc24d2ee1a792f31e0",
+          "personalized_quote": false,
+          "derived": false
+        },
+        {
+          "provider_id": "bsu",
+          "provider_name": "Bank BSU",
+          "product": "Mietkautionssparkonto",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "rental_deposit",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.00",
+              "published_text": "0.00%",
+              "offset_in_evidence": 0
+            }
+          ],
+          "evidence_text": "0.00%",
+          "source_url": "https://www.bankbsu.ch/zinssaetze",
+          "provider_conditions": [],
+          "fetched_at": "2026-09-22T08:27:48.226056+00:00",
+          "source_sha256": "42357aa35c9ab6f68be3ac69b57b699f95c2405c823afcbc24d2ee1a792f31e0",
+          "personalized_quote": false,
+          "derived": false
+        },
+        {
+          "provider_id": "bsu",
+          "provider_name": "Bank BSU",
+          "product": "PRIVOR Vorsorgekonto 3. Säule",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "pillar_3a_cash",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.150",
+              "published_text": "0.150%",
+              "offset_in_evidence": 0
+            }
+          ],
+          "evidence_text": "0.150%",
+          "source_url": "https://www.bankbsu.ch/zinssaetze",
+          "provider_conditions": [],
+          "fetched_at": "2026-09-22T08:27:48.226056+00:00",
+          "source_sha256": "42357aa35c9ab6f68be3ac69b57b699f95c2405c823afcbc24d2ee1a792f31e0",
+          "personalized_quote": false,
+          "derived": false
+        },
+        {
+          "provider_id": "bsu",
+          "provider_name": "Bank BSU",
+          "product": "PRIVOR Freizügigkeitskonto",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "vested_benefits_cash",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.050",
+              "published_text": "0.050%",
+              "offset_in_evidence": 0
+            }
+          ],
+          "evidence_text": "0.050%",
+          "source_url": "https://www.bankbsu.ch/zinssaetze",
+          "provider_conditions": [],
+          "fetched_at": "2026-09-22T08:27:48.226056+00:00",
+          "source_sha256": "42357aa35c9ab6f68be3ac69b57b699f95c2405c823afcbc24d2ee1a792f31e0",
+          "personalized_quote": false,
+          "derived": false
+        }
+      ]
+    },
+    {
+      "provider_id": "valiant",
+      "source_url": "https://www.valiant.ch/de/privatkunden/zahlen-zinssatz-barometer",
+      "fetched_at": "2026-09-22T08:27:48.382317+00:00",
+      "status": "ok",
+      "published_date_labels": [
+        "15. Juli 2026"
+      ],
+      "products": [
+        {
+          "provider_id": "valiant",
+          "provider_name": "Valiant",
+          "product": "Geschenkkonto",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "savings",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.250",
+              "published_text": "0,250%",
+              "offset_in_evidence": 4
+            },
+            {
+              "percent": "0.050",
+              "published_text": "0,050%",
+              "offset_in_evidence": 49
+            }
+          ],
+          "evidence_text": "von 0,250% bis CHF 20 000.00 Über CHF 20 000.00: 0,050%",
+          "source_url": "https://www.valiant.ch/de/privatkunden/zahlen-zinssatz-barometer",
+          "provider_conditions": [],
+          "fetched_at": "2026-09-22T08:27:48.382317+00:00",
+          "source_sha256": "1f6c8fd71a8b31630e5b4813701afd2917da95b7c4ab238e19f48a4158ab18df",
+          "personalized_quote": false,
+          "derived": false
+        },
+        {
+          "provider_id": "valiant",
+          "provider_name": "Valiant",
+          "product": "Mietkautionskonto",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "rental_deposit",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.000",
+              "published_text": "0,000%",
+              "offset_in_evidence": 4
+            }
+          ],
+          "evidence_text": "von 0,000%",
+          "source_url": "https://www.valiant.ch/de/privatkunden/zahlen-zinssatz-barometer",
+          "provider_conditions": [],
+          "fetched_at": "2026-09-22T08:27:48.382317+00:00",
+          "source_sha256": "1f6c8fd71a8b31630e5b4813701afd2917da95b7c4ab238e19f48a4158ab18df",
+          "personalized_quote": false,
+          "derived": false
+        },
+        {
+          "provider_id": "valiant",
+          "provider_name": "Valiant",
+          "product": "Sparkonto CHF",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "savings",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.050",
+              "published_text": "0,050%",
+              "offset_in_evidence": 0
+            },
+            {
+              "percent": "0.000",
+              "published_text": "0,000%",
+              "offset_in_evidence": 46
+            }
+          ],
+          "evidence_text": "0,050% bis CHF 50 000.00, über CHF 50 000.00: 0,000%",
+          "source_url": "https://www.valiant.ch/de/privatkunden/zahlen-zinssatz-barometer",
+          "provider_conditions": [],
+          "fetched_at": "2026-09-22T08:27:48.382317+00:00",
+          "source_sha256": "1f6c8fd71a8b31630e5b4813701afd2917da95b7c4ab238e19f48a4158ab18df",
+          "personalized_quote": false,
+          "derived": false
+        },
+        {
+          "provider_id": "valiant",
+          "provider_name": "Valiant",
+          "product": "Sparkonto EUR",
+          "country": "CH",
+          "currency": "EUR",
+          "category": "savings",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "1.500",
+              "published_text": "1,500%",
+              "offset_in_evidence": 0
+            },
+            {
+              "percent": "0.200",
+              "published_text": "0,200%",
+              "offset_in_evidence": 46
+            }
+          ],
+          "evidence_text": "1,500% bis EUR 50 000.00, über EUR 50 000.00: 0,200%",
+          "source_url": "https://www.valiant.ch/de/privatkunden/zahlen-zinssatz-barometer",
+          "provider_conditions": [],
+          "fetched_at": "2026-09-22T08:27:48.382317+00:00",
+          "source_sha256": "1f6c8fd71a8b31630e5b4813701afd2917da95b7c4ab238e19f48a4158ab18df",
+          "personalized_quote": false,
+          "derived": false
+        },
+        {
+          "provider_id": "valiant",
+          "provider_name": "Valiant",
+          "product": "Sparkonto USD",
+          "country": "CH",
+          "currency": "USD",
+          "category": "savings",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "2.000",
+              "published_text": "2,000%",
+              "offset_in_evidence": 0
+            },
+            {
+              "percent": "0.200",
+              "published_text": "0,200%",
+              "offset_in_evidence": 46
+            }
+          ],
+          "evidence_text": "2,000% bis USD 50 000.00, über USD 50 000.00: 0,200%",
+          "source_url": "https://www.valiant.ch/de/privatkunden/zahlen-zinssatz-barometer",
+          "provider_conditions": [],
+          "fetched_at": "2026-09-22T08:27:48.382317+00:00",
+          "source_sha256": "1f6c8fd71a8b31630e5b4813701afd2917da95b7c4ab238e19f48a4158ab18df",
+          "personalized_quote": false,
+          "derived": false
+        },
+        {
+          "provider_id": "valiant",
+          "provider_name": "Valiant",
+          "product": "Young Plus Sparkonto",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "savings",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.250",
+              "published_text": "0,250%",
+              "offset_in_evidence": 4
+            },
+            {
+              "percent": "0.050",
+              "published_text": "0,050%",
+              "offset_in_evidence": 49
+            }
+          ],
+          "evidence_text": "von 0,250% bis CHF 20 000.00 Über CHF 20 000.00: 0,050%",
+          "source_url": "https://www.valiant.ch/de/privatkunden/zahlen-zinssatz-barometer",
+          "provider_conditions": [],
+          "fetched_at": "2026-09-22T08:27:48.382317+00:00",
+          "source_sha256": "1f6c8fd71a8b31630e5b4813701afd2917da95b7c4ab238e19f48a4158ab18df",
+          "personalized_quote": false,
+          "derived": false
+        },
+        {
+          "provider_id": "valiant",
+          "provider_name": "Valiant",
+          "product": "Freizügigkeitskonto 2. Säule",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "vested_benefits_cash",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.010",
+              "published_text": "0,010%",
+              "offset_in_evidence": 4
+            }
+          ],
+          "evidence_text": "von 0,010%",
+          "source_url": "https://www.valiant.ch/de/privatkunden/zahlen-zinssatz-barometer",
+          "provider_conditions": [],
+          "fetched_at": "2026-09-22T08:27:48.382317+00:00",
+          "source_sha256": "1f6c8fd71a8b31630e5b4813701afd2917da95b7c4ab238e19f48a4158ab18df",
+          "personalized_quote": false,
+          "derived": false
+        },
+        {
+          "provider_id": "valiant",
+          "provider_name": "Valiant",
+          "product": "PRIVOR Vorsorgekonto 3a",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "pillar_3a_cash",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.200",
+              "published_text": "0,200%",
+              "offset_in_evidence": 4
+            }
+          ],
+          "evidence_text": "von 0,200%",
+          "source_url": "https://www.valiant.ch/de/privatkunden/zahlen-zinssatz-barometer",
+          "provider_conditions": [],
+          "fetched_at": "2026-09-22T08:27:48.382317+00:00",
+          "source_sha256": "1f6c8fd71a8b31630e5b4813701afd2917da95b7c4ab238e19f48a4158ab18df",
+          "personalized_quote": false,
+          "derived": false
+        }
+      ]
+    },
+    {
+      "provider_id": "cler",
+      "source_url": "https://www.cler.ch/de/info/zinssatze-fur-privatkunden",
+      "fetched_at": "2026-09-22T08:27:48.441619+00:00",
+      "status": "ok",
+      "published_date_labels": [],
+      "products": [
+        {
+          "provider_id": "cler",
+          "provider_name": "Bank Cler",
+          "product": "Sparkonto",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "savings",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.050",
+              "published_text": "0,050%",
+              "offset_in_evidence": 0
+            },
+            {
+              "percent": "0.000",
+              "published_text": "0,0 0 0%",
+              "offset_in_evidence": 22
+            }
+          ],
+          "evidence_text": "0,050% ab CHF 500'000 0,0 0 0%",
+          "source_url": "https://www.cler.ch/de/info/zinssatze-fur-privatkunden",
+          "provider_conditions": [
+            "Je nach Bankpaket für Privatkunden erhalten Sie einen Vorzugszins auf dem Sparkonto Exclusive und auf dem Vorsorgekonto 3. Bonusmöglichkeit: bei Kontoneueröffnung Zinsbonus von 0,600 % für 1 Jahr ab Datum der Kontoeröffnung. Für Nettoneugeldeinzahlungen nach Ablauf des Jahres erhalten Sie den Zinsbonus bis zum Ende des jeweiligen Kalenderjahres. Nettoneugeldeingänge bis max. 250 000 CHF sind bonusberechtigt.Die Zinssätze zum Sparkonto Exclusive für Inhaber Inhaber/-innen eines Bankpakets E-Light können auf dem Factsheet « Bankpaket für Privatkunden E-Light » eingesehen werden. Gilt bis zu einem Kontoguthaben von 25'000 CHF. Ab 25'000 CHF 0,0% Zins. Bei Überzügen auf dem Konto kommt ein Sollzins von 11,5% pro Jahr zur Anwendung. Gilt bis zu einem Kontoguthaben von 100'000 CHF. Ab 100'000 CHF 0,0% Zins."
+          ],
+          "fetched_at": "2026-09-22T08:27:48.441619+00:00",
+          "source_sha256": "99afc643ed1b064e3bcd56e92c3011bb1e64b1c41dcc5ffa93a22cb0ba64fe51",
+          "personalized_quote": false,
+          "derived": false
+        },
+        {
+          "provider_id": "cler",
+          "provider_name": "Bank Cler",
+          "product": "Sparkonto Jugend / Geschenksparkonto",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "savings",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.700",
+              "published_text": "0,7 0 0 %",
+              "offset_in_evidence": 0
+            },
+            {
+              "percent": "0.500",
+              "published_text": "0,5 0 0 %",
+              "offset_in_evidence": 24
+            }
+          ],
+          "evidence_text": "0,7 0 0 % ab CHF 25'000 0,5 0 0 %",
+          "source_url": "https://www.cler.ch/de/info/zinssatze-fur-privatkunden",
+          "provider_conditions": [
+            "Je nach Bankpaket für Privatkunden erhalten Sie einen Vorzugszins auf dem Sparkonto Exclusive und auf dem Vorsorgekonto 3. Bonusmöglichkeit: bei Kontoneueröffnung Zinsbonus von 0,600 % für 1 Jahr ab Datum der Kontoeröffnung. Für Nettoneugeldeinzahlungen nach Ablauf des Jahres erhalten Sie den Zinsbonus bis zum Ende des jeweiligen Kalenderjahres. Nettoneugeldeingänge bis max. 250 000 CHF sind bonusberechtigt.Die Zinssätze zum Sparkonto Exclusive für Inhaber Inhaber/-innen eines Bankpakets E-Light können auf dem Factsheet « Bankpaket für Privatkunden E-Light » eingesehen werden. Gilt bis zu einem Kontoguthaben von 25'000 CHF. Ab 25'000 CHF 0,0% Zins. Bei Überzügen auf dem Konto kommt ein Sollzins von 11,5% pro Jahr zur Anwendung. Gilt bis zu einem Kontoguthaben von 100'000 CHF. Ab 100'000 CHF 0,0% Zins."
+          ],
+          "fetched_at": "2026-09-22T08:27:48.441619+00:00",
+          "source_sha256": "99afc643ed1b064e3bcd56e92c3011bb1e64b1c41dcc5ffa93a22cb0ba64fe51",
+          "personalized_quote": false,
+          "derived": false
+        },
+        {
+          "provider_id": "cler",
+          "provider_name": "Bank Cler",
+          "product": "Sparkonto Euro",
+          "country": "CH",
+          "currency": "EUR",
+          "category": "savings",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.100",
+              "published_text": "0,1 0 0%",
+              "offset_in_evidence": 0
+            }
+          ],
+          "evidence_text": "0,1 0 0%",
+          "source_url": "https://www.cler.ch/de/info/zinssatze-fur-privatkunden",
+          "provider_conditions": [
+            "Je nach Bankpaket für Privatkunden erhalten Sie einen Vorzugszins auf dem Sparkonto Exclusive und auf dem Vorsorgekonto 3. Bonusmöglichkeit: bei Kontoneueröffnung Zinsbonus von 0,600 % für 1 Jahr ab Datum der Kontoeröffnung. Für Nettoneugeldeinzahlungen nach Ablauf des Jahres erhalten Sie den Zinsbonus bis zum Ende des jeweiligen Kalenderjahres. Nettoneugeldeingänge bis max. 250 000 CHF sind bonusberechtigt.Die Zinssätze zum Sparkonto Exclusive für Inhaber Inhaber/-innen eines Bankpakets E-Light können auf dem Factsheet « Bankpaket für Privatkunden E-Light » eingesehen werden. Gilt bis zu einem Kontoguthaben von 25'000 CHF. Ab 25'000 CHF 0,0% Zins. Bei Überzügen auf dem Konto kommt ein Sollzins von 11,5% pro Jahr zur Anwendung. Gilt bis zu einem Kontoguthaben von 100'000 CHF. Ab 100'000 CHF 0,0% Zins."
+          ],
+          "fetched_at": "2026-09-22T08:27:48.441619+00:00",
+          "source_sha256": "99afc643ed1b064e3bcd56e92c3011bb1e64b1c41dcc5ffa93a22cb0ba64fe51",
+          "personalized_quote": false,
+          "derived": false
+        },
+        {
+          "provider_id": "cler",
+          "provider_name": "Bank Cler",
+          "product": "Vorsorgekonto 3",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "pillar_3a_cash",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.200",
+              "published_text": "0,200%",
+              "offset_in_evidence": 0
+            },
+            {
+              "percent": "0.250",
+              "published_text": "0,250%",
+              "offset_in_evidence": 9
+            }
+          ],
+          "evidence_text": "0,200% / 0,250% 1",
+          "source_url": "https://www.cler.ch/de/info/zinssatze-fur-privatkunden",
+          "provider_conditions": [
+            "Je nach Bankpaket für Privatkunden erhalten Sie einen Vorzugszins auf dem Sparkonto Exclusive und auf dem Vorsorgekonto 3. Bonusmöglichkeit: bei Kontoneueröffnung Zinsbonus von 0,600 % für 1 Jahr ab Datum der Kontoeröffnung. Für Nettoneugeldeinzahlungen nach Ablauf des Jahres erhalten Sie den Zinsbonus bis zum Ende des jeweiligen Kalenderjahres. Nettoneugeldeingänge bis max. 250 000 CHF sind bonusberechtigt.Die Zinssätze zum Sparkonto Exclusive für Inhaber Inhaber/-innen eines Bankpakets E-Light können auf dem Factsheet « Bankpaket für Privatkunden E-Light » eingesehen werden. Gilt bis zu einem Kontoguthaben von 25'000 CHF. Ab 25'000 CHF 0,0% Zins. Bei Überzügen auf dem Konto kommt ein Sollzins von 11,5% pro Jahr zur Anwendung. Gilt bis zu einem Kontoguthaben von 100'000 CHF. Ab 100'000 CHF 0,0% Zins."
+          ],
+          "fetched_at": "2026-09-22T08:27:48.441619+00:00",
+          "source_sha256": "99afc643ed1b064e3bcd56e92c3011bb1e64b1c41dcc5ffa93a22cb0ba64fe51",
+          "personalized_quote": false,
+          "derived": false
+        },
+        {
+          "provider_id": "cler",
+          "provider_name": "Bank Cler",
+          "product": "Vorsorgekonto Zak",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "pillar_3a_cash",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.400",
+              "published_text": "0, 4 00 %",
+              "offset_in_evidence": 0
+            }
+          ],
+          "evidence_text": "0, 4 00 %",
+          "source_url": "https://www.cler.ch/de/info/zinssatze-fur-privatkunden",
+          "provider_conditions": [
+            "Je nach Bankpaket für Privatkunden erhalten Sie einen Vorzugszins auf dem Sparkonto Exclusive und auf dem Vorsorgekonto 3. Bonusmöglichkeit: bei Kontoneueröffnung Zinsbonus von 0,600 % für 1 Jahr ab Datum der Kontoeröffnung. Für Nettoneugeldeinzahlungen nach Ablauf des Jahres erhalten Sie den Zinsbonus bis zum Ende des jeweiligen Kalenderjahres. Nettoneugeldeingänge bis max. 250 000 CHF sind bonusberechtigt.Die Zinssätze zum Sparkonto Exclusive für Inhaber Inhaber/-innen eines Bankpakets E-Light können auf dem Factsheet « Bankpaket für Privatkunden E-Light » eingesehen werden. Gilt bis zu einem Kontoguthaben von 25'000 CHF. Ab 25'000 CHF 0,0% Zins. Bei Überzügen auf dem Konto kommt ein Sollzins von 11,5% pro Jahr zur Anwendung. Gilt bis zu einem Kontoguthaben von 100'000 CHF. Ab 100'000 CHF 0,0% Zins."
+          ],
+          "fetched_at": "2026-09-22T08:27:48.441619+00:00",
+          "source_sha256": "99afc643ed1b064e3bcd56e92c3011bb1e64b1c41dcc5ffa93a22cb0ba64fe51",
+          "personalized_quote": false,
+          "derived": false
+        },
+        {
+          "provider_id": "cler",
+          "provider_name": "Bank Cler",
+          "product": "Freizügigkeitskonto",
+          "country": "CH",
+          "currency": "CHF",
+          "category": "vested_benefits_cash",
+          "value_type": "published_interest_rate_schedule",
+          "unit": "percent_per_annum",
+          "published_rates": [
+            {
+              "percent": "0.050",
+              "published_text": "0,050%",
+              "offset_in_evidence": 0
+            }
+          ],
+          "evidence_text": "0,050%",
+          "source_url": "https://www.cler.ch/de/info/zinssatze-fur-privatkunden",
+          "provider_conditions": [
+            "Je nach Bankpaket für Privatkunden erhalten Sie einen Vorzugszins auf dem Sparkonto Exclusive und auf dem Vorsorgekonto 3. Bonusmöglichkeit: bei Kontoneueröffnung Zinsbonus von 0,600 % für 1 Jahr ab Datum der Kontoeröffnung. Für Nettoneugeldeinzahlungen nach Ablauf des Jahres erhalten Sie den Zinsbonus bis zum Ende des jeweiligen Kalenderjahres. Nettoneugeldeingänge bis max. 250 000 CHF sind bonusberechtigt.Die Zinssätze zum Sparkonto Exclusive für Inhaber Inhaber/-innen eines Bankpakets E-Light können auf dem Factsheet « Bankpaket für Privatkunden E-Light » eingesehen werden. Gilt bis zu einem Kontoguthaben von 25'000 CHF. Ab 25'000 CHF 0,0% Zins. Bei Überzügen auf dem Konto kommt ein Sollzins von 11,5% pro Jahr zur Anwendung. Gilt bis zu einem Kontoguthaben von 100'000 CHF. Ab 100'000 CHF 0,0% Zins."
+          ],
+          "fetched_at": "2026-09-22T08:27:48.441619+00:00",
+          "source_sha256": "99afc643ed1b064e3bcd56e92c3011bb1e64b1c41dcc5ffa93a22cb0ba64fe51",
+          "personalized_quote": false,
+          "derived": false
+        }
+      ]
+    }
+  ]
+}
