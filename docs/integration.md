@@ -1,6 +1,6 @@
 # Structured quote contract · draft v0.1
 
-The authoritative shapes are in `schemas/contract.schema.json`; each provider supplies a strict product-specific schema for `input.providerData`. This is a proposal and offline validation kit. There is no production gateway, active insurer or credential service yet.
+The authoritative shapes are in `schemas/contract.schema.json`; each provider supplies a strict product-specific schema for `input.providerData`. This is a proposal and offline validation kit. A production gateway is deployed at [api.fiscalnonsense.com](https://api.fiscalnonsense.com/), but no providers are active yet. This repository remains the proposal and offline validation kit; it does not provision credentials or activate submissions.
 
 ## 1. Shared objects
 
@@ -71,3 +71,16 @@ An actual API would receive POST JSON from an approved server-side gateway, with
 Before launch, verify provider identity, authorisations, data/display rights, visitor disclosures and data processing. Schemas/code from PRs require security review. The production system must not compile arbitrary public schemas on demand or fetch arbitrary manifest URLs. No PR has production secrets or automatic activation.
 
 Quotes are obtained for current inputs at search time. Weekly source checks are separate monitoring. Never silently trigger applications, purchases, credit searches, callbacks or marketing. See review-and-launch.md.
+
+## Deployed gateway
+
+The [provider directory](https://fiscalnonsense.com/providers/) loads approved products and their reviewed questionnaires from the gateway. These browser-facing routes are distinct from your insurer or lender pricing endpoint:
+
+- `GET /api/quotes/health`: service health and provider count.
+- `GET /api/quotes/providers`: approved, unexpired provider/product catalogue; initially empty.
+- `GET /api/quotes/form/:providerId/:productId`: approved schemas and disclosures.
+- `POST /api/quotes`: `{ "consent": true, "request": <structured request> }`; accepts the authorised website origin and returns a validated structured response.
+
+Quote requests are validated server-side before forwarding to an approved provider. Credentials stay on the server. The fictional full-service example is never enabled in production. The initial form renderer supports a reviewed subset of JSON Schema; products needing more complex flows require a reviewed UI implementation before activation.
+
+Activation requires a pinned, reviewed integration revision, explicitly approved products and disclosures, a time-limited production approval, and private credential provisioning where required. Merging a PR alone changes neither the production registry nor the website catalogue.

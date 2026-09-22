@@ -2,11 +2,11 @@
 
 **Bring your prices. We will check the maths.**
 
-An open contribution programme for insurers, lenders, pension providers and pricing-platform operators who want their quotes to appear on [Fiscal Nonsense](https://fiscalnonsense.com/compare/).
+An open contribution programme for insurers, lenders, pension providers and pricing-platform operators who want their quotes to appear on [Fiscal Nonsense](https://fiscalnonsense.com/providers/).
 
 ## Status: accepting integration proposals
 
-This repository defines a **draft v0.1 interface** and an offline test kit. There are no connected insurers, production quote endpoint, or automatic listing/deployment in this repository. All example prices are fictional. Passing tests or merging a pull request does not enable an integration on the website.
+This repository defines a **draft v0.1 interface** and an offline test kit. The production gateway is hosted at [api.fiscalnonsense.com](https://api.fiscalnonsense.com/), with its forms connected to the website provider directory. There are no active insurers or automatic activations from this repository. All example prices are fictional. Passing tests or merging a pull request does not enable an integration on the website.
 
 We welcome proposals for Switzerland (CH), the United States (US), the United Kingdom (GB), Germany (DE) and Italy (IT). The taxonomy covers personal and business insurance, mortgages and other consumer/business credit. It is extensible: propose missing product types instead of forcing them into an unrelated category. Each product needs country-specific inputs and terms before activation.
 

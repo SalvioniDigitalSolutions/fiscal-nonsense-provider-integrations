@@ -8,4 +8,4 @@
 6. **Explicit activation:** a maintainer enables the integration in a separately controlled production service only after these gates. Merging this repo or changing a manifest never activates it. No public PR code runs with production secrets.
 7. **Monitoring:** suppress expired/invalid results, provide a per-provider kill switch and retest breaking API changes before rollout. Public documentation monitoring may run weekly; personalised quotes are obtained per search.
 
-There is currently **no production quote service or active provider** in this programme. This repository opens the door to integrations; it does not itself establish a partnership or regulatory permission.
+The [production quote gateway](https://api.fiscalnonsense.com/) is deployed, but there are currently **no active providers** in this programme. This repository opens the door to integrations; it does not itself establish a partnership or regulatory permission.
