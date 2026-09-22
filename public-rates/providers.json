@@ -119,6 +119,18 @@
           5,
           10
         ]
+      },
+      {
+        "id": "saron",
+        "label": "Money-market mortgage (current published rate)",
+        "rateType": "saron",
+        "start": "Welche VIAC Hypotheken stehen zur Auswahl\\?",
+        "end": "\\nFest-Hypothek\\n",
+        "pattern": "Geldmarkt-Hypothek\\s+(?P<rate>\\d+[.,]\\d+)\\s*%\\s+1\\s+Zinssatz kann alle 3 Monate ändern\\s+Laufzeit (?P<term>\\d+) Jahre",
+        "terms": [
+          3
+        ],
+        "conditions": "Current published total money-market rate; can change every three months. Three-year framework term. VIAC customers only, subject to Bank WIR approval. This is not a rate fixed for three years."
       }
     ],
     "conditions": "VIAC customers only; definitive rate confirmed after complete dossier reaches Bank WIR. Full eligibility criteria apply.",

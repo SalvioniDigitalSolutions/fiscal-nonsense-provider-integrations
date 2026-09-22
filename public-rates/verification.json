@@ -2,7 +2,7 @@
   "verifiedAt": "2026-09-22T08:23:25.197799Z",
   "historicalVerificationOnly": true,
   "providerCount": 18,
-  "rateCount": 219,
+  "rateCount": 220,
   "providers": [
     {
       "providerId": "cler",
@@ -23,10 +23,10 @@
     {
       "providerId": "viac",
       "status": "ok",
-      "rateCount": 2,
+      "rateCount": 3,
       "sourceUrl": "https://viac.ch/produkte/hypothek/",
       "sourceSha256": "433002167c7e2468a2c5fd4a6c60a4fe00ba6c0e49fdd1ca2a54c0f35b6f9703",
-      "retrievedAt": "2026-09-22T08:23:15.291836Z"
+      "retrievedAt": "2026-09-22T08:56:48.528580Z"
     },
     {
       "providerId": "hypomat",
@@ -148,5 +148,7 @@
       "sourceSha256": "f894c95cf41ab0cf5008df3d3914baeb1acbf51a3536202291ec08de04e52ab2",
       "retrievedAt": "2026-09-22T08:23:16.862074Z"
     }
-  ]
+  ],
+  "fixedRateCount": 219,
+  "saronRateCount": 1
 }

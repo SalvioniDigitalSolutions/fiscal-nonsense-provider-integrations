@@ -1,6 +1,6 @@
 # Public Swiss mortgage rates
 
-MIT-licensed, dependency-free Python adapters for **exact lender-published fixed mortgage rates**. These are public rate observations, not personalised or binding offers. They complement the applicant-based quote contract; they must not be inserted into that contract as approved quotes.
+MIT-licensed, dependency-free Python adapters for **exact lender-published mortgage rates**. These are public rate observations, not personalised or binding offers. They complement the applicant-based quote contract; they must not be inserted into that contract as approved quotes.
 
 ## Run
 
@@ -30,13 +30,13 @@ Run at most hourly for a comparison deployment and show the retrieval time. No b
 
 ## Verified coverage
 
-Live direct fetch on 22 September 2026: **18 provider brands, 219 product/term entries**. See [verification.json](verification.json) for per-provider counts and response hashes. This is a historical implementation check, never a current-rate feed. Fixtures contain deliberately synthetic `7.123` rates and are not offers.
+Live direct fetch on 22 September 2026: **18 provider brands, 219 fixed product/term entries plus one current total SARON money-market rate**. See [verification.json](verification.json) for per-provider counts and response hashes. This is a historical implementation check, never a current-rate feed. Fixtures contain deliberately synthetic `7.123` rates and are not offers.
 
 | Provider | Entries | Included products |
 |---|---:|---|
 | Bank Cler | 35 | Fixed, Supercard and sustainability tables |
 | Bank BSU | 9 | Main fixed-rate table |
-| VIAC / Bank WIR | 2 | Fixed 5 and 10 years |
+| VIAC / Bank WIR | 3 | Fixed 5 and 10 years; current total money-market rate with 3-year framework |
 | Hypomat / GLKB | 19 | Fixed 2–20 years, from rates |
 | PostFinance | 14 | Fixed 2–15 years, from rates |
 | Migros Bank | 18 | Standard and published online preferential table |
@@ -57,7 +57,7 @@ Every source URL and scoped extraction rule is in [providers.json](providers.jso
 
 ## Deliberate exclusions
 
-SARON margins are not all-in mortgage rates; this first module focuses on fixed rates. Migros ECO rates for terms longer than five years have a time-limited discount, so the ECO table is not represented as a flat full-term rate. BSU's separate limited campaign needs its own complete campaign adapter. PKSL's advertised ECO discount is not subtracted. Cler's securities-account discount is not calculated. CA's French-property CHF/EUR columns are excluded.
+SARON margins are not all-in mortgage rates. Only VIAC’s explicitly published current total money-market rate is included with `rateType: saron`; its rate can change every three months and the three-year term is a framework, not a fixed-rate promise. Swissquote’s SARON table is excluded from total-rate comparison because first-party wording does not clearly distinguish margin from total rate. Migros ECO rates for terms longer than five years have a time-limited discount, so the ECO table is not represented as a flat full-term rate. BSU's separate limited campaign needs its own complete campaign adapter. PKSL's advertised ECO discount is not subtracted. Cler's securities-account discount is not calculated. CA's French-property CHF/EUR columns are excluded.
 
 Swiss Life returned HTTP 403 during direct verification; no access workaround was attempted. The inspected ZugerKB page did not return a rate table; no cached search values were substituted. Neither is counted as a working adapter.
 

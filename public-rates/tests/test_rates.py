@@ -23,7 +23,7 @@ class AdapterTests(unittest.TestCase):
                 self.assertTrue(all(not r['derived'] and not r['binding'] for r in result))
                 self.assertTrue(all(r['sourceUrl'] == provider['url'] for r in result))
                 total += len(result)
-        self.assertEqual(total, 219)
+        self.assertEqual(total, 220)
 
     def test_missing_duplicate_or_unexpected_term_fails_closed(self):
         p = next(p for p in rates.providers() if p['id'] == 'zkb')

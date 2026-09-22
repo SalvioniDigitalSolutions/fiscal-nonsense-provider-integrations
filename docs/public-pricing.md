@@ -10,7 +10,7 @@ Verified by direct network retrieval on **22 September 2026**:
 
 | Category | Public-source coverage | Result |
 |---|---|---|
-| [Mortgages](../public-rates/README.md) | 18 provider brands | 219 exact fixed product/term rates, including explicitly printed preferential tables |
+| [Mortgages](../public-rates/README.md) | 18 provider brands | 219 exact fixed product/term rates plus one explicitly published current total SARON rate |
 | [Consumer credit](../public-credit/README.md) | 6 provider brands | 6 published annual-rate ranges plus 9 cashgate conditional table entries |
 | [Savings and pension cash accounts](../public-savings/README.md) | 5 banks | 35 product schedules, retaining rate tiers/conditions; includes pillar 3a and vested benefits |
 | [Basic health insurance](../public-insurance/README.md) | Official BAG tariffs for 34 insurers | 217,308 ordinary-canton 2026 premium rows, covering all 26 cantons (217,472 archive rows including special territories) |
@@ -53,7 +53,7 @@ No service, website publication or recurring refresh is installed by these libra
 
 - Swiss Life mortgage page blocked direct retrieval; no block bypass or cached-search substitute.
 - The inspected ZugerKB mortgage page did not expose a usable table.
-- SARON margins are not full mortgage rates; this mortgage module is fixed-rate only.
+- SARON margins are not full mortgage rates. Only VIAC’s unambiguous current total SARON rate is included; its framework term does not fix the rate.
 - Individual car/property/supplementary-health/life insurance and investment pension projections need additional tariff dimensions or a provider quote API. Basic-health tariffs do not generalise to these products.
 - Leasing examples are tied to a vehicle, down payment, residual, mileage and term; they are not generic personal-loan quotes.
 

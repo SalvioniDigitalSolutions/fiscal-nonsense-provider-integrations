@@ -97,7 +97,7 @@ def extract(provider, html, fetched_at=None):
                 'providerId': provider['id'], 'providerName': provider['name'],
                 'lenderGroup': provider.get('lenderGroup'),
                 'country': provider['country'], 'currency': provider['currency'],
-                'product': section['label'], 'rateType': 'fixed',
+                'product': section['label'], 'rateType': section.get('rateType', 'fixed'),
                 'termYears': int(match['term']), 'annualRatePercent': rate,
                 'publishedRateText': raw_rate, 'qualifier': section.get('qualifier', 'published'),
                 'binding': False, 'personalised': False, 'derived': False,
