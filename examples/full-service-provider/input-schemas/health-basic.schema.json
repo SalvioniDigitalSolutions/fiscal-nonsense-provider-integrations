@@ -1,0 +1,95 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "member": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "dateOfBirth": {
+          "type": "string",
+          "format": "date",
+          "title": "Date of birth"
+        },
+        "municipalityId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Municipality id"
+        },
+        "canton": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Canton"
+        },
+        "premiumRegion": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Premium region"
+        },
+        "employmentHoursPerWeek": {
+          "type": "integer",
+          "minimum": 0,
+          "title": "Employment hours per week"
+        },
+        "permitCategory": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Permit category"
+        }
+      },
+      "required": [
+        "dateOfBirth",
+        "municipalityId",
+        "canton",
+        "premiumRegion",
+        "employmentHoursPerWeek",
+        "permitCategory"
+      ],
+      "title": "Member"
+    },
+    "plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "model": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Model"
+        },
+        "deductible": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Deductible"
+        },
+        "accidentCover": {
+          "type": "boolean",
+          "title": "Accident cover"
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date",
+          "title": "Start date"
+        }
+      },
+      "required": [
+        "model",
+        "deductible",
+        "accidentCover",
+        "startDate"
+      ],
+      "title": "Plan"
+    }
+  },
+  "required": [
+    "member",
+    "plan"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fictional health-basic required provider inputs",
+  "description": "Synthetic provider specification, not a universal underwriting questionnaire. Real providers must verify all fields and conditions."
+}

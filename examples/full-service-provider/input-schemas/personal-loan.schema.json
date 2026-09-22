@@ -1,0 +1,256 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "borrower": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "dateOfBirth": {
+          "type": "string",
+          "format": "date",
+          "title": "Date of birth"
+        },
+        "residenceCountry": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Residence country"
+        },
+        "residencePostalCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Residence postal code"
+        },
+        "nationality": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Nationality"
+        },
+        "housingStatus": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Housing status"
+        },
+        "dependants": {
+          "type": "integer",
+          "minimum": 0,
+          "title": "Dependants"
+        }
+      },
+      "required": [
+        "dateOfBirth",
+        "residenceCountry",
+        "residencePostalCode",
+        "nationality",
+        "housingStatus",
+        "dependants"
+      ],
+      "title": "Borrower"
+    },
+    "employment": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Status"
+        },
+        "contractType": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Contract type"
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date",
+          "title": "Start date"
+        },
+        "probation": {
+          "type": "boolean",
+          "title": "Probation"
+        }
+      },
+      "required": [
+        "status",
+        "contractType",
+        "startDate",
+        "probation"
+      ],
+      "title": "Employment"
+    },
+    "finances": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "grossAnnualIncome": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Gross annual income"
+        },
+        "netMonthlyIncome": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Net monthly income"
+        },
+        "otherMonthlyIncome": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Other monthly income"
+        },
+        "housingCostMonthly": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Housing cost monthly"
+        },
+        "livingExpensesMonthly": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Living expenses monthly"
+        },
+        "existingDebtPaymentsMonthly": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Existing debt payments monthly"
+        },
+        "existingDebtBalance": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Existing debt balance"
+        },
+        "hasArrears": {
+          "type": "boolean",
+          "title": "Has arrears"
+        },
+        "priorInsolvency": {
+          "type": "boolean",
+          "title": "Prior insolvency"
+        }
+      },
+      "required": [
+        "grossAnnualIncome",
+        "netMonthlyIncome",
+        "otherMonthlyIncome",
+        "housingCostMonthly",
+        "livingExpensesMonthly",
+        "existingDebtPaymentsMonthly",
+        "existingDebtBalance",
+        "hasArrears",
+        "priorInsolvency"
+      ],
+      "title": "Finances"
+    },
+    "creditSearch": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "authorised": {
+          "type": "boolean",
+          "title": "Authorised"
+        },
+        "assessmentMode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Assessment mode"
+        }
+      },
+      "required": [
+        "authorised",
+        "assessmentMode"
+      ],
+      "title": "Credit search"
+    },
+    "application": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "joint": {
+          "type": "boolean",
+          "title": "Joint"
+        },
+        "purpose": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Purpose"
+        },
+        "requestedStartDate": {
+          "type": "string",
+          "format": "date",
+          "title": "Requested start date"
+        },
+        "coBorrower": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "dateOfBirth": {
+              "type": "string",
+              "format": "date",
+              "title": "Date of birth"
+            },
+            "netMonthlyIncome": {
+              "type": "string",
+              "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+              "title": "Net monthly income"
+            },
+            "monthlyDebtPayments": {
+              "type": "string",
+              "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+              "title": "Monthly debt payments"
+            }
+          },
+          "required": [
+            "dateOfBirth",
+            "netMonthlyIncome",
+            "monthlyDebtPayments"
+          ]
+        }
+      },
+      "required": [
+        "joint",
+        "purpose",
+        "requestedStartDate"
+      ],
+      "title": "Application",
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "joint": {
+                "const": true
+              }
+            },
+            "required": [
+              "joint"
+            ]
+          },
+          "then": {
+            "required": [
+              "coBorrower"
+            ],
+            "properties": {
+              "coBorrower": {}
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "borrower",
+    "employment",
+    "finances",
+    "creditSearch",
+    "application"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fictional personal-loan required provider inputs",
+  "description": "Synthetic provider specification, not a universal underwriting questionnaire. Real providers must verify all fields and conditions."
+}

@@ -1,0 +1,481 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "common": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "policyholder": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "dateOfBirth": {
+              "type": "string",
+              "format": "date",
+              "title": "Date of birth"
+            },
+            "nationality": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Nationality"
+            },
+            "residenceCountry": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Residence country"
+            },
+            "residencePostalCode": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Residence postal code"
+            },
+            "residenceMunicipality": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Residence municipality"
+            },
+            "occupationCode": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Occupation code"
+            },
+            "householdAdults": {
+              "type": "integer",
+              "minimum": 0,
+              "title": "Household adults"
+            },
+            "householdChildren": {
+              "type": "integer",
+              "minimum": 0,
+              "title": "Household children"
+            }
+          },
+          "required": [
+            "dateOfBirth",
+            "nationality",
+            "residenceCountry",
+            "residencePostalCode",
+            "residenceMunicipality",
+            "occupationCode",
+            "householdAdults",
+            "householdChildren"
+          ],
+          "title": "Policyholder"
+        },
+        "history": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "previousInsurerId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Previous insurer id"
+            },
+            "yearsContinuouslyInsured": {
+              "type": "integer",
+              "minimum": 0,
+              "title": "Years continuously insured"
+            },
+            "previousPolicyCancelledByInsurer": {
+              "type": "boolean",
+              "title": "Previous policy cancelled by insurer"
+            },
+            "hasClaims": {
+              "type": "boolean",
+              "title": "Has claims"
+            },
+            "claims": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "date": {
+                    "type": "string",
+                    "format": "date",
+                    "title": "Date"
+                  },
+                  "type": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1000,
+                    "title": "Type"
+                  },
+                  "paidAmount": {
+                    "type": "string",
+                    "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+                    "title": "Paid amount"
+                  },
+                  "open": {
+                    "type": "boolean",
+                    "title": "Open"
+                  }
+                },
+                "required": [
+                  "date",
+                  "type",
+                  "paidAmount",
+                  "open"
+                ]
+              }
+            }
+          },
+          "required": [
+            "previousInsurerId",
+            "yearsContinuouslyInsured",
+            "previousPolicyCancelledByInsurer",
+            "hasClaims"
+          ],
+          "title": "History",
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "hasClaims": {
+                    "const": true
+                  }
+                },
+                "required": [
+                  "hasClaims"
+                ]
+              },
+              "then": {
+                "required": [
+                  "claims"
+                ],
+                "properties": {
+                  "claims": {}
+                }
+              }
+            }
+          ]
+        },
+        "policy": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "territories": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1000
+              },
+              "title": "Territories"
+            },
+            "paymentMethod": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Payment method"
+            },
+            "marketingConsent": {
+              "type": "boolean",
+              "title": "Marketing consent"
+            }
+          },
+          "required": [
+            "territories",
+            "paymentMethod",
+            "marketingConsent"
+          ],
+          "title": "Policy"
+        }
+      },
+      "required": [
+        "policyholder",
+        "history",
+        "policy"
+      ],
+      "title": "Common"
+    },
+    "insuredPerson": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "dateOfBirth": {
+          "type": "string",
+          "format": "date",
+          "title": "Date of birth"
+        },
+        "sexForUnderwriting": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Sex for underwriting"
+        },
+        "heightCm": {
+          "type": "integer",
+          "minimum": 0,
+          "title": "Height cm"
+        },
+        "weightKg": {
+          "type": "integer",
+          "minimum": 0,
+          "title": "Weight kg"
+        },
+        "smoker": {
+          "type": "boolean",
+          "title": "Smoker"
+        },
+        "occupationCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Occupation code"
+        },
+        "residenceCountry": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Residence country"
+        }
+      },
+      "required": [
+        "dateOfBirth",
+        "sexForUnderwriting",
+        "heightCm",
+        "weightKg",
+        "smoker",
+        "occupationCode",
+        "residenceCountry"
+      ],
+      "title": "Insured person"
+    },
+    "medical": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "hasConditions": {
+          "type": "boolean",
+          "title": "Has conditions"
+        },
+        "takesRegularMedication": {
+          "type": "boolean",
+          "title": "Takes regular medication"
+        },
+        "hasPlannedTreatment": {
+          "type": "boolean",
+          "title": "Has planned treatment"
+        },
+        "conditions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "conditionCode": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1000,
+                "title": "Condition code"
+              },
+              "diagnosedDate": {
+                "type": "string",
+                "format": "date",
+                "title": "Diagnosed date"
+              },
+              "ongoing": {
+                "type": "boolean",
+                "title": "Ongoing"
+              }
+            },
+            "required": [
+              "conditionCode",
+              "diagnosedDate",
+              "ongoing"
+            ]
+          }
+        }
+      },
+      "required": [
+        "hasConditions",
+        "takesRegularMedication",
+        "hasPlannedTreatment"
+      ],
+      "title": "Medical",
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "hasConditions": {
+                "const": true
+              }
+            },
+            "required": [
+              "hasConditions"
+            ]
+          },
+          "then": {
+            "required": [
+              "conditions"
+            ],
+            "properties": {
+              "conditions": {}
+            }
+          }
+        }
+      ]
+    },
+    "cover": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "hospitalWard": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Hospital ward"
+        },
+        "worldwide": {
+          "type": "boolean",
+          "title": "Worldwide"
+        },
+        "annualLimit": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Annual limit"
+        }
+      },
+      "required": [
+        "hospitalWard",
+        "worldwide",
+        "annualLimit"
+      ],
+      "title": "Cover"
+    },
+    "benefit": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "sumAssured": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Sum assured"
+        },
+        "termYears": {
+          "type": "integer",
+          "minimum": 0,
+          "title": "Term years"
+        },
+        "benefitPattern": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Benefit pattern"
+        },
+        "jointLife": {
+          "type": "boolean",
+          "title": "Joint life"
+        }
+      },
+      "required": [
+        "sumAssured",
+        "termYears",
+        "benefitPattern",
+        "jointLife"
+      ],
+      "title": "Benefit"
+    },
+    "activities": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "hazardousSports": {
+          "type": "boolean",
+          "title": "Hazardous sports"
+        },
+        "hazardousOccupation": {
+          "type": "boolean",
+          "title": "Hazardous occupation"
+        },
+        "extendedForeignTravel": {
+          "type": "boolean",
+          "title": "Extended foreign travel"
+        }
+      },
+      "required": [
+        "hazardousSports",
+        "hazardousOccupation",
+        "extendedForeignTravel"
+      ],
+      "title": "Activities"
+    },
+    "financial": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "annualIncome": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Annual income"
+        },
+        "existingLifeCover": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Existing life cover"
+        }
+      },
+      "required": [
+        "annualIncome",
+        "existingLifeCover"
+      ],
+      "title": "Financial"
+    },
+    "accidentBenefits": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "deathBenefit": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Death benefit"
+        },
+        "disabilityCapital": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Disability capital"
+        },
+        "dailyBenefit": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Daily benefit"
+        },
+        "sportsCover": {
+          "type": "boolean",
+          "title": "Sports cover"
+        }
+      },
+      "required": [
+        "deathBenefit",
+        "disabilityCapital",
+        "dailyBenefit",
+        "sportsCover"
+      ],
+      "title": "Accident benefits"
+    }
+  },
+  "required": [
+    "common",
+    "insuredPerson",
+    "medical",
+    "cover",
+    "benefit",
+    "activities",
+    "financial",
+    "accidentBenefits"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fictional accident required provider inputs",
+  "description": "Synthetic provider specification, not a universal underwriting questionnaire. Real providers must verify all fields and conditions."
+}

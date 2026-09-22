@@ -1,0 +1,118 @@
+{
+  "request": {
+    "schemaVersion": "0.1",
+    "requestId": "synthetic-pillar-3b",
+    "providerId": "full-service-demo",
+    "productId": "pillar-3b",
+    "country": "CH",
+    "currency": "CHF",
+    "applicant": {
+      "kind": "individual",
+      "residencyCountry": "CH",
+      "postalCode": "0000",
+      "ageYears": 40
+    },
+    "input": {
+      "family": "retirement",
+      "retirementAgeYears": 65,
+      "initialCapital": "10000.00",
+      "contribution": {
+        "amount": "200.00",
+        "period": "month"
+      },
+      "payout": "capital",
+      "riskPreference": "balanced",
+      "schemeType": "pillar-3b",
+      "employment": "employed",
+      "transferAmount": "0.00",
+      "providerData": {
+        "member": {
+          "dateOfBirth": "1986-01-01",
+          "residenceCountry": "CH",
+          "taxResidenceCountry": "CH",
+          "taxRegion": "TI",
+          "employmentStatus": "employed",
+          "maritalStatus": "single",
+          "dependants": 0
+        },
+        "finances": {
+          "annualEarnedIncome": "96000.00",
+          "existingPensionCapital": "10000.00",
+          "contributionsThisYear": "0.00",
+          "otherPensionAnnualIncome": "0.00"
+        },
+        "preferences": {
+          "targetRetirementAge": 65,
+          "contributionIndexationPercent": "0.00",
+          "beneficiaryType": "estate",
+          "sustainableInvestmentsRequested": false
+        },
+        "transfer": {
+          "requested": false
+        },
+        "pillar3b": {
+          "wrapperType": "unrestricted_savings",
+          "insuranceLinked": false,
+          "surrenderValueRequired": false
+        }
+      }
+    }
+  },
+  "response": {
+    "schemaVersion": "0.1",
+    "requestId": "synthetic-pillar-3b",
+    "providerId": "full-service-demo",
+    "mode": "sandbox",
+    "status": "quoted",
+    "quotes": [
+      {
+        "quoteId": "fictional-pillar-3b",
+        "productId": "pillar-3b",
+        "productName": "Fictional Swiss pillar 3b",
+        "country": "CH",
+        "currency": "CHF",
+        "priceKind": "indicative",
+        "issuedAt": "2026-09-22T10:00:00Z",
+        "expiresAt": "2026-09-22T10:15:00Z",
+        "quoteUrl": "https://provider.example/quote",
+        "termsUrl": "https://provider.example/terms",
+        "assumptions": "Synthetic offline illustration only. No eligibility, local tax benefit or real price is asserted.",
+        "retirement": {
+          "initialCapital": "10000.00",
+          "contribution": {
+            "amount": "200.00",
+            "period": "month"
+          },
+          "fees": [
+            {
+              "id": "fictional-assets-fee",
+              "percentPerYear": "0.50",
+              "basis": "assets"
+            }
+          ],
+          "guaranteedBenefits": [],
+          "projections": [
+            {
+              "illustrative": true,
+              "horizonYears": 25,
+              "assumedGrossAnnualReturnPercent": "2.50",
+              "annualFeePercent": "0.50",
+              "assumedNetAnnualReturnPercent": "2.00",
+              "projectedValue": "93980.93",
+              "methodology": "Fictional accumulation illustration: net annual return = gross less asset fee; monthly effective rate = (1 + net annual rate)^(1/12) - 1; contributions at month end. No annuity payout or tax advantage is priced.",
+              "inflationTreatment": "nominal",
+              "taxTreatment": "excluded",
+              "contributionTiming": "end_of_period"
+            }
+          ],
+          "access": {
+            "earliestAgeYears": 65,
+            "earlyWithdrawalAllowed": false,
+            "conditions": "Fictional restriction only; actual scheme and jurisdiction rules require provider review."
+          },
+          "riskDescription": "Illustrative return is not guaranteed. No guarantee or annuity payout is represented."
+        }
+      }
+    ]
+  }
+}

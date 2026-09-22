@@ -1,0 +1,217 @@
+{
+  "request": {
+    "schemaVersion": "0.1",
+    "requestId": "synthetic-bnpl",
+    "providerId": "full-service-demo",
+    "productId": "bnpl",
+    "country": "CH",
+    "currency": "CHF",
+    "applicant": {
+      "kind": "individual",
+      "residencyCountry": "CH",
+      "postalCode": "0000",
+      "ageYears": 40
+    },
+    "input": {
+      "family": "credit",
+      "facilityType": "installment",
+      "amount": "1200.00",
+      "purpose": "Synthetic bnpl",
+      "repaymentModel": "bnpl",
+      "preferredRateType": "fixed",
+      "monthlyIncome": "6500.00",
+      "monthlyDebtPayments": "200.00",
+      "termMonths": 12,
+      "providerData": {
+        "borrower": {
+          "dateOfBirth": "1986-01-01",
+          "residenceCountry": "CH",
+          "residencePostalCode": "0000",
+          "nationality": "CH",
+          "housingStatus": "tenant",
+          "dependants": 0
+        },
+        "employment": {
+          "status": "employed",
+          "contractType": "permanent",
+          "startDate": "2020-01-01",
+          "probation": false
+        },
+        "finances": {
+          "grossAnnualIncome": "96000.00",
+          "netMonthlyIncome": "6500.00",
+          "otherMonthlyIncome": "0.00",
+          "housingCostMonthly": "1500.00",
+          "livingExpensesMonthly": "1800.00",
+          "existingDebtPaymentsMonthly": "200.00",
+          "existingDebtBalance": "5000.00",
+          "hasArrears": false,
+          "priorInsolvency": false
+        },
+        "creditSearch": {
+          "authorised": false,
+          "assessmentMode": "illustrative_no_credit_check"
+        },
+        "application": {
+          "joint": false,
+          "purpose": "SYNTHETIC",
+          "requestedStartDate": "2026-10-01"
+        },
+        "purchase": {
+          "merchantId": "SYNTHETIC",
+          "cashPrice": "1200.00",
+          "deposit": "0.00",
+          "numberOfInstalments": 12,
+          "frequency": "monthly",
+          "itemCategory": "SYNTHETIC"
+        }
+      }
+    }
+  },
+  "response": {
+    "schemaVersion": "0.1",
+    "requestId": "synthetic-bnpl",
+    "providerId": "full-service-demo",
+    "mode": "sandbox",
+    "status": "quoted",
+    "quotes": [
+      {
+        "quoteId": "fictional-bnpl",
+        "productId": "bnpl",
+        "productName": "Fictional Buy now, pay later",
+        "country": "CH",
+        "currency": "CHF",
+        "priceKind": "indicative",
+        "issuedAt": "2026-09-22T10:00:00Z",
+        "expiresAt": "2026-09-22T10:15:00Z",
+        "quoteUrl": "https://provider.example/quote",
+        "termsUrl": "https://provider.example/terms",
+        "assumptions": "Synthetic offline illustration only. No eligibility, local tax benefit or real price is asserted.",
+        "credit": {
+          "facilityType": "installment",
+          "amount": "1200.00",
+          "nominalAnnualRatePercent": "0.00",
+          "rateType": "fixed",
+          "apr": null,
+          "aprUnavailableReason": "No jurisdiction-specific APR certified for this fictional fixture.",
+          "fees": [],
+          "repaymentModel": "bnpl",
+          "termMonths": 12,
+          "repaymentSchedule": [
+            {
+              "number": 1,
+              "date": "2026-11-01",
+              "payment": "100.00",
+              "principal": "100.00",
+              "interest": "0.00",
+              "fees": "0.00",
+              "balance": "1100.00"
+            },
+            {
+              "number": 2,
+              "date": "2026-12-01",
+              "payment": "100.00",
+              "principal": "100.00",
+              "interest": "0.00",
+              "fees": "0.00",
+              "balance": "1000.00"
+            },
+            {
+              "number": 3,
+              "date": "2027-01-01",
+              "payment": "100.00",
+              "principal": "100.00",
+              "interest": "0.00",
+              "fees": "0.00",
+              "balance": "900.00"
+            },
+            {
+              "number": 4,
+              "date": "2027-02-01",
+              "payment": "100.00",
+              "principal": "100.00",
+              "interest": "0.00",
+              "fees": "0.00",
+              "balance": "800.00"
+            },
+            {
+              "number": 5,
+              "date": "2027-03-01",
+              "payment": "100.00",
+              "principal": "100.00",
+              "interest": "0.00",
+              "fees": "0.00",
+              "balance": "700.00"
+            },
+            {
+              "number": 6,
+              "date": "2027-04-01",
+              "payment": "100.00",
+              "principal": "100.00",
+              "interest": "0.00",
+              "fees": "0.00",
+              "balance": "600.00"
+            },
+            {
+              "number": 7,
+              "date": "2027-05-01",
+              "payment": "100.00",
+              "principal": "100.00",
+              "interest": "0.00",
+              "fees": "0.00",
+              "balance": "500.00"
+            },
+            {
+              "number": 8,
+              "date": "2027-06-01",
+              "payment": "100.00",
+              "principal": "100.00",
+              "interest": "0.00",
+              "fees": "0.00",
+              "balance": "400.00"
+            },
+            {
+              "number": 9,
+              "date": "2027-07-01",
+              "payment": "100.00",
+              "principal": "100.00",
+              "interest": "0.00",
+              "fees": "0.00",
+              "balance": "300.00"
+            },
+            {
+              "number": 10,
+              "date": "2027-08-01",
+              "payment": "100.00",
+              "principal": "100.00",
+              "interest": "0.00",
+              "fees": "0.00",
+              "balance": "200.00"
+            },
+            {
+              "number": 11,
+              "date": "2027-09-01",
+              "payment": "100.00",
+              "principal": "100.00",
+              "interest": "0.00",
+              "fees": "0.00",
+              "balance": "100.00"
+            },
+            {
+              "number": 12,
+              "date": "2027-10-01",
+              "payment": "100.00",
+              "principal": "100.00",
+              "interest": "0.00",
+              "fees": "0.00",
+              "balance": "0.00"
+            }
+          ],
+          "totalPayable": "1200.00",
+          "totalInterest": "0.00",
+          "finalBalance": "0.00"
+        }
+      }
+    ]
+  }
+}

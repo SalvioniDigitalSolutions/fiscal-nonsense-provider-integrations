@@ -1,0 +1,296 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "common": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "policyholder": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "dateOfBirth": {
+              "type": "string",
+              "format": "date",
+              "title": "Date of birth"
+            },
+            "nationality": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Nationality"
+            },
+            "residenceCountry": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Residence country"
+            },
+            "residencePostalCode": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Residence postal code"
+            },
+            "residenceMunicipality": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Residence municipality"
+            },
+            "occupationCode": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Occupation code"
+            },
+            "householdAdults": {
+              "type": "integer",
+              "minimum": 0,
+              "title": "Household adults"
+            },
+            "householdChildren": {
+              "type": "integer",
+              "minimum": 0,
+              "title": "Household children"
+            }
+          },
+          "required": [
+            "dateOfBirth",
+            "nationality",
+            "residenceCountry",
+            "residencePostalCode",
+            "residenceMunicipality",
+            "occupationCode",
+            "householdAdults",
+            "householdChildren"
+          ],
+          "title": "Policyholder"
+        },
+        "history": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "previousInsurerId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Previous insurer id"
+            },
+            "yearsContinuouslyInsured": {
+              "type": "integer",
+              "minimum": 0,
+              "title": "Years continuously insured"
+            },
+            "previousPolicyCancelledByInsurer": {
+              "type": "boolean",
+              "title": "Previous policy cancelled by insurer"
+            },
+            "hasClaims": {
+              "type": "boolean",
+              "title": "Has claims"
+            },
+            "claims": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "date": {
+                    "type": "string",
+                    "format": "date",
+                    "title": "Date"
+                  },
+                  "type": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1000,
+                    "title": "Type"
+                  },
+                  "paidAmount": {
+                    "type": "string",
+                    "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+                    "title": "Paid amount"
+                  },
+                  "open": {
+                    "type": "boolean",
+                    "title": "Open"
+                  }
+                },
+                "required": [
+                  "date",
+                  "type",
+                  "paidAmount",
+                  "open"
+                ]
+              }
+            }
+          },
+          "required": [
+            "previousInsurerId",
+            "yearsContinuouslyInsured",
+            "previousPolicyCancelledByInsurer",
+            "hasClaims"
+          ],
+          "title": "History",
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "hasClaims": {
+                    "const": true
+                  }
+                },
+                "required": [
+                  "hasClaims"
+                ]
+              },
+              "then": {
+                "required": [
+                  "claims"
+                ],
+                "properties": {
+                  "claims": {}
+                }
+              }
+            }
+          ]
+        },
+        "policy": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "territories": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1000
+              },
+              "title": "Territories"
+            },
+            "paymentMethod": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Payment method"
+            },
+            "marketingConsent": {
+              "type": "boolean",
+              "title": "Marketing consent"
+            }
+          },
+          "required": [
+            "territories",
+            "paymentMethod",
+            "marketingConsent"
+          ],
+          "title": "Policy"
+        }
+      },
+      "required": [
+        "policyholder",
+        "history",
+        "policy"
+      ],
+      "title": "Common"
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "household": {
+          "type": "boolean",
+          "title": "Household"
+        },
+        "motor": {
+          "type": "boolean",
+          "title": "Motor"
+        },
+        "employment": {
+          "type": "boolean",
+          "title": "Employment"
+        },
+        "property": {
+          "type": "boolean",
+          "title": "Property"
+        },
+        "business": {
+          "type": "boolean",
+          "title": "Business"
+        },
+        "countries": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          },
+          "title": "Countries"
+        }
+      },
+      "required": [
+        "household",
+        "motor",
+        "employment",
+        "property",
+        "business",
+        "countries"
+      ],
+      "title": "Scope"
+    },
+    "disputes": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "hasExistingDispute": {
+          "type": "boolean",
+          "title": "Has existing dispute"
+        },
+        "awareOfLikelyDispute": {
+          "type": "boolean",
+          "title": "Aware of likely dispute"
+        }
+      },
+      "required": [
+        "hasExistingDispute",
+        "awareOfLikelyDispute"
+      ],
+      "title": "Disputes"
+    },
+    "cover": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "limit": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Limit"
+        },
+        "waitingMonths": {
+          "type": "integer",
+          "minimum": 0,
+          "title": "Waiting months"
+        }
+      },
+      "required": [
+        "limit",
+        "waitingMonths"
+      ],
+      "title": "Cover"
+    }
+  },
+  "required": [
+    "common",
+    "scope",
+    "disputes",
+    "cover"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fictional legal required provider inputs",
+  "description": "Synthetic provider specification, not a universal underwriting questionnaire. Real providers must verify all fields and conditions."
+}

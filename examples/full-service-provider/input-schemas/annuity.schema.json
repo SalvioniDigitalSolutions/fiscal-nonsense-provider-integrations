@@ -1,0 +1,204 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "member": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "dateOfBirth": {
+          "type": "string",
+          "format": "date",
+          "title": "Date of birth"
+        },
+        "residenceCountry": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Residence country"
+        },
+        "taxResidenceCountry": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Tax residence country"
+        },
+        "taxRegion": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Tax region"
+        },
+        "employmentStatus": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Employment status"
+        },
+        "maritalStatus": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Marital status"
+        },
+        "dependants": {
+          "type": "integer",
+          "minimum": 0,
+          "title": "Dependants"
+        }
+      },
+      "required": [
+        "dateOfBirth",
+        "residenceCountry",
+        "taxResidenceCountry",
+        "taxRegion",
+        "employmentStatus",
+        "maritalStatus",
+        "dependants"
+      ],
+      "title": "Member"
+    },
+    "finances": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "annualEarnedIncome": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Annual earned income"
+        },
+        "existingPensionCapital": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Existing pension capital"
+        },
+        "contributionsThisYear": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Contributions this year"
+        },
+        "otherPensionAnnualIncome": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Other pension annual income"
+        }
+      },
+      "required": [
+        "annualEarnedIncome",
+        "existingPensionCapital",
+        "contributionsThisYear",
+        "otherPensionAnnualIncome"
+      ],
+      "title": "Finances"
+    },
+    "preferences": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "targetRetirementAge": {
+          "type": "integer",
+          "minimum": 0,
+          "title": "Target retirement age"
+        },
+        "contributionIndexationPercent": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Contribution indexation percent"
+        },
+        "beneficiaryType": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Beneficiary type"
+        },
+        "sustainableInvestmentsRequested": {
+          "type": "boolean",
+          "title": "Sustainable investments requested"
+        }
+      },
+      "required": [
+        "targetRetirementAge",
+        "contributionIndexationPercent",
+        "beneficiaryType",
+        "sustainableInvestmentsRequested"
+      ],
+      "title": "Preferences"
+    },
+    "transfer": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "requested": {
+          "type": "boolean",
+          "title": "Requested"
+        }
+      },
+      "required": [
+        "requested"
+      ],
+      "title": "Transfer"
+    },
+    "annuity": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "purchaseCapital": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Purchase capital"
+        },
+        "startAge": {
+          "type": "integer",
+          "minimum": 0,
+          "title": "Start age"
+        },
+        "jointLife": {
+          "type": "boolean",
+          "title": "Joint life"
+        },
+        "guaranteePeriodYears": {
+          "type": "integer",
+          "minimum": 0,
+          "title": "Guarantee period years"
+        },
+        "annualEscalationPercent": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Annual escalation percent"
+        },
+        "paymentFrequency": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Payment frequency"
+        },
+        "paymentTiming": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Payment timing"
+        }
+      },
+      "required": [
+        "purchaseCapital",
+        "startAge",
+        "jointLife",
+        "guaranteePeriodYears",
+        "annualEscalationPercent",
+        "paymentFrequency",
+        "paymentTiming"
+      ],
+      "title": "Annuity"
+    }
+  },
+  "required": [
+    "member",
+    "finances",
+    "preferences",
+    "transfer",
+    "annuity"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fictional annuity required provider inputs",
+  "description": "Synthetic provider specification, not a universal underwriting questionnaire. Real providers must verify all fields and conditions."
+}

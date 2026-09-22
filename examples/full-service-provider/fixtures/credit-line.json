@@ -1,0 +1,114 @@
+{
+  "request": {
+    "schemaVersion": "0.1",
+    "requestId": "synthetic-credit-line",
+    "providerId": "full-service-demo",
+    "productId": "credit-line",
+    "country": "CH",
+    "currency": "CHF",
+    "applicant": {
+      "kind": "individual",
+      "residencyCountry": "CH",
+      "postalCode": "0000",
+      "ageYears": 40
+    },
+    "input": {
+      "family": "credit",
+      "facilityType": "revolving",
+      "amount": "10000.00",
+      "purpose": "Synthetic credit-line",
+      "repaymentModel": "revolving",
+      "preferredRateType": "fixed",
+      "monthlyIncome": "6500.00",
+      "monthlyDebtPayments": "200.00",
+      "assumedDrawnBalance": "1000.00",
+      "providerData": {
+        "borrower": {
+          "dateOfBirth": "1986-01-01",
+          "residenceCountry": "CH",
+          "residencePostalCode": "0000",
+          "nationality": "CH",
+          "housingStatus": "tenant",
+          "dependants": 0
+        },
+        "employment": {
+          "status": "employed",
+          "contractType": "permanent",
+          "startDate": "2020-01-01",
+          "probation": false
+        },
+        "finances": {
+          "grossAnnualIncome": "96000.00",
+          "netMonthlyIncome": "6500.00",
+          "otherMonthlyIncome": "0.00",
+          "housingCostMonthly": "1500.00",
+          "livingExpensesMonthly": "1800.00",
+          "existingDebtPaymentsMonthly": "200.00",
+          "existingDebtBalance": "5000.00",
+          "hasArrears": false,
+          "priorInsolvency": false
+        },
+        "creditSearch": {
+          "authorised": false,
+          "assessmentMode": "illustrative_no_credit_check"
+        },
+        "application": {
+          "joint": false,
+          "purpose": "SYNTHETIC",
+          "requestedStartDate": "2026-10-01"
+        },
+        "usage": {
+          "requestedLimit": "10000.00",
+          "assumedDrawnBalance": "1000.00",
+          "balanceTransfer": "0.00",
+          "monthlyPurchases": "0.00",
+          "cashWithdrawals": "0.00",
+          "repayInFull": false
+        }
+      }
+    }
+  },
+  "response": {
+    "schemaVersion": "0.1",
+    "requestId": "synthetic-credit-line",
+    "providerId": "full-service-demo",
+    "mode": "sandbox",
+    "status": "quoted",
+    "quotes": [
+      {
+        "quoteId": "fictional-credit-line",
+        "productId": "credit-line",
+        "productName": "Fictional Credit lines and overdrafts",
+        "country": "CH",
+        "currency": "CHF",
+        "priceKind": "indicative",
+        "issuedAt": "2026-09-22T10:00:00Z",
+        "expiresAt": "2026-09-22T10:15:00Z",
+        "quoteUrl": "https://provider.example/quote",
+        "termsUrl": "https://provider.example/terms",
+        "assumptions": "Synthetic offline illustration only. No eligibility, local tax benefit or real price is asserted.",
+        "credit": {
+          "facilityType": "revolving",
+          "amount": "10000.00",
+          "nominalAnnualRatePercent": "6.00",
+          "rateType": "fixed",
+          "apr": null,
+          "aprUnavailableReason": "No jurisdiction-specific APR certified for this fictional fixture.",
+          "fees": [],
+          "repaymentModel": "revolving",
+          "minimumPayment": {
+            "percentOfBalance": "3.00",
+            "floor": "25.00",
+            "cappedAtBalance": true
+          },
+          "illustration": {
+            "drawnBalance": "1000.00",
+            "monthlyInterest": "5.00",
+            "minimumPayment": "30.00",
+            "assumptions": "One month at nominal rate / 12, on starting balance; no new spending or fees. Not an APR calculation."
+          }
+        }
+      }
+    ]
+  }
+}

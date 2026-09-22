@@ -1,0 +1,31 @@
+name: Provider integration proposal
+description: Propose an insurer, lender or comparison-platform connection.
+title: "[Provider] "
+body:
+  - type: markdown
+    attributes:
+      value: "Public information only. Never post credentials, customer data or confidential agreements. Production access is reviewed separately."
+  - type: input
+    id: organisation
+    attributes:
+      label: Legal entity and official website
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Markets, products and your relationship to the provider
+    validations:
+      required: true
+  - type: textarea
+    id: integration
+    attributes:
+      label: Public API documentation, permitted embed or tariff source
+      description: Explain whether the results are personalised prices, indicative rates or a referral journey.
+    validations:
+      required: true
+  - type: textarea
+    id: requirements
+    attributes:
+      label: Inputs, access requirements and public technical contact
+      description: Include known fees or arrange a private discussion via info@fiscalnonsense.com. No secrets.

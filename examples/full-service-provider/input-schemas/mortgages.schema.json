@@ -1,0 +1,432 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "borrower": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "dateOfBirth": {
+          "type": "string",
+          "format": "date",
+          "title": "Date of birth"
+        },
+        "residenceCountry": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Residence country"
+        },
+        "residencePostalCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Residence postal code"
+        },
+        "nationality": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Nationality"
+        },
+        "housingStatus": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Housing status"
+        },
+        "dependants": {
+          "type": "integer",
+          "minimum": 0,
+          "title": "Dependants"
+        }
+      },
+      "required": [
+        "dateOfBirth",
+        "residenceCountry",
+        "residencePostalCode",
+        "nationality",
+        "housingStatus",
+        "dependants"
+      ],
+      "title": "Borrower"
+    },
+    "employment": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Status"
+        },
+        "contractType": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Contract type"
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date",
+          "title": "Start date"
+        },
+        "probation": {
+          "type": "boolean",
+          "title": "Probation"
+        }
+      },
+      "required": [
+        "status",
+        "contractType",
+        "startDate",
+        "probation"
+      ],
+      "title": "Employment"
+    },
+    "finances": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "grossAnnualIncome": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Gross annual income"
+        },
+        "netMonthlyIncome": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Net monthly income"
+        },
+        "otherMonthlyIncome": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Other monthly income"
+        },
+        "housingCostMonthly": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Housing cost monthly"
+        },
+        "livingExpensesMonthly": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Living expenses monthly"
+        },
+        "existingDebtPaymentsMonthly": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Existing debt payments monthly"
+        },
+        "existingDebtBalance": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Existing debt balance"
+        },
+        "hasArrears": {
+          "type": "boolean",
+          "title": "Has arrears"
+        },
+        "priorInsolvency": {
+          "type": "boolean",
+          "title": "Prior insolvency"
+        }
+      },
+      "required": [
+        "grossAnnualIncome",
+        "netMonthlyIncome",
+        "otherMonthlyIncome",
+        "housingCostMonthly",
+        "livingExpensesMonthly",
+        "existingDebtPaymentsMonthly",
+        "existingDebtBalance",
+        "hasArrears",
+        "priorInsolvency"
+      ],
+      "title": "Finances"
+    },
+    "creditSearch": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "authorised": {
+          "type": "boolean",
+          "title": "Authorised"
+        },
+        "assessmentMode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Assessment mode"
+        }
+      },
+      "required": [
+        "authorised",
+        "assessmentMode"
+      ],
+      "title": "Credit search"
+    },
+    "application": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "joint": {
+          "type": "boolean",
+          "title": "Joint"
+        },
+        "purpose": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Purpose"
+        },
+        "requestedStartDate": {
+          "type": "string",
+          "format": "date",
+          "title": "Requested start date"
+        },
+        "coBorrower": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "dateOfBirth": {
+              "type": "string",
+              "format": "date",
+              "title": "Date of birth"
+            },
+            "netMonthlyIncome": {
+              "type": "string",
+              "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+              "title": "Net monthly income"
+            },
+            "monthlyDebtPayments": {
+              "type": "string",
+              "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+              "title": "Monthly debt payments"
+            }
+          },
+          "required": [
+            "dateOfBirth",
+            "netMonthlyIncome",
+            "monthlyDebtPayments"
+          ]
+        }
+      },
+      "required": [
+        "joint",
+        "purpose",
+        "requestedStartDate"
+      ],
+      "title": "Application",
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "joint": {
+                "const": true
+              }
+            },
+            "required": [
+              "joint"
+            ]
+          },
+          "then": {
+            "required": [
+              "coBorrower"
+            ],
+            "properties": {
+              "coBorrower": {}
+            }
+          }
+        }
+      ]
+    },
+    "mortgage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "purpose": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Purpose",
+          "enum": [
+            "purchase",
+            "refinance"
+          ]
+        },
+        "deposit": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Deposit"
+        },
+        "collateral": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "propertyType": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Property type"
+            },
+            "country": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Country"
+            },
+            "postalCode": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Postal code"
+            },
+            "value": {
+              "type": "string",
+              "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+              "title": "Value"
+            },
+            "purchasePrice": {
+              "type": "string",
+              "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+              "title": "Purchase price"
+            },
+            "tenure": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Tenure"
+            },
+            "use": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Use"
+            },
+            "constructionYear": {
+              "type": "integer",
+              "minimum": 0,
+              "title": "Construction year"
+            },
+            "energyRating": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Energy rating"
+            },
+            "existingSecuredDebt": {
+              "type": "string",
+              "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+              "title": "Existing secured debt"
+            }
+          },
+          "required": [
+            "propertyType",
+            "country",
+            "postalCode",
+            "value",
+            "purchasePrice",
+            "tenure",
+            "use",
+            "constructionYear",
+            "energyRating",
+            "existingSecuredDebt"
+          ],
+          "title": "Collateral"
+        },
+        "rateFixMonths": {
+          "type": "integer",
+          "minimum": 0,
+          "title": "Rate fix months"
+        },
+        "amortisationPreference": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Amortisation preference"
+        },
+        "pensionAssetsPledged": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Pension assets pledged"
+        },
+        "existingLoan": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "balance": {
+              "type": "string",
+              "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+              "title": "Balance"
+            },
+            "currentRatePercent": {
+              "type": "string",
+              "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+              "title": "Current rate percent"
+            },
+            "fixedUntil": {
+              "type": "string",
+              "format": "date",
+              "title": "Fixed until"
+            },
+            "earlyRepaymentCharge": {
+              "type": "string",
+              "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+              "title": "Early repayment charge"
+            }
+          },
+          "required": [
+            "balance",
+            "currentRatePercent",
+            "fixedUntil",
+            "earlyRepaymentCharge"
+          ]
+        }
+      },
+      "required": [
+        "purpose",
+        "deposit",
+        "collateral",
+        "rateFixMonths",
+        "amortisationPreference",
+        "pensionAssetsPledged"
+      ],
+      "title": "Mortgage",
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "purpose": {
+                "const": "refinance"
+              }
+            },
+            "required": [
+              "purpose"
+            ]
+          },
+          "then": {
+            "required": [
+              "existingLoan"
+            ],
+            "properties": {
+              "existingLoan": {}
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "borrower",
+    "employment",
+    "finances",
+    "creditSearch",
+    "application",
+    "mortgage"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fictional mortgages required provider inputs",
+  "description": "Synthetic provider specification, not a universal underwriting questionnaire. Real providers must verify all fields and conditions."
+}

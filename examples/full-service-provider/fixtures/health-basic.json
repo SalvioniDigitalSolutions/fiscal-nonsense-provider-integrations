@@ -1,0 +1,111 @@
+{
+  "request": {
+    "schemaVersion": "0.1",
+    "requestId": "synthetic-health-basic",
+    "providerId": "full-service-demo",
+    "productId": "health-basic",
+    "country": "CH",
+    "currency": "CHF",
+    "applicant": {
+      "kind": "individual",
+      "residencyCountry": "CH",
+      "postalCode": "0000",
+      "ageYears": 40
+    },
+    "input": {
+      "family": "insurance",
+      "startDate": "2026-10-01",
+      "termMonths": 12,
+      "paymentPeriod": "month",
+      "risk": {
+        "kind": "person",
+        "insuredPeople": [
+          {
+            "ageYears": 40,
+            "smoker": false,
+            "employment": "employed"
+          }
+        ],
+        "benefitAmount": "100000.00",
+        "benefitPeriod": "lump_sum",
+        "accidentCover": true
+      },
+      "requestedCoverages": [
+        {
+          "id": "health-basic-cover",
+          "limit": null,
+          "deductible": "2500.00",
+          "waitingDays": 0,
+          "deductibleBasis": "annual",
+          "coinsurancePercent": "10.00",
+          "annualCoinsuranceCap": "700.00"
+        }
+      ],
+      "providerData": {
+        "member": {
+          "dateOfBirth": "1986-01-01",
+          "municipalityId": "SYNTHETIC",
+          "canton": "TI",
+          "premiumRegion": "SYNTHETIC",
+          "employmentHoursPerWeek": 40,
+          "permitCategory": "citizen"
+        },
+        "plan": {
+          "model": "standard",
+          "deductible": "2500.00",
+          "accidentCover": false,
+          "startDate": "2026-10-01"
+        }
+      }
+    }
+  },
+  "response": {
+    "schemaVersion": "0.1",
+    "requestId": "synthetic-health-basic",
+    "providerId": "full-service-demo",
+    "mode": "sandbox",
+    "status": "quoted",
+    "quotes": [
+      {
+        "quoteId": "fictional-health-basic",
+        "productId": "health-basic",
+        "productName": "Fictional Basic health insurance",
+        "country": "CH",
+        "currency": "CHF",
+        "priceKind": "indicative",
+        "issuedAt": "2026-09-22T10:00:00Z",
+        "expiresAt": "2026-09-22T10:15:00Z",
+        "quoteUrl": "https://provider.example/quote",
+        "termsUrl": "https://provider.example/terms",
+        "assumptions": "Synthetic offline illustration only. No eligibility, local tax benefit or real price is asserted.",
+        "insurance": {
+          "premium": {
+            "base": "100.00",
+            "taxes": "20.00",
+            "mandatoryFees": "0.00",
+            "total": "120.00",
+            "period": "month"
+          },
+          "startDate": "2026-10-01",
+          "endDate": "2027-09-30",
+          "coverages": [
+            {
+              "id": "health-basic-cover",
+              "limit": null,
+              "deductible": "2500.00",
+              "waitingDays": 0,
+              "deductibleBasis": "annual",
+              "coinsurancePercent": "10.00",
+              "annualCoinsuranceCap": "700.00"
+            }
+          ],
+          "exclusions": [
+            "Fictional fixture: no policy exists."
+          ],
+          "renewal": "manual",
+          "cancellationNoticeDays": 30
+        }
+      }
+    ]
+  }
+}

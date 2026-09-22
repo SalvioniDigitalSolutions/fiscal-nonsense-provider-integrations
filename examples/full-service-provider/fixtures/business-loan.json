@@ -1,0 +1,435 @@
+{
+  "request": {
+    "schemaVersion": "0.1",
+    "requestId": "synthetic-business-loan",
+    "providerId": "full-service-demo",
+    "productId": "business-loan",
+    "country": "CH",
+    "currency": "CHF",
+    "applicant": {
+      "kind": "individual",
+      "residencyCountry": "CH",
+      "postalCode": "0000",
+      "ageYears": 40
+    },
+    "input": {
+      "family": "credit",
+      "facilityType": "installment",
+      "amount": "10000.00",
+      "purpose": "Synthetic business-loan",
+      "repaymentModel": "fully_amortizing",
+      "preferredRateType": "fixed",
+      "monthlyIncome": "6500.00",
+      "monthlyDebtPayments": "200.00",
+      "termMonths": 36,
+      "providerData": {
+        "borrower": {
+          "dateOfBirth": "1986-01-01",
+          "residenceCountry": "CH",
+          "residencePostalCode": "0000",
+          "nationality": "CH",
+          "housingStatus": "tenant",
+          "dependants": 0
+        },
+        "employment": {
+          "status": "employed",
+          "contractType": "permanent",
+          "startDate": "2020-01-01",
+          "probation": false
+        },
+        "finances": {
+          "grossAnnualIncome": "96000.00",
+          "netMonthlyIncome": "6500.00",
+          "otherMonthlyIncome": "0.00",
+          "housingCostMonthly": "1500.00",
+          "livingExpensesMonthly": "1800.00",
+          "existingDebtPaymentsMonthly": "200.00",
+          "existingDebtBalance": "5000.00",
+          "hasArrears": false,
+          "priorInsolvency": false
+        },
+        "creditSearch": {
+          "authorised": false,
+          "assessmentMode": "illustrative_no_credit_check"
+        },
+        "application": {
+          "joint": false,
+          "purpose": "SYNTHETIC",
+          "requestedStartDate": "2026-10-01"
+        },
+        "business": {
+          "legalForm": "limited_company",
+          "industryCode": "SYNTHETIC",
+          "tradingSince": "2020-01-01",
+          "annualRevenue": "500000.00",
+          "annualOperatingProfit": "50000.00",
+          "totalAssets": "100000.00",
+          "totalLiabilities": "20000.00",
+          "personalGuaranteeOffered": false
+        }
+      }
+    }
+  },
+  "response": {
+    "schemaVersion": "0.1",
+    "requestId": "synthetic-business-loan",
+    "providerId": "full-service-demo",
+    "mode": "sandbox",
+    "status": "quoted",
+    "quotes": [
+      {
+        "quoteId": "fictional-business-loan",
+        "productId": "business-loan",
+        "productName": "Fictional Business loans",
+        "country": "CH",
+        "currency": "CHF",
+        "priceKind": "indicative",
+        "issuedAt": "2026-09-22T10:00:00Z",
+        "expiresAt": "2026-09-22T10:15:00Z",
+        "quoteUrl": "https://provider.example/quote",
+        "termsUrl": "https://provider.example/terms",
+        "assumptions": "Synthetic offline illustration only. No eligibility, local tax benefit or real price is asserted.",
+        "credit": {
+          "facilityType": "installment",
+          "amount": "10000.00",
+          "nominalAnnualRatePercent": "6.00",
+          "rateType": "fixed",
+          "apr": null,
+          "aprUnavailableReason": "No jurisdiction-specific APR certified for this fictional fixture.",
+          "fees": [],
+          "repaymentModel": "fully_amortizing",
+          "termMonths": 36,
+          "repaymentSchedule": [
+            {
+              "number": 1,
+              "date": "2026-11-01",
+              "payment": "304.22",
+              "principal": "254.22",
+              "interest": "50.00",
+              "fees": "0.00",
+              "balance": "9745.78"
+            },
+            {
+              "number": 2,
+              "date": "2026-12-01",
+              "payment": "304.22",
+              "principal": "255.49",
+              "interest": "48.73",
+              "fees": "0.00",
+              "balance": "9490.29"
+            },
+            {
+              "number": 3,
+              "date": "2027-01-01",
+              "payment": "304.22",
+              "principal": "256.77",
+              "interest": "47.45",
+              "fees": "0.00",
+              "balance": "9233.52"
+            },
+            {
+              "number": 4,
+              "date": "2027-02-01",
+              "payment": "304.22",
+              "principal": "258.05",
+              "interest": "46.17",
+              "fees": "0.00",
+              "balance": "8975.47"
+            },
+            {
+              "number": 5,
+              "date": "2027-03-01",
+              "payment": "304.22",
+              "principal": "259.34",
+              "interest": "44.88",
+              "fees": "0.00",
+              "balance": "8716.13"
+            },
+            {
+              "number": 6,
+              "date": "2027-04-01",
+              "payment": "304.22",
+              "principal": "260.64",
+              "interest": "43.58",
+              "fees": "0.00",
+              "balance": "8455.49"
+            },
+            {
+              "number": 7,
+              "date": "2027-05-01",
+              "payment": "304.22",
+              "principal": "261.94",
+              "interest": "42.28",
+              "fees": "0.00",
+              "balance": "8193.55"
+            },
+            {
+              "number": 8,
+              "date": "2027-06-01",
+              "payment": "304.22",
+              "principal": "263.25",
+              "interest": "40.97",
+              "fees": "0.00",
+              "balance": "7930.30"
+            },
+            {
+              "number": 9,
+              "date": "2027-07-01",
+              "payment": "304.22",
+              "principal": "264.57",
+              "interest": "39.65",
+              "fees": "0.00",
+              "balance": "7665.73"
+            },
+            {
+              "number": 10,
+              "date": "2027-08-01",
+              "payment": "304.22",
+              "principal": "265.89",
+              "interest": "38.33",
+              "fees": "0.00",
+              "balance": "7399.84"
+            },
+            {
+              "number": 11,
+              "date": "2027-09-01",
+              "payment": "304.22",
+              "principal": "267.22",
+              "interest": "37.00",
+              "fees": "0.00",
+              "balance": "7132.62"
+            },
+            {
+              "number": 12,
+              "date": "2027-10-01",
+              "payment": "304.22",
+              "principal": "268.56",
+              "interest": "35.66",
+              "fees": "0.00",
+              "balance": "6864.06"
+            },
+            {
+              "number": 13,
+              "date": "2027-11-01",
+              "payment": "304.22",
+              "principal": "269.90",
+              "interest": "34.32",
+              "fees": "0.00",
+              "balance": "6594.16"
+            },
+            {
+              "number": 14,
+              "date": "2027-12-01",
+              "payment": "304.22",
+              "principal": "271.25",
+              "interest": "32.97",
+              "fees": "0.00",
+              "balance": "6322.91"
+            },
+            {
+              "number": 15,
+              "date": "2028-01-01",
+              "payment": "304.22",
+              "principal": "272.61",
+              "interest": "31.61",
+              "fees": "0.00",
+              "balance": "6050.30"
+            },
+            {
+              "number": 16,
+              "date": "2028-02-01",
+              "payment": "304.22",
+              "principal": "273.97",
+              "interest": "30.25",
+              "fees": "0.00",
+              "balance": "5776.33"
+            },
+            {
+              "number": 17,
+              "date": "2028-03-01",
+              "payment": "304.22",
+              "principal": "275.34",
+              "interest": "28.88",
+              "fees": "0.00",
+              "balance": "5500.99"
+            },
+            {
+              "number": 18,
+              "date": "2028-04-01",
+              "payment": "304.22",
+              "principal": "276.72",
+              "interest": "27.50",
+              "fees": "0.00",
+              "balance": "5224.27"
+            },
+            {
+              "number": 19,
+              "date": "2028-05-01",
+              "payment": "304.22",
+              "principal": "278.10",
+              "interest": "26.12",
+              "fees": "0.00",
+              "balance": "4946.17"
+            },
+            {
+              "number": 20,
+              "date": "2028-06-01",
+              "payment": "304.22",
+              "principal": "279.49",
+              "interest": "24.73",
+              "fees": "0.00",
+              "balance": "4666.68"
+            },
+            {
+              "number": 21,
+              "date": "2028-07-01",
+              "payment": "304.22",
+              "principal": "280.89",
+              "interest": "23.33",
+              "fees": "0.00",
+              "balance": "4385.79"
+            },
+            {
+              "number": 22,
+              "date": "2028-08-01",
+              "payment": "304.22",
+              "principal": "282.29",
+              "interest": "21.93",
+              "fees": "0.00",
+              "balance": "4103.50"
+            },
+            {
+              "number": 23,
+              "date": "2028-09-01",
+              "payment": "304.22",
+              "principal": "283.70",
+              "interest": "20.52",
+              "fees": "0.00",
+              "balance": "3819.80"
+            },
+            {
+              "number": 24,
+              "date": "2028-10-01",
+              "payment": "304.22",
+              "principal": "285.12",
+              "interest": "19.10",
+              "fees": "0.00",
+              "balance": "3534.68"
+            },
+            {
+              "number": 25,
+              "date": "2028-11-01",
+              "payment": "304.22",
+              "principal": "286.55",
+              "interest": "17.67",
+              "fees": "0.00",
+              "balance": "3248.13"
+            },
+            {
+              "number": 26,
+              "date": "2028-12-01",
+              "payment": "304.22",
+              "principal": "287.98",
+              "interest": "16.24",
+              "fees": "0.00",
+              "balance": "2960.15"
+            },
+            {
+              "number": 27,
+              "date": "2029-01-01",
+              "payment": "304.22",
+              "principal": "289.42",
+              "interest": "14.80",
+              "fees": "0.00",
+              "balance": "2670.73"
+            },
+            {
+              "number": 28,
+              "date": "2029-02-01",
+              "payment": "304.22",
+              "principal": "290.87",
+              "interest": "13.35",
+              "fees": "0.00",
+              "balance": "2379.86"
+            },
+            {
+              "number": 29,
+              "date": "2029-03-01",
+              "payment": "304.22",
+              "principal": "292.32",
+              "interest": "11.90",
+              "fees": "0.00",
+              "balance": "2087.54"
+            },
+            {
+              "number": 30,
+              "date": "2029-04-01",
+              "payment": "304.22",
+              "principal": "293.78",
+              "interest": "10.44",
+              "fees": "0.00",
+              "balance": "1793.76"
+            },
+            {
+              "number": 31,
+              "date": "2029-05-01",
+              "payment": "304.22",
+              "principal": "295.25",
+              "interest": "8.97",
+              "fees": "0.00",
+              "balance": "1498.51"
+            },
+            {
+              "number": 32,
+              "date": "2029-06-01",
+              "payment": "304.22",
+              "principal": "296.73",
+              "interest": "7.49",
+              "fees": "0.00",
+              "balance": "1201.78"
+            },
+            {
+              "number": 33,
+              "date": "2029-07-01",
+              "payment": "304.22",
+              "principal": "298.21",
+              "interest": "6.01",
+              "fees": "0.00",
+              "balance": "903.57"
+            },
+            {
+              "number": 34,
+              "date": "2029-08-01",
+              "payment": "304.22",
+              "principal": "299.70",
+              "interest": "4.52",
+              "fees": "0.00",
+              "balance": "603.87"
+            },
+            {
+              "number": 35,
+              "date": "2029-09-01",
+              "payment": "304.22",
+              "principal": "301.20",
+              "interest": "3.02",
+              "fees": "0.00",
+              "balance": "302.67"
+            },
+            {
+              "number": 36,
+              "date": "2029-10-01",
+              "payment": "304.18",
+              "principal": "302.67",
+              "interest": "1.51",
+              "fees": "0.00",
+              "balance": "0.00"
+            }
+          ],
+          "totalPayable": "10951.88",
+          "totalInterest": "951.88",
+          "finalBalance": "0.00"
+        }
+      }
+    ]
+  }
+}

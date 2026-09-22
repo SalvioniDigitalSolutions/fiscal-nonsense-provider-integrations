@@ -1,0 +1,368 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "common": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "policyholder": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "dateOfBirth": {
+              "type": "string",
+              "format": "date",
+              "title": "Date of birth"
+            },
+            "nationality": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Nationality"
+            },
+            "residenceCountry": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Residence country"
+            },
+            "residencePostalCode": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Residence postal code"
+            },
+            "residenceMunicipality": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Residence municipality"
+            },
+            "occupationCode": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Occupation code"
+            },
+            "householdAdults": {
+              "type": "integer",
+              "minimum": 0,
+              "title": "Household adults"
+            },
+            "householdChildren": {
+              "type": "integer",
+              "minimum": 0,
+              "title": "Household children"
+            }
+          },
+          "required": [
+            "dateOfBirth",
+            "nationality",
+            "residenceCountry",
+            "residencePostalCode",
+            "residenceMunicipality",
+            "occupationCode",
+            "householdAdults",
+            "householdChildren"
+          ],
+          "title": "Policyholder"
+        },
+        "history": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "previousInsurerId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Previous insurer id"
+            },
+            "yearsContinuouslyInsured": {
+              "type": "integer",
+              "minimum": 0,
+              "title": "Years continuously insured"
+            },
+            "previousPolicyCancelledByInsurer": {
+              "type": "boolean",
+              "title": "Previous policy cancelled by insurer"
+            },
+            "hasClaims": {
+              "type": "boolean",
+              "title": "Has claims"
+            },
+            "claims": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "date": {
+                    "type": "string",
+                    "format": "date",
+                    "title": "Date"
+                  },
+                  "type": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1000,
+                    "title": "Type"
+                  },
+                  "paidAmount": {
+                    "type": "string",
+                    "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+                    "title": "Paid amount"
+                  },
+                  "open": {
+                    "type": "boolean",
+                    "title": "Open"
+                  }
+                },
+                "required": [
+                  "date",
+                  "type",
+                  "paidAmount",
+                  "open"
+                ]
+              }
+            }
+          },
+          "required": [
+            "previousInsurerId",
+            "yearsContinuouslyInsured",
+            "previousPolicyCancelledByInsurer",
+            "hasClaims"
+          ],
+          "title": "History",
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "hasClaims": {
+                    "const": true
+                  }
+                },
+                "required": [
+                  "hasClaims"
+                ]
+              },
+              "then": {
+                "required": [
+                  "claims"
+                ],
+                "properties": {
+                  "claims": {}
+                }
+              }
+            }
+          ]
+        },
+        "policy": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "territories": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1000
+              },
+              "title": "Territories"
+            },
+            "paymentMethod": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Payment method"
+            },
+            "marketingConsent": {
+              "type": "boolean",
+              "title": "Marketing consent"
+            }
+          },
+          "required": [
+            "territories",
+            "paymentMethod",
+            "marketingConsent"
+          ],
+          "title": "Policy"
+        }
+      },
+      "required": [
+        "policyholder",
+        "history",
+        "policy"
+      ],
+      "title": "Common"
+    },
+    "property": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "postalCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Postal code"
+        },
+        "municipality": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Municipality"
+        },
+        "buildingType": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Building type"
+        },
+        "constructionYear": {
+          "type": "integer",
+          "minimum": 0,
+          "title": "Construction year"
+        },
+        "floorAreaSqm": {
+          "type": "integer",
+          "minimum": 0,
+          "title": "Floor area sqm"
+        },
+        "constructionMaterial": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Construction material"
+        },
+        "roofMaterial": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Roof material"
+        },
+        "occupancy": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Occupancy"
+        },
+        "occupiedDaysPerYear": {
+          "type": "integer",
+          "minimum": 0,
+          "title": "Occupied days per year"
+        },
+        "adults": {
+          "type": "integer",
+          "minimum": 0,
+          "title": "Adults"
+        },
+        "children": {
+          "type": "integer",
+          "minimum": 0,
+          "title": "Children"
+        },
+        "securityAlarm": {
+          "type": "boolean",
+          "title": "Security alarm"
+        },
+        "smokeDetectors": {
+          "type": "boolean",
+          "title": "Smoke detectors"
+        },
+        "priorFlood": {
+          "type": "boolean",
+          "title": "Prior flood"
+        },
+        "businessUse": {
+          "type": "boolean",
+          "title": "Business use"
+        }
+      },
+      "required": [
+        "postalCode",
+        "municipality",
+        "buildingType",
+        "constructionYear",
+        "floorAreaSqm",
+        "constructionMaterial",
+        "roofMaterial",
+        "occupancy",
+        "occupiedDaysPerYear",
+        "adults",
+        "children",
+        "securityAlarm",
+        "smokeDetectors",
+        "priorFlood",
+        "businessUse"
+      ],
+      "title": "Property"
+    },
+    "valuables": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "jewellery": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Jewellery"
+        },
+        "art": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Art"
+        },
+        "electronics": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Electronics"
+        }
+      },
+      "required": [
+        "jewellery",
+        "art",
+        "electronics"
+      ],
+      "title": "Valuables"
+    },
+    "cover": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "accidentalDamage": {
+          "type": "boolean",
+          "title": "Accidental damage"
+        },
+        "naturalHazards": {
+          "type": "boolean",
+          "title": "Natural hazards"
+        },
+        "theftOutsideHome": {
+          "type": "boolean",
+          "title": "Theft outside home"
+        },
+        "replacementValue": {
+          "type": "boolean",
+          "title": "Replacement value"
+        }
+      },
+      "required": [
+        "accidentalDamage",
+        "naturalHazards",
+        "theftOutsideHome",
+        "replacementValue"
+      ],
+      "title": "Cover"
+    }
+  },
+  "required": [
+    "common",
+    "property",
+    "valuables",
+    "cover"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fictional home required provider inputs",
+  "description": "Synthetic provider specification, not a universal underwriting questionnaire. Real providers must verify all fields and conditions."
+}

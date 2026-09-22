@@ -1,0 +1,135 @@
+{
+  "request": {
+    "schemaVersion": "0.1",
+    "requestId": "synthetic-legal",
+    "providerId": "full-service-demo",
+    "productId": "legal",
+    "country": "CH",
+    "currency": "CHF",
+    "applicant": {
+      "kind": "individual",
+      "residencyCountry": "CH",
+      "postalCode": "0000",
+      "ageYears": 40
+    },
+    "input": {
+      "family": "insurance",
+      "startDate": "2026-10-01",
+      "termMonths": 12,
+      "paymentPeriod": "year",
+      "risk": {
+        "kind": "personal-liability",
+        "householdAdults": 2,
+        "householdChildren": 0,
+        "activities": [
+          "Fictional ordinary household activities"
+        ]
+      },
+      "requestedCoverages": [
+        {
+          "id": "legal-cover",
+          "limit": "100000.00",
+          "deductible": "500.00",
+          "waitingDays": 0,
+          "deductibleBasis": "per_claim",
+          "coinsurancePercent": "0.00",
+          "annualCoinsuranceCap": null
+        }
+      ],
+      "providerData": {
+        "common": {
+          "policyholder": {
+            "dateOfBirth": "1986-01-01",
+            "nationality": "CH",
+            "residenceCountry": "CH",
+            "residencePostalCode": "0000",
+            "residenceMunicipality": "Fictional municipality",
+            "occupationCode": "SYNTHETIC",
+            "householdAdults": 2,
+            "householdChildren": 0
+          },
+          "history": {
+            "previousInsurerId": "none",
+            "yearsContinuouslyInsured": 5,
+            "previousPolicyCancelledByInsurer": false,
+            "hasClaims": false
+          },
+          "policy": {
+            "territories": [
+              "CH"
+            ],
+            "paymentMethod": "bank_transfer",
+            "marketingConsent": false
+          }
+        },
+        "scope": {
+          "household": true,
+          "motor": false,
+          "employment": true,
+          "property": false,
+          "business": false,
+          "countries": [
+            "CH"
+          ]
+        },
+        "disputes": {
+          "hasExistingDispute": false,
+          "awareOfLikelyDispute": false
+        },
+        "cover": {
+          "limit": "300000.00",
+          "waitingMonths": 3
+        }
+      }
+    }
+  },
+  "response": {
+    "schemaVersion": "0.1",
+    "requestId": "synthetic-legal",
+    "providerId": "full-service-demo",
+    "mode": "sandbox",
+    "status": "quoted",
+    "quotes": [
+      {
+        "quoteId": "fictional-legal",
+        "productId": "legal",
+        "productName": "Fictional Legal expenses insurance",
+        "country": "CH",
+        "currency": "CHF",
+        "priceKind": "indicative",
+        "issuedAt": "2026-09-22T10:00:00Z",
+        "expiresAt": "2026-09-22T10:15:00Z",
+        "quoteUrl": "https://provider.example/quote",
+        "termsUrl": "https://provider.example/terms",
+        "assumptions": "Synthetic offline illustration only. No eligibility, local tax benefit or real price is asserted.",
+        "insurance": {
+          "premium": {
+            "base": "100.00",
+            "taxes": "20.00",
+            "mandatoryFees": "0.00",
+            "total": "120.00",
+            "period": "year"
+          },
+          "startDate": "2026-10-01",
+          "endDate": "2027-09-30",
+          "coverages": [
+            {
+              "id": "legal-cover",
+              "limit": "100000.00",
+              "deductible": "500.00",
+              "waitingDays": 0,
+              "deductibleBasis": "per_claim",
+              "coinsurancePercent": "0.00",
+              "annualCoinsuranceCap": null
+            }
+          ],
+          "exclusions": [
+            "Fictional fixture: no policy exists."
+          ],
+          "renewal": "manual",
+          "cancellationNoticeDays": 30
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,334 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "common": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "policyholder": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "dateOfBirth": {
+              "type": "string",
+              "format": "date",
+              "title": "Date of birth"
+            },
+            "nationality": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Nationality"
+            },
+            "residenceCountry": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Residence country"
+            },
+            "residencePostalCode": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Residence postal code"
+            },
+            "residenceMunicipality": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Residence municipality"
+            },
+            "occupationCode": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Occupation code"
+            },
+            "householdAdults": {
+              "type": "integer",
+              "minimum": 0,
+              "title": "Household adults"
+            },
+            "householdChildren": {
+              "type": "integer",
+              "minimum": 0,
+              "title": "Household children"
+            }
+          },
+          "required": [
+            "dateOfBirth",
+            "nationality",
+            "residenceCountry",
+            "residencePostalCode",
+            "residenceMunicipality",
+            "occupationCode",
+            "householdAdults",
+            "householdChildren"
+          ],
+          "title": "Policyholder"
+        },
+        "history": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "previousInsurerId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Previous insurer id"
+            },
+            "yearsContinuouslyInsured": {
+              "type": "integer",
+              "minimum": 0,
+              "title": "Years continuously insured"
+            },
+            "previousPolicyCancelledByInsurer": {
+              "type": "boolean",
+              "title": "Previous policy cancelled by insurer"
+            },
+            "hasClaims": {
+              "type": "boolean",
+              "title": "Has claims"
+            },
+            "claims": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "date": {
+                    "type": "string",
+                    "format": "date",
+                    "title": "Date"
+                  },
+                  "type": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1000,
+                    "title": "Type"
+                  },
+                  "paidAmount": {
+                    "type": "string",
+                    "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+                    "title": "Paid amount"
+                  },
+                  "open": {
+                    "type": "boolean",
+                    "title": "Open"
+                  }
+                },
+                "required": [
+                  "date",
+                  "type",
+                  "paidAmount",
+                  "open"
+                ]
+              }
+            }
+          },
+          "required": [
+            "previousInsurerId",
+            "yearsContinuouslyInsured",
+            "previousPolicyCancelledByInsurer",
+            "hasClaims"
+          ],
+          "title": "History",
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "hasClaims": {
+                    "const": true
+                  }
+                },
+                "required": [
+                  "hasClaims"
+                ]
+              },
+              "then": {
+                "required": [
+                  "claims"
+                ],
+                "properties": {
+                  "claims": {}
+                }
+              }
+            }
+          ]
+        },
+        "policy": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "territories": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1000
+              },
+              "title": "Territories"
+            },
+            "paymentMethod": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Payment method"
+            },
+            "marketingConsent": {
+              "type": "boolean",
+              "title": "Marketing consent"
+            }
+          },
+          "required": [
+            "territories",
+            "paymentMethod",
+            "marketingConsent"
+          ],
+          "title": "Policy"
+        }
+      },
+      "required": [
+        "policyholder",
+        "history",
+        "policy"
+      ],
+      "title": "Common"
+    },
+    "trip": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "bookingDate": {
+          "type": "string",
+          "format": "date",
+          "title": "Booking date"
+        },
+        "departureDate": {
+          "type": "string",
+          "format": "date",
+          "title": "Departure date"
+        },
+        "returnDate": {
+          "type": "string",
+          "format": "date",
+          "title": "Return date"
+        },
+        "countries": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          },
+          "title": "Countries"
+        },
+        "purpose": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Purpose"
+        },
+        "cruise": {
+          "type": "boolean",
+          "title": "Cruise"
+        },
+        "winterSports": {
+          "type": "boolean",
+          "title": "Winter sports"
+        },
+        "businessActivities": {
+          "type": "boolean",
+          "title": "Business activities"
+        },
+        "cancellationValue": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Cancellation value"
+        }
+      },
+      "required": [
+        "bookingDate",
+        "departureDate",
+        "returnDate",
+        "countries",
+        "purpose",
+        "cruise",
+        "winterSports",
+        "businessActivities",
+        "cancellationValue"
+      ],
+      "title": "Trip"
+    },
+    "travellers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "dateOfBirth": {
+            "type": "string",
+            "format": "date",
+            "title": "Date of birth"
+          },
+          "residenceCountry": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000,
+            "title": "Residence country"
+          },
+          "hasPreexistingConditions": {
+            "type": "boolean",
+            "title": "Has preexisting conditions"
+          }
+        },
+        "required": [
+          "dateOfBirth",
+          "residenceCountry",
+          "hasPreexistingConditions"
+        ]
+      },
+      "title": "Travellers"
+    },
+    "cover": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "medicalLimit": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Medical limit"
+        },
+        "baggageLimit": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Baggage limit"
+        },
+        "cancellation": {
+          "type": "boolean",
+          "title": "Cancellation"
+        }
+      },
+      "required": [
+        "medicalLimit",
+        "baggageLimit",
+        "cancellation"
+      ],
+      "title": "Cover"
+    }
+  },
+  "required": [
+    "common",
+    "trip",
+    "travellers",
+    "cover"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fictional travel required provider inputs",
+  "description": "Synthetic provider specification, not a universal underwriting questionnaire. Real providers must verify all fields and conditions."
+}

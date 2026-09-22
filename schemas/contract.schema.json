@@ -1,0 +1,1476 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fiscalnonsense.com/specs/provider-contract/0.1",
+  "$defs": {
+    "money": {
+      "type": "string",
+      "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$"
+    },
+    "percent": {
+      "type": "string",
+      "pattern": "^(100|[0-9]{1,2})\\.\\d{2}$"
+    },
+    "signedPercent": {
+      "type": "string",
+      "pattern": "^-?(100|[0-9]{1,2})\\.\\d{2}$"
+    },
+    "fee": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "amount": {
+          "$ref": "#/$defs/money"
+        },
+        "timing": {
+          "type": "string",
+          "enum": [
+            "upfront",
+            "monthly",
+            "annual",
+            "at_end"
+          ]
+        },
+        "includedInTotal": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "amount",
+        "timing",
+        "includedInTotal"
+      ]
+    },
+    "applicant": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "individual",
+            "organisation"
+          ]
+        },
+        "residencyCountry": {
+          "type": "string",
+          "enum": [
+            "CH",
+            "US",
+            "GB",
+            "DE",
+            "IT"
+          ]
+        },
+        "postalCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "ageYears": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 120
+        }
+      },
+      "required": [
+        "kind",
+        "residencyCountry",
+        "postalCode"
+      ]
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "limit": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/money"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "deductible": {
+          "$ref": "#/$defs/money"
+        },
+        "waitingDays": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "deductibleBasis": {
+          "type": "string",
+          "enum": [
+            "per_claim",
+            "annual",
+            "none"
+          ]
+        },
+        "coinsurancePercent": {
+          "$ref": "#/$defs/percent"
+        },
+        "annualCoinsuranceCap": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/money"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "limit",
+        "deductible",
+        "waitingDays",
+        "deductibleBasis",
+        "coinsurancePercent",
+        "annualCoinsuranceCap"
+      ]
+    },
+    "location": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "country": {
+          "type": "string",
+          "enum": [
+            "CH",
+            "US",
+            "GB",
+            "DE",
+            "IT"
+          ]
+        },
+        "postalCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        }
+      },
+      "required": [
+        "country",
+        "postalCode"
+      ]
+    },
+    "risk-vehicle": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "vehicle"
+        },
+        "vehicle": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "car",
+                "motorcycle",
+                "boat"
+              ]
+            },
+            "year": {
+              "type": "integer",
+              "minimum": 1900,
+              "maximum": 2200
+            },
+            "value": {
+              "$ref": "#/$defs/money"
+            },
+            "annualDistanceKm": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "use": {
+              "type": "string",
+              "enum": [
+                "private",
+                "commuting",
+                "business"
+              ]
+            }
+          },
+          "required": [
+            "type",
+            "year",
+            "value",
+            "annualDistanceKm",
+            "use"
+          ]
+        },
+        "drivers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "ageYears": {
+                "type": "integer",
+                "minimum": 16,
+                "maximum": 110
+              },
+              "licenceYears": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "claimsLastFiveYears": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "ageYears",
+              "licenceYears",
+              "claimsLastFiveYears"
+            ]
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "kind",
+        "vehicle",
+        "drivers"
+      ]
+    },
+    "risk-property": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "property"
+        },
+        "location": {
+          "$ref": "#/$defs/location"
+        },
+        "occupancy": {
+          "type": "string",
+          "enum": [
+            "owner",
+            "tenant",
+            "landlord",
+            "business"
+          ]
+        },
+        "buildingValue": {
+          "$ref": "#/$defs/money"
+        },
+        "contentsValue": {
+          "$ref": "#/$defs/money"
+        }
+      },
+      "required": [
+        "kind",
+        "location",
+        "occupancy",
+        "buildingValue",
+        "contentsValue"
+      ]
+    },
+    "risk-person": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "person"
+        },
+        "insuredPeople": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "ageYears": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 120
+              },
+              "smoker": {
+                "type": "boolean"
+              },
+              "employment": {
+                "type": "string",
+                "enum": [
+                  "employed",
+                  "self_employed",
+                  "retired",
+                  "student",
+                  "other"
+                ]
+              }
+            },
+            "required": [
+              "ageYears",
+              "smoker",
+              "employment"
+            ]
+          },
+          "minItems": 1
+        },
+        "benefitAmount": {
+          "$ref": "#/$defs/money"
+        },
+        "benefitPeriod": {
+          "type": "string",
+          "enum": [
+            "lump_sum",
+            "month",
+            "year"
+          ]
+        },
+        "accidentCover": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "kind",
+        "insuredPeople",
+        "benefitAmount",
+        "benefitPeriod",
+        "accidentCover"
+      ]
+    },
+    "risk-travel": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "travel"
+        },
+        "departure": {
+          "type": "string",
+          "format": "date"
+        },
+        "return": {
+          "type": "string",
+          "format": "date"
+        },
+        "destinationCountries": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "minItems": 1
+        },
+        "travellerAges": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 120
+          },
+          "minItems": 1
+        },
+        "tripCost": {
+          "$ref": "#/$defs/money"
+        }
+      },
+      "required": [
+        "kind",
+        "departure",
+        "return",
+        "destinationCountries",
+        "travellerAges",
+        "tripCost"
+      ]
+    },
+    "risk-pet": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "pet"
+        },
+        "species": {
+          "type": "string",
+          "enum": [
+            "dog",
+            "cat",
+            "other"
+          ]
+        },
+        "ageYears": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 50
+        },
+        "breed": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        }
+      },
+      "required": [
+        "kind",
+        "species",
+        "ageYears",
+        "breed"
+      ]
+    },
+    "risk-business": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "business"
+        },
+        "industryCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "annualRevenue": {
+          "$ref": "#/$defs/money"
+        },
+        "employees": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "insuredAssetValue": {
+          "$ref": "#/$defs/money"
+        },
+        "territories": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "kind",
+        "industryCode",
+        "annualRevenue",
+        "employees",
+        "insuredAssetValue",
+        "territories"
+      ]
+    },
+    "risk-personal-liability": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "personal-liability"
+        },
+        "householdAdults": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "householdChildren": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "activities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "kind",
+        "householdAdults",
+        "householdChildren",
+        "activities"
+      ]
+    },
+    "risk-specialist": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "specialist"
+        },
+        "riskDescription": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "insuredValue": {
+          "$ref": "#/$defs/money"
+        },
+        "territories": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "kind",
+        "riskDescription",
+        "insuredValue",
+        "territories"
+      ]
+    },
+    "insuranceInput": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "family": {
+          "const": "insurance"
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "termMonths": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "paymentPeriod": {
+          "type": "string",
+          "enum": [
+            "month",
+            "year",
+            "single"
+          ]
+        },
+        "risk": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/risk-vehicle"
+            },
+            {
+              "$ref": "#/$defs/risk-property"
+            },
+            {
+              "$ref": "#/$defs/risk-person"
+            },
+            {
+              "$ref": "#/$defs/risk-travel"
+            },
+            {
+              "$ref": "#/$defs/risk-pet"
+            },
+            {
+              "$ref": "#/$defs/risk-business"
+            },
+            {
+              "$ref": "#/$defs/risk-personal-liability"
+            },
+            {
+              "$ref": "#/$defs/risk-specialist"
+            }
+          ]
+        },
+        "requestedCoverages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/coverage"
+          },
+          "minItems": 1
+        },
+        "providerData": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "family",
+        "startDate",
+        "termMonths",
+        "paymentPeriod",
+        "risk",
+        "requestedCoverages",
+        "providerData"
+      ]
+    },
+    "creditInput": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "family": {
+          "const": "credit"
+        },
+        "facilityType": {
+          "type": "string",
+          "enum": [
+            "installment",
+            "revolving"
+          ]
+        },
+        "amount": {
+          "$ref": "#/$defs/money"
+        },
+        "purpose": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "termMonths": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "repaymentModel": {
+          "type": "string",
+          "enum": [
+            "fully_amortizing",
+            "interest_only",
+            "partial_amortization",
+            "deferred",
+            "lease",
+            "bnpl",
+            "revolving"
+          ]
+        },
+        "preferredRateType": {
+          "type": "string",
+          "enum": [
+            "fixed",
+            "variable"
+          ]
+        },
+        "monthlyIncome": {
+          "$ref": "#/$defs/money"
+        },
+        "monthlyDebtPayments": {
+          "$ref": "#/$defs/money"
+        },
+        "collateralValue": {
+          "$ref": "#/$defs/money"
+        },
+        "deposit": {
+          "$ref": "#/$defs/money"
+        },
+        "residualValue": {
+          "$ref": "#/$defs/money"
+        },
+        "assumedDrawnBalance": {
+          "$ref": "#/$defs/money"
+        },
+        "providerData": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "family",
+        "facilityType",
+        "amount",
+        "purpose",
+        "repaymentModel",
+        "preferredRateType",
+        "monthlyIncome",
+        "monthlyDebtPayments",
+        "providerData"
+      ]
+    },
+    "retirementInput": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "family": {
+          "const": "retirement"
+        },
+        "retirementAgeYears": {
+          "type": "integer",
+          "minimum": 18,
+          "maximum": 100
+        },
+        "initialCapital": {
+          "$ref": "#/$defs/money"
+        },
+        "contribution": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "amount": {
+              "$ref": "#/$defs/money"
+            },
+            "period": {
+              "type": "string",
+              "enum": [
+                "month",
+                "year",
+                "single"
+              ]
+            }
+          },
+          "required": [
+            "amount",
+            "period"
+          ]
+        },
+        "payout": {
+          "type": "string",
+          "enum": [
+            "capital",
+            "annuity",
+            "undecided"
+          ]
+        },
+        "riskPreference": {
+          "type": "string",
+          "enum": [
+            "capital_preservation",
+            "balanced",
+            "growth"
+          ]
+        },
+        "schemeType": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "employment": {
+          "type": "string",
+          "enum": [
+            "employed",
+            "self_employed",
+            "not_employed"
+          ]
+        },
+        "transferAmount": {
+          "$ref": "#/$defs/money"
+        },
+        "providerData": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "family",
+        "retirementAgeYears",
+        "initialCapital",
+        "contribution",
+        "payout",
+        "riskPreference",
+        "schemeType",
+        "employment",
+        "transferAmount",
+        "providerData"
+      ]
+    },
+    "request": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "schemaVersion": {
+          "const": "0.1"
+        },
+        "requestId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "providerId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "productId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "country": {
+          "type": "string",
+          "enum": [
+            "CH",
+            "US",
+            "GB",
+            "DE",
+            "IT"
+          ]
+        },
+        "currency": {
+          "type": "string",
+          "enum": [
+            "CHF",
+            "USD",
+            "GBP",
+            "EUR"
+          ]
+        },
+        "applicant": {
+          "$ref": "#/$defs/applicant"
+        },
+        "input": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/insuranceInput"
+            },
+            {
+              "$ref": "#/$defs/creditInput"
+            },
+            {
+              "$ref": "#/$defs/retirementInput"
+            }
+          ]
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "requestId",
+        "providerId",
+        "productId",
+        "country",
+        "currency",
+        "applicant",
+        "input"
+      ]
+    },
+    "insuranceOutput": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "premium": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "base": {
+              "$ref": "#/$defs/money"
+            },
+            "taxes": {
+              "$ref": "#/$defs/money"
+            },
+            "mandatoryFees": {
+              "$ref": "#/$defs/money"
+            },
+            "total": {
+              "$ref": "#/$defs/money"
+            },
+            "period": {
+              "type": "string",
+              "enum": [
+                "month",
+                "year",
+                "single"
+              ]
+            }
+          },
+          "required": [
+            "base",
+            "taxes",
+            "mandatoryFees",
+            "total",
+            "period"
+          ]
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "endDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "coverages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/coverage"
+          },
+          "minItems": 1
+        },
+        "exclusions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "minItems": 1
+        },
+        "renewal": {
+          "type": "string",
+          "enum": [
+            "automatic",
+            "manual",
+            "none"
+          ]
+        },
+        "cancellationNoticeDays": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "premium",
+        "startDate",
+        "endDate",
+        "coverages",
+        "exclusions",
+        "renewal",
+        "cancellationNoticeDays"
+      ]
+    },
+    "payment": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "number": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "payment": {
+          "$ref": "#/$defs/money"
+        },
+        "principal": {
+          "$ref": "#/$defs/money"
+        },
+        "interest": {
+          "$ref": "#/$defs/money"
+        },
+        "fees": {
+          "$ref": "#/$defs/money"
+        },
+        "balance": {
+          "$ref": "#/$defs/money"
+        }
+      },
+      "required": [
+        "number",
+        "date",
+        "payment",
+        "principal",
+        "interest",
+        "fees",
+        "balance"
+      ]
+    },
+    "apr": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "percent": {
+              "$ref": "#/$defs/percent"
+            },
+            "jurisdiction": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            },
+            "definition": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            }
+          },
+          "required": [
+            "percent",
+            "jurisdiction",
+            "definition"
+          ]
+        }
+      ]
+    },
+    "creditOutput": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "facilityType": {
+          "type": "string",
+          "enum": [
+            "installment",
+            "revolving"
+          ]
+        },
+        "amount": {
+          "$ref": "#/$defs/money"
+        },
+        "nominalAnnualRatePercent": {
+          "$ref": "#/$defs/percent"
+        },
+        "rateType": {
+          "type": "string",
+          "enum": [
+            "fixed",
+            "variable"
+          ]
+        },
+        "apr": {
+          "$ref": "#/$defs/apr"
+        },
+        "aprUnavailableReason": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "fees": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/fee"
+          },
+          "minItems": 0
+        },
+        "termMonths": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "repaymentModel": {
+          "type": "string",
+          "enum": [
+            "fully_amortizing",
+            "interest_only",
+            "partial_amortization",
+            "deferred",
+            "lease",
+            "bnpl",
+            "revolving"
+          ]
+        },
+        "repaymentSchedule": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/payment"
+          },
+          "minItems": 1
+        },
+        "totalPayable": {
+          "$ref": "#/$defs/money"
+        },
+        "totalInterest": {
+          "$ref": "#/$defs/money"
+        },
+        "finalBalance": {
+          "$ref": "#/$defs/money"
+        },
+        "minimumPayment": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "percentOfBalance": {
+              "$ref": "#/$defs/percent"
+            },
+            "floor": {
+              "$ref": "#/$defs/money"
+            },
+            "cappedAtBalance": {
+              "const": true
+            }
+          },
+          "required": [
+            "percentOfBalance",
+            "floor",
+            "cappedAtBalance"
+          ]
+        },
+        "illustration": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "drawnBalance": {
+              "$ref": "#/$defs/money"
+            },
+            "monthlyInterest": {
+              "$ref": "#/$defs/money"
+            },
+            "minimumPayment": {
+              "$ref": "#/$defs/money"
+            },
+            "assumptions": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            }
+          },
+          "required": [
+            "drawnBalance",
+            "monthlyInterest",
+            "minimumPayment",
+            "assumptions"
+          ]
+        }
+      },
+      "required": [
+        "facilityType",
+        "amount",
+        "nominalAnnualRatePercent",
+        "rateType",
+        "apr",
+        "fees",
+        "repaymentModel"
+      ]
+    },
+    "projection": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "illustrative": {
+          "const": true
+        },
+        "horizonYears": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "assumedGrossAnnualReturnPercent": {
+          "$ref": "#/$defs/signedPercent"
+        },
+        "annualFeePercent": {
+          "$ref": "#/$defs/percent"
+        },
+        "assumedNetAnnualReturnPercent": {
+          "$ref": "#/$defs/signedPercent"
+        },
+        "projectedValue": {
+          "$ref": "#/$defs/money"
+        },
+        "methodology": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "inflationTreatment": {
+          "type": "string",
+          "enum": [
+            "nominal",
+            "real"
+          ]
+        },
+        "taxTreatment": {
+          "type": "string",
+          "enum": [
+            "excluded",
+            "included"
+          ]
+        },
+        "contributionTiming": {
+          "type": "string",
+          "enum": [
+            "start_of_period",
+            "end_of_period"
+          ]
+        }
+      },
+      "required": [
+        "illustrative",
+        "horizonYears",
+        "assumedGrossAnnualReturnPercent",
+        "annualFeePercent",
+        "assumedNetAnnualReturnPercent",
+        "projectedValue",
+        "methodology",
+        "inflationTreatment",
+        "taxTreatment",
+        "contributionTiming"
+      ]
+    },
+    "retirementOutput": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "initialCapital": {
+          "$ref": "#/$defs/money"
+        },
+        "contribution": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "amount": {
+              "$ref": "#/$defs/money"
+            },
+            "period": {
+              "type": "string",
+              "enum": [
+                "month",
+                "year",
+                "single"
+              ]
+            }
+          },
+          "required": [
+            "amount",
+            "period"
+          ]
+        },
+        "fees": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 2000
+              },
+              "percentPerYear": {
+                "$ref": "#/$defs/percent"
+              },
+              "basis": {
+                "type": "string",
+                "enum": [
+                  "assets",
+                  "contributions"
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "percentPerYear",
+              "basis"
+            ]
+          },
+          "minItems": 0
+        },
+        "guaranteedBenefits": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "amount": {
+                "$ref": "#/$defs/money"
+              },
+              "period": {
+                "type": "string",
+                "enum": [
+                  "month",
+                  "year",
+                  "single"
+                ]
+              },
+              "fromAgeYears": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "guarantor": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 2000
+              },
+              "conditions": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 2000
+              }
+            },
+            "required": [
+              "amount",
+              "period",
+              "fromAgeYears",
+              "guarantor",
+              "conditions"
+            ]
+          },
+          "minItems": 0
+        },
+        "projections": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/projection"
+          },
+          "minItems": 0
+        },
+        "access": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "earliestAgeYears": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "earlyWithdrawalAllowed": {
+              "type": "boolean"
+            },
+            "conditions": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            }
+          },
+          "required": [
+            "earliestAgeYears",
+            "earlyWithdrawalAllowed",
+            "conditions"
+          ]
+        },
+        "riskDescription": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        }
+      },
+      "required": [
+        "initialCapital",
+        "contribution",
+        "fees",
+        "guaranteedBenefits",
+        "projections",
+        "access",
+        "riskDescription"
+      ]
+    },
+    "quote": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "quoteId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "productId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "productName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "country": {
+          "type": "string",
+          "enum": [
+            "CH",
+            "US",
+            "GB",
+            "DE",
+            "IT"
+          ]
+        },
+        "currency": {
+          "type": "string",
+          "enum": [
+            "CHF",
+            "USD",
+            "GBP",
+            "EUR"
+          ]
+        },
+        "priceKind": {
+          "type": "string",
+          "enum": [
+            "indicative",
+            "personalized"
+          ]
+        },
+        "issuedAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "expiresAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "quoteUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "termsUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "assumptions": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "insurance": {
+          "$ref": "#/$defs/insuranceOutput"
+        },
+        "credit": {
+          "$ref": "#/$defs/creditOutput"
+        },
+        "retirement": {
+          "$ref": "#/$defs/retirementOutput"
+        }
+      },
+      "required": [
+        "quoteId",
+        "productId",
+        "productName",
+        "country",
+        "currency",
+        "priceKind",
+        "issuedAt",
+        "expiresAt",
+        "quoteUrl",
+        "termsUrl",
+        "assumptions"
+      ]
+    },
+    "response": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "schemaVersion": {
+          "const": "0.1"
+        },
+        "requestId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "providerId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "mode": {
+          "type": "string",
+          "enum": [
+            "sandbox",
+            "live"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "quoted",
+            "no_quote",
+            "unavailable"
+          ]
+        },
+        "quotes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/quote"
+          },
+          "minItems": 0
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "requestId",
+        "providerId",
+        "mode",
+        "status",
+        "quotes"
+      ]
+    }
+  }
+}

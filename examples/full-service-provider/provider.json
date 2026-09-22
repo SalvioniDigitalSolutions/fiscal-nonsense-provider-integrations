@@ -1,0 +1,959 @@
+{
+  "schemaVersion": "0.1",
+  "id": "full-service-demo",
+  "status": "proposed",
+  "displayName": "Nonsense Cover & Credit \u2014 FICTIONAL",
+  "legalName": "Fictional Example Group \u2014 not a registered provider",
+  "website": "https://provider.example",
+  "documentationUrl": "https://provider.example/docs",
+  "sandboxUrl": "https://sandbox.provider.example/quotes",
+  "contactEmail": "integrations@provider.example",
+  "quoteHosts": [
+    "provider.example"
+  ],
+  "products": [
+    {
+      "id": "car",
+      "family": "insurance",
+      "category": "car",
+      "name": "Fictional Car insurance",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "insurance_premium",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/insuranceInput",
+      "riskKind": "vehicle",
+      "contractingEntity": {
+        "legalName": "Fictional Insurance Division \u2014 not registered",
+        "role": "insurer",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/car.schema.json"
+    },
+    {
+      "id": "motorcycle",
+      "family": "insurance",
+      "category": "motorcycle",
+      "name": "Fictional Motorcycle insurance",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "insurance_premium",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/insuranceInput",
+      "riskKind": "vehicle",
+      "contractingEntity": {
+        "legalName": "Fictional Insurance Division \u2014 not registered",
+        "role": "insurer",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/motorcycle.schema.json"
+    },
+    {
+      "id": "home",
+      "family": "insurance",
+      "category": "home",
+      "name": "Fictional Home insurance",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "insurance_premium",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/insuranceInput",
+      "riskKind": "property",
+      "contractingEntity": {
+        "legalName": "Fictional Insurance Division \u2014 not registered",
+        "role": "insurer",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/home.schema.json"
+    },
+    {
+      "id": "landlord",
+      "family": "insurance",
+      "category": "landlord",
+      "name": "Fictional Landlord insurance",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "insurance_premium",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/insuranceInput",
+      "riskKind": "property",
+      "contractingEntity": {
+        "legalName": "Fictional Insurance Division \u2014 not registered",
+        "role": "insurer",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/landlord.schema.json"
+    },
+    {
+      "id": "health-basic",
+      "family": "insurance",
+      "category": "health-basic",
+      "name": "Fictional Basic health insurance",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "insurance_premium",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/insuranceInput",
+      "riskKind": "person",
+      "contractingEntity": {
+        "legalName": "Fictional Insurance Division \u2014 not registered",
+        "role": "insurer",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/health-basic.schema.json"
+    },
+    {
+      "id": "health-supplementary",
+      "family": "insurance",
+      "category": "health-supplementary",
+      "name": "Fictional Supplementary health insurance",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "insurance_premium",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/insuranceInput",
+      "riskKind": "person",
+      "contractingEntity": {
+        "legalName": "Fictional Insurance Division \u2014 not registered",
+        "role": "insurer",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/health-supplementary.schema.json"
+    },
+    {
+      "id": "dental",
+      "family": "insurance",
+      "category": "dental",
+      "name": "Fictional Dental insurance",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "insurance_premium",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/insuranceInput",
+      "riskKind": "person",
+      "contractingEntity": {
+        "legalName": "Fictional Insurance Division \u2014 not registered",
+        "role": "insurer",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/dental.schema.json"
+    },
+    {
+      "id": "life",
+      "family": "insurance",
+      "category": "life",
+      "name": "Fictional Life insurance",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "insurance_premium",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/insuranceInput",
+      "riskKind": "person",
+      "contractingEntity": {
+        "legalName": "Fictional Insurance Division \u2014 not registered",
+        "role": "insurer",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/life.schema.json"
+    },
+    {
+      "id": "disability",
+      "family": "insurance",
+      "category": "disability",
+      "name": "Fictional Disability and income protection",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "insurance_premium",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/insuranceInput",
+      "riskKind": "person",
+      "contractingEntity": {
+        "legalName": "Fictional Insurance Division \u2014 not registered",
+        "role": "insurer",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/disability.schema.json"
+    },
+    {
+      "id": "accident",
+      "family": "insurance",
+      "category": "accident",
+      "name": "Fictional Accident insurance",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "insurance_premium",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/insuranceInput",
+      "riskKind": "person",
+      "contractingEntity": {
+        "legalName": "Fictional Insurance Division \u2014 not registered",
+        "role": "insurer",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/accident.schema.json"
+    },
+    {
+      "id": "long-term-care",
+      "family": "insurance",
+      "category": "long-term-care",
+      "name": "Fictional Long-term care insurance",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "insurance_premium",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/insuranceInput",
+      "riskKind": "person",
+      "contractingEntity": {
+        "legalName": "Fictional Insurance Division \u2014 not registered",
+        "role": "insurer",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/long-term-care.schema.json"
+    },
+    {
+      "id": "travel",
+      "family": "insurance",
+      "category": "travel",
+      "name": "Fictional Travel insurance",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "insurance_premium",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/insuranceInput",
+      "riskKind": "travel",
+      "contractingEntity": {
+        "legalName": "Fictional Insurance Division \u2014 not registered",
+        "role": "insurer",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/travel.schema.json"
+    },
+    {
+      "id": "pet",
+      "family": "insurance",
+      "category": "pet",
+      "name": "Fictional Pet insurance",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "insurance_premium",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/insuranceInput",
+      "riskKind": "pet",
+      "contractingEntity": {
+        "legalName": "Fictional Insurance Division \u2014 not registered",
+        "role": "insurer",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/pet.schema.json"
+    },
+    {
+      "id": "liability",
+      "family": "insurance",
+      "category": "liability",
+      "name": "Fictional Personal liability insurance",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "insurance_premium",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/insuranceInput",
+      "riskKind": "personal-liability",
+      "contractingEntity": {
+        "legalName": "Fictional Insurance Division \u2014 not registered",
+        "role": "insurer",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/liability.schema.json"
+    },
+    {
+      "id": "legal",
+      "family": "insurance",
+      "category": "legal",
+      "name": "Fictional Legal expenses insurance",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "insurance_premium",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/insuranceInput",
+      "riskKind": "personal-liability",
+      "contractingEntity": {
+        "legalName": "Fictional Insurance Division \u2014 not registered",
+        "role": "insurer",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/legal.schema.json"
+    },
+    {
+      "id": "business-property",
+      "family": "insurance",
+      "category": "business-property",
+      "name": "Fictional Business property insurance",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "insurance_premium",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/insuranceInput",
+      "riskKind": "property",
+      "contractingEntity": {
+        "legalName": "Fictional Insurance Division \u2014 not registered",
+        "role": "insurer",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/business-property.schema.json"
+    },
+    {
+      "id": "business-liability",
+      "family": "insurance",
+      "category": "business-liability",
+      "name": "Fictional Business liability insurance",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "insurance_premium",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/insuranceInput",
+      "riskKind": "business",
+      "contractingEntity": {
+        "legalName": "Fictional Insurance Division \u2014 not registered",
+        "role": "insurer",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/business-liability.schema.json"
+    },
+    {
+      "id": "professional-indemnity",
+      "family": "insurance",
+      "category": "professional-indemnity",
+      "name": "Fictional Professional indemnity insurance",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "insurance_premium",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/insuranceInput",
+      "riskKind": "business",
+      "contractingEntity": {
+        "legalName": "Fictional Insurance Division \u2014 not registered",
+        "role": "insurer",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/professional-indemnity.schema.json"
+    },
+    {
+      "id": "cyber",
+      "family": "insurance",
+      "category": "cyber",
+      "name": "Fictional Cyber insurance",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "insurance_premium",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/insuranceInput",
+      "riskKind": "business",
+      "contractingEntity": {
+        "legalName": "Fictional Insurance Division \u2014 not registered",
+        "role": "insurer",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/cyber.schema.json"
+    },
+    {
+      "id": "workers-compensation",
+      "family": "insurance",
+      "category": "workers-compensation",
+      "name": "Fictional Workers\u2019 compensation insurance",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "insurance_premium",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/insuranceInput",
+      "riskKind": "business",
+      "contractingEntity": {
+        "legalName": "Fictional Insurance Division \u2014 not registered",
+        "role": "insurer",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/workers-compensation.schema.json"
+    },
+    {
+      "id": "marine",
+      "family": "insurance",
+      "category": "marine",
+      "name": "Fictional Marine and boat insurance",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "insurance_premium",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/insuranceInput",
+      "riskKind": "vehicle",
+      "contractingEntity": {
+        "legalName": "Fictional Insurance Division \u2014 not registered",
+        "role": "insurer",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/marine.schema.json"
+    },
+    {
+      "id": "specialty-insurance",
+      "family": "insurance",
+      "category": "specialty-insurance",
+      "name": "Fictional Other specialist insurance",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "insurance_premium",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/insuranceInput",
+      "riskKind": "specialist",
+      "contractingEntity": {
+        "legalName": "Fictional Insurance Division \u2014 not registered",
+        "role": "insurer",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/specialty-insurance.schema.json"
+    },
+    {
+      "id": "mortgages",
+      "family": "credit",
+      "category": "mortgages",
+      "name": "Fictional Mortgages",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "credit_terms",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/creditInput",
+      "riskKind": null,
+      "contractingEntity": {
+        "legalName": "Fictional Credit Division \u2014 not registered",
+        "role": "lender",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/mortgages.schema.json"
+    },
+    {
+      "id": "personal-loan",
+      "family": "credit",
+      "category": "personal-loan",
+      "name": "Fictional Personal loans",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "credit_terms",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/creditInput",
+      "riskKind": null,
+      "contractingEntity": {
+        "legalName": "Fictional Credit Division \u2014 not registered",
+        "role": "lender",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/personal-loan.schema.json"
+    },
+    {
+      "id": "vehicle-finance",
+      "family": "credit",
+      "category": "vehicle-finance",
+      "name": "Fictional Vehicle finance",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "credit_terms",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/creditInput",
+      "riskKind": null,
+      "contractingEntity": {
+        "legalName": "Fictional Credit Division \u2014 not registered",
+        "role": "lender",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/vehicle-finance.schema.json"
+    },
+    {
+      "id": "student-loan",
+      "family": "credit",
+      "category": "student-loan",
+      "name": "Fictional Student loans",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "credit_terms",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/creditInput",
+      "riskKind": null,
+      "contractingEntity": {
+        "legalName": "Fictional Credit Division \u2014 not registered",
+        "role": "lender",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/student-loan.schema.json"
+    },
+    {
+      "id": "secured-loan",
+      "family": "credit",
+      "category": "secured-loan",
+      "name": "Fictional Secured loans",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "credit_terms",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/creditInput",
+      "riskKind": null,
+      "contractingEntity": {
+        "legalName": "Fictional Credit Division \u2014 not registered",
+        "role": "lender",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/secured-loan.schema.json"
+    },
+    {
+      "id": "credit-card",
+      "family": "credit",
+      "category": "credit-card",
+      "name": "Fictional Credit cards",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "credit_terms",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/creditInput",
+      "riskKind": null,
+      "contractingEntity": {
+        "legalName": "Fictional Credit Division \u2014 not registered",
+        "role": "lender",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/credit-card.schema.json"
+    },
+    {
+      "id": "credit-line",
+      "family": "credit",
+      "category": "credit-line",
+      "name": "Fictional Credit lines and overdrafts",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "credit_terms",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/creditInput",
+      "riskKind": null,
+      "contractingEntity": {
+        "legalName": "Fictional Credit Division \u2014 not registered",
+        "role": "lender",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/credit-line.schema.json"
+    },
+    {
+      "id": "bnpl",
+      "family": "credit",
+      "category": "bnpl",
+      "name": "Fictional Buy now, pay later",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "credit_terms",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/creditInput",
+      "riskKind": null,
+      "contractingEntity": {
+        "legalName": "Fictional Credit Division \u2014 not registered",
+        "role": "lender",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/bnpl.schema.json"
+    },
+    {
+      "id": "business-loan",
+      "family": "credit",
+      "category": "business-loan",
+      "name": "Fictional Business loans",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "credit_terms",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/creditInput",
+      "riskKind": null,
+      "contractingEntity": {
+        "legalName": "Fictional Credit Division \u2014 not registered",
+        "role": "lender",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/business-loan.schema.json"
+    },
+    {
+      "id": "asset-finance",
+      "family": "credit",
+      "category": "asset-finance",
+      "name": "Fictional Asset finance and leasing",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "credit_terms",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/creditInput",
+      "riskKind": null,
+      "contractingEntity": {
+        "legalName": "Fictional Credit Division \u2014 not registered",
+        "role": "lender",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/asset-finance.schema.json"
+    },
+    {
+      "id": "bridging-loan",
+      "family": "credit",
+      "category": "bridging-loan",
+      "name": "Fictional Bridging loans",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "credit_terms",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/creditInput",
+      "riskKind": null,
+      "contractingEntity": {
+        "legalName": "Fictional Credit Division \u2014 not registered",
+        "role": "lender",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/bridging-loan.schema.json"
+    },
+    {
+      "id": "specialty-credit",
+      "family": "credit",
+      "category": "specialty-credit",
+      "name": "Fictional Other specialist credit",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "credit_terms",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/creditInput",
+      "riskKind": null,
+      "contractingEntity": {
+        "legalName": "Fictional Credit Division \u2014 not registered",
+        "role": "lender",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/specialty-credit.schema.json"
+    },
+    {
+      "id": "occupational-pension",
+      "family": "retirement",
+      "category": "occupational-pension",
+      "name": "Fictional Occupational pensions",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "retirement_terms",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/retirementInput",
+      "riskKind": null,
+      "contractingEntity": {
+        "legalName": "Fictional Retirement Division \u2014 not registered",
+        "role": "pension_provider",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/occupational-pension.schema.json"
+    },
+    {
+      "id": "private-pension",
+      "family": "retirement",
+      "category": "private-pension",
+      "name": "Fictional Private pensions",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "retirement_terms",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/retirementInput",
+      "riskKind": null,
+      "contractingEntity": {
+        "legalName": "Fictional Retirement Division \u2014 not registered",
+        "role": "pension_provider",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/private-pension.schema.json"
+    },
+    {
+      "id": "pillar-3a",
+      "family": "retirement",
+      "category": "pillar-3a",
+      "name": "Fictional Swiss pillar 3a",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "retirement_terms",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/retirementInput",
+      "riskKind": null,
+      "contractingEntity": {
+        "legalName": "Fictional Retirement Division \u2014 not registered",
+        "role": "pension_provider",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/pillar-3a.schema.json"
+    },
+    {
+      "id": "pillar-3b",
+      "family": "retirement",
+      "category": "pillar-3b",
+      "name": "Fictional Swiss pillar 3b",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "retirement_terms",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/retirementInput",
+      "riskKind": null,
+      "contractingEntity": {
+        "legalName": "Fictional Retirement Division \u2014 not registered",
+        "role": "pension_provider",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/pillar-3b.schema.json"
+    },
+    {
+      "id": "annuity",
+      "family": "retirement",
+      "category": "annuity",
+      "name": "Fictional Retirement annuities",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "retirement_terms",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/retirementInput",
+      "riskKind": null,
+      "contractingEntity": {
+        "legalName": "Fictional Retirement Division \u2014 not registered",
+        "role": "pension_provider",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/annuity.schema.json"
+    },
+    {
+      "id": "pension-transfer",
+      "family": "retirement",
+      "category": "pension-transfer",
+      "name": "Fictional Pension transfers and vested benefits",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "retirement_terms",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/retirementInput",
+      "riskKind": null,
+      "contractingEntity": {
+        "legalName": "Fictional Retirement Division \u2014 not registered",
+        "role": "pension_provider",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/pension-transfer.schema.json"
+    },
+    {
+      "id": "specialty-retirement",
+      "family": "retirement",
+      "category": "specialty-retirement",
+      "name": "Fictional Other retirement provision",
+      "markets": [
+        {
+          "country": "CH",
+          "currency": "CHF"
+        }
+      ],
+      "pricingModel": "retirement_terms",
+      "inputSpecification": "README.md",
+      "implementationStatus": "fixture_only",
+      "inputSchema": "schemas/contract.schema.json#/$defs/retirementInput",
+      "riskKind": null,
+      "contractingEntity": {
+        "legalName": "Fictional Retirement Division \u2014 not registered",
+        "role": "pension_provider",
+        "registerUrl": "https://provider.example/fictional-register"
+      },
+      "providerDataSchema": "input-schemas/specialty-retirement.schema.json"
+    }
+  ]
+}

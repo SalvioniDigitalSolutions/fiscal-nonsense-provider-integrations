@@ -1,0 +1,483 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "common": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "policyholder": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "dateOfBirth": {
+              "type": "string",
+              "format": "date",
+              "title": "Date of birth"
+            },
+            "nationality": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Nationality"
+            },
+            "residenceCountry": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Residence country"
+            },
+            "residencePostalCode": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Residence postal code"
+            },
+            "residenceMunicipality": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Residence municipality"
+            },
+            "occupationCode": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Occupation code"
+            },
+            "householdAdults": {
+              "type": "integer",
+              "minimum": 0,
+              "title": "Household adults"
+            },
+            "householdChildren": {
+              "type": "integer",
+              "minimum": 0,
+              "title": "Household children"
+            }
+          },
+          "required": [
+            "dateOfBirth",
+            "nationality",
+            "residenceCountry",
+            "residencePostalCode",
+            "residenceMunicipality",
+            "occupationCode",
+            "householdAdults",
+            "householdChildren"
+          ],
+          "title": "Policyholder"
+        },
+        "history": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "previousInsurerId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Previous insurer id"
+            },
+            "yearsContinuouslyInsured": {
+              "type": "integer",
+              "minimum": 0,
+              "title": "Years continuously insured"
+            },
+            "previousPolicyCancelledByInsurer": {
+              "type": "boolean",
+              "title": "Previous policy cancelled by insurer"
+            },
+            "hasClaims": {
+              "type": "boolean",
+              "title": "Has claims"
+            },
+            "claims": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "date": {
+                    "type": "string",
+                    "format": "date",
+                    "title": "Date"
+                  },
+                  "type": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1000,
+                    "title": "Type"
+                  },
+                  "paidAmount": {
+                    "type": "string",
+                    "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+                    "title": "Paid amount"
+                  },
+                  "open": {
+                    "type": "boolean",
+                    "title": "Open"
+                  }
+                },
+                "required": [
+                  "date",
+                  "type",
+                  "paidAmount",
+                  "open"
+                ]
+              }
+            }
+          },
+          "required": [
+            "previousInsurerId",
+            "yearsContinuouslyInsured",
+            "previousPolicyCancelledByInsurer",
+            "hasClaims"
+          ],
+          "title": "History",
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "hasClaims": {
+                    "const": true
+                  }
+                },
+                "required": [
+                  "hasClaims"
+                ]
+              },
+              "then": {
+                "required": [
+                  "claims"
+                ],
+                "properties": {
+                  "claims": {}
+                }
+              }
+            }
+          ]
+        },
+        "policy": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "territories": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1000
+              },
+              "title": "Territories"
+            },
+            "paymentMethod": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Payment method"
+            },
+            "marketingConsent": {
+              "type": "boolean",
+              "title": "Marketing consent"
+            }
+          },
+          "required": [
+            "territories",
+            "paymentMethod",
+            "marketingConsent"
+          ],
+          "title": "Policy"
+        }
+      },
+      "required": [
+        "policyholder",
+        "history",
+        "policy"
+      ],
+      "title": "Common"
+    },
+    "vehicle": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "make": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Make"
+        },
+        "model": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Model"
+        },
+        "variant": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Variant"
+        },
+        "firstRegistrationDate": {
+          "type": "string",
+          "format": "date",
+          "title": "First registration date"
+        },
+        "registrationCountry": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Registration country"
+        },
+        "registrationPostalCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Registration postal code"
+        },
+        "fuel": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Fuel"
+        },
+        "powerKw": {
+          "type": "integer",
+          "minimum": 0,
+          "title": "Power kw"
+        },
+        "engineCc": {
+          "type": "integer",
+          "minimum": 0,
+          "title": "Engine cc"
+        },
+        "newPrice": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "New price"
+        },
+        "accessoryValue": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Accessory value"
+        },
+        "annualDistanceKm": {
+          "type": "integer",
+          "minimum": 0,
+          "title": "Annual distance km"
+        },
+        "overnightParking": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Overnight parking"
+        },
+        "ownership": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Ownership"
+        },
+        "financeBalance": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Finance balance"
+        },
+        "use": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "title": "Use",
+          "enum": [
+            "private",
+            "commuting",
+            "business"
+          ]
+        },
+        "hasModifications": {
+          "type": "boolean",
+          "title": "Has modifications"
+        },
+        "businessUse": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "businessActivity": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "title": "Business activity"
+            },
+            "annualBusinessDistanceKm": {
+              "type": "integer",
+              "minimum": 0,
+              "title": "Annual business distance km"
+            },
+            "carriageOfGoods": {
+              "type": "boolean",
+              "title": "Carriage of goods"
+            },
+            "carriageOfPassengersForHire": {
+              "type": "boolean",
+              "title": "Carriage of passengers for hire"
+            }
+          },
+          "required": [
+            "businessActivity",
+            "annualBusinessDistanceKm",
+            "carriageOfGoods",
+            "carriageOfPassengersForHire"
+          ]
+        }
+      },
+      "required": [
+        "make",
+        "model",
+        "variant",
+        "firstRegistrationDate",
+        "registrationCountry",
+        "registrationPostalCode",
+        "fuel",
+        "powerKw",
+        "engineCc",
+        "newPrice",
+        "accessoryValue",
+        "annualDistanceKm",
+        "overnightParking",
+        "ownership",
+        "financeBalance",
+        "use",
+        "hasModifications"
+      ],
+      "title": "Vehicle",
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "use": {
+                "const": "business"
+              }
+            },
+            "required": [
+              "use"
+            ]
+          },
+          "then": {
+            "required": [
+              "businessUse"
+            ],
+            "properties": {
+              "businessUse": {}
+            }
+          }
+        }
+      ]
+    },
+    "drivers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "dateOfBirth": {
+            "type": "string",
+            "format": "date",
+            "title": "Date of birth"
+          },
+          "licenceDate": {
+            "type": "string",
+            "format": "date",
+            "title": "Licence date"
+          },
+          "licenceCountry": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000,
+            "title": "Licence country"
+          },
+          "occupationCode": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000,
+            "title": "Occupation code"
+          },
+          "convictionsLastFiveYears": {
+            "type": "integer",
+            "minimum": 0,
+            "title": "Convictions last five years"
+          },
+          "licenceSuspended": {
+            "type": "boolean",
+            "title": "Licence suspended"
+          }
+        },
+        "required": [
+          "dateOfBirth",
+          "licenceDate",
+          "licenceCountry",
+          "occupationCode",
+          "convictionsLastFiveYears",
+          "licenceSuspended"
+        ]
+      },
+      "title": "Drivers"
+    },
+    "cover": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "thirdPartyLimit": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d{0,11})\\.\\d{2}$",
+          "title": "Third party limit"
+        },
+        "collision": {
+          "type": "boolean",
+          "title": "Collision"
+        },
+        "theft": {
+          "type": "boolean",
+          "title": "Theft"
+        },
+        "glass": {
+          "type": "boolean",
+          "title": "Glass"
+        },
+        "roadsideAssistance": {
+          "type": "boolean",
+          "title": "Roadside assistance"
+        },
+        "courtesyVehicle": {
+          "type": "boolean",
+          "title": "Courtesy vehicle"
+        },
+        "agreedRepairNetwork": {
+          "type": "boolean",
+          "title": "Agreed repair network"
+        }
+      },
+      "required": [
+        "thirdPartyLimit",
+        "collision",
+        "theft",
+        "glass",
+        "roadsideAssistance",
+        "courtesyVehicle",
+        "agreedRepairNetwork"
+      ],
+      "title": "Cover"
+    }
+  },
+  "required": [
+    "common",
+    "vehicle",
+    "drivers",
+    "cover"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fictional car required provider inputs",
+  "description": "Synthetic provider specification, not a universal underwriting questionnaire. Real providers must verify all fields and conditions."
+}

@@ -1,0 +1,164 @@
+{
+  "request": {
+    "schemaVersion": "0.1",
+    "requestId": "synthetic-disability",
+    "providerId": "full-service-demo",
+    "productId": "disability",
+    "country": "CH",
+    "currency": "CHF",
+    "applicant": {
+      "kind": "individual",
+      "residencyCountry": "CH",
+      "postalCode": "0000",
+      "ageYears": 40
+    },
+    "input": {
+      "family": "insurance",
+      "startDate": "2026-10-01",
+      "termMonths": 12,
+      "paymentPeriod": "month",
+      "risk": {
+        "kind": "person",
+        "insuredPeople": [
+          {
+            "ageYears": 40,
+            "smoker": false,
+            "employment": "employed"
+          }
+        ],
+        "benefitAmount": "100000.00",
+        "benefitPeriod": "lump_sum",
+        "accidentCover": true
+      },
+      "requestedCoverages": [
+        {
+          "id": "disability-cover",
+          "limit": "100000.00",
+          "deductible": "0.00",
+          "waitingDays": 0,
+          "deductibleBasis": "none",
+          "coinsurancePercent": "0.00",
+          "annualCoinsuranceCap": null
+        }
+      ],
+      "providerData": {
+        "common": {
+          "policyholder": {
+            "dateOfBirth": "1986-01-01",
+            "nationality": "CH",
+            "residenceCountry": "CH",
+            "residencePostalCode": "0000",
+            "residenceMunicipality": "Fictional municipality",
+            "occupationCode": "SYNTHETIC",
+            "householdAdults": 2,
+            "householdChildren": 0
+          },
+          "history": {
+            "previousInsurerId": "none",
+            "yearsContinuouslyInsured": 5,
+            "previousPolicyCancelledByInsurer": false,
+            "hasClaims": false
+          },
+          "policy": {
+            "territories": [
+              "CH"
+            ],
+            "paymentMethod": "bank_transfer",
+            "marketingConsent": false
+          }
+        },
+        "insuredPerson": {
+          "dateOfBirth": "1986-01-01",
+          "sexForUnderwriting": "not_requested",
+          "heightCm": 175,
+          "weightKg": 70,
+          "smoker": false,
+          "occupationCode": "SYNTHETIC",
+          "residenceCountry": "CH"
+        },
+        "medical": {
+          "hasConditions": false,
+          "takesRegularMedication": false,
+          "hasPlannedTreatment": false
+        },
+        "cover": {
+          "hospitalWard": "general",
+          "worldwide": false,
+          "annualLimit": "100000.00"
+        },
+        "benefit": {
+          "sumAssured": "100000.00",
+          "termYears": 20,
+          "benefitPattern": "level",
+          "jointLife": false
+        },
+        "activities": {
+          "hazardousSports": false,
+          "hazardousOccupation": false,
+          "extendedForeignTravel": false
+        },
+        "financial": {
+          "annualIncome": "96000.00",
+          "existingLifeCover": "0.00"
+        },
+        "incomeProtection": {
+          "annualEarnedIncome": "96000.00",
+          "monthlyBenefit": "4000.00",
+          "deferredDays": 90,
+          "benefitTermMonths": 24,
+          "employerSickPayMonths": 3,
+          "existingMonthlyBenefit": "0.00"
+        }
+      }
+    }
+  },
+  "response": {
+    "schemaVersion": "0.1",
+    "requestId": "synthetic-disability",
+    "providerId": "full-service-demo",
+    "mode": "sandbox",
+    "status": "quoted",
+    "quotes": [
+      {
+        "quoteId": "fictional-disability",
+        "productId": "disability",
+        "productName": "Fictional Disability and income protection",
+        "country": "CH",
+        "currency": "CHF",
+        "priceKind": "indicative",
+        "issuedAt": "2026-09-22T10:00:00Z",
+        "expiresAt": "2026-09-22T10:15:00Z",
+        "quoteUrl": "https://provider.example/quote",
+        "termsUrl": "https://provider.example/terms",
+        "assumptions": "Synthetic offline illustration only. No eligibility, local tax benefit or real price is asserted.",
+        "insurance": {
+          "premium": {
+            "base": "100.00",
+            "taxes": "20.00",
+            "mandatoryFees": "0.00",
+            "total": "120.00",
+            "period": "month"
+          },
+          "startDate": "2026-10-01",
+          "endDate": "2027-09-30",
+          "coverages": [
+            {
+              "id": "disability-cover",
+              "limit": "100000.00",
+              "deductible": "0.00",
+              "waitingDays": 0,
+              "deductibleBasis": "none",
+              "coinsurancePercent": "0.00",
+              "annualCoinsuranceCap": null
+            }
+          ],
+          "exclusions": [
+            "Fictional fixture: no policy exists."
+          ],
+          "renewal": "manual",
+          "cancellationNoticeDays": 30
+        }
+      }
+    ]
+  }
+}

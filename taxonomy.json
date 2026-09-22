@@ -1,0 +1,330 @@
+[
+  {
+    "id": "car",
+    "family": "insurance",
+    "en": "Car insurance",
+    "de": "Autoversicherung",
+    "fr": "Assurance auto",
+    "it": "Assicurazione auto"
+  },
+  {
+    "id": "motorcycle",
+    "family": "insurance",
+    "en": "Motorcycle insurance",
+    "de": "Motorradversicherung",
+    "fr": "Assurance moto",
+    "it": "Assicurazione moto"
+  },
+  {
+    "id": "home",
+    "family": "insurance",
+    "en": "Home insurance",
+    "de": "Hausrat- und Gebäudeversicherung",
+    "fr": "Assurance habitation",
+    "it": "Assicurazione casa"
+  },
+  {
+    "id": "landlord",
+    "family": "insurance",
+    "en": "Landlord insurance",
+    "de": "Vermieterversicherung",
+    "fr": "Assurance propriétaire bailleur",
+    "it": "Assicurazione locatore"
+  },
+  {
+    "id": "health-basic",
+    "family": "insurance",
+    "en": "Basic health insurance",
+    "de": "Grundkrankenversicherung",
+    "fr": "Assurance maladie de base",
+    "it": "Assicurazione malattia di base"
+  },
+  {
+    "id": "health-supplementary",
+    "family": "insurance",
+    "en": "Supplementary health insurance",
+    "de": "Krankenzusatzversicherung",
+    "fr": "Assurance maladie complémentaire",
+    "it": "Assicurazione malattia complementare"
+  },
+  {
+    "id": "dental",
+    "family": "insurance",
+    "en": "Dental insurance",
+    "de": "Zahnversicherung",
+    "fr": "Assurance dentaire",
+    "it": "Assicurazione dentale"
+  },
+  {
+    "id": "life",
+    "family": "insurance",
+    "en": "Life insurance",
+    "de": "Lebensversicherung",
+    "fr": "Assurance vie",
+    "it": "Assicurazione vita"
+  },
+  {
+    "id": "disability",
+    "family": "insurance",
+    "en": "Disability and income protection",
+    "de": "Erwerbsunfähigkeit und Einkommensschutz",
+    "fr": "Invalidité et protection du revenu",
+    "it": "Invalidità e protezione del reddito"
+  },
+  {
+    "id": "accident",
+    "family": "insurance",
+    "en": "Accident insurance",
+    "de": "Unfallversicherung",
+    "fr": "Assurance accidents",
+    "it": "Assicurazione infortuni"
+  },
+  {
+    "id": "long-term-care",
+    "family": "insurance",
+    "en": "Long-term care insurance",
+    "de": "Pflegeversicherung",
+    "fr": "Assurance dépendance",
+    "it": "Assicurazione non autosufficienza"
+  },
+  {
+    "id": "travel",
+    "family": "insurance",
+    "en": "Travel insurance",
+    "de": "Reiseversicherung",
+    "fr": "Assurance voyage",
+    "it": "Assicurazione viaggio"
+  },
+  {
+    "id": "pet",
+    "family": "insurance",
+    "en": "Pet insurance",
+    "de": "Tierversicherung",
+    "fr": "Assurance animaux",
+    "it": "Assicurazione animali"
+  },
+  {
+    "id": "liability",
+    "family": "insurance",
+    "en": "Personal liability insurance",
+    "de": "Privathaftpflichtversicherung",
+    "fr": "Responsabilité civile privée",
+    "it": "Responsabilità civile privata"
+  },
+  {
+    "id": "legal",
+    "family": "insurance",
+    "en": "Legal expenses insurance",
+    "de": "Rechtsschutzversicherung",
+    "fr": "Protection juridique",
+    "it": "Tutela legale"
+  },
+  {
+    "id": "business-property",
+    "family": "insurance",
+    "en": "Business property insurance",
+    "de": "Geschäftssachversicherung",
+    "fr": "Assurance des biens professionnels",
+    "it": "Assicurazione beni aziendali"
+  },
+  {
+    "id": "business-liability",
+    "family": "insurance",
+    "en": "Business liability insurance",
+    "de": "Betriebshaftpflichtversicherung",
+    "fr": "Responsabilité civile professionnelle",
+    "it": "Responsabilità civile aziendale"
+  },
+  {
+    "id": "professional-indemnity",
+    "family": "insurance",
+    "en": "Professional indemnity insurance",
+    "de": "Berufshaftpflichtversicherung",
+    "fr": "Responsabilité civile professionnelle spécialisée",
+    "it": "Responsabilità civile professionale"
+  },
+  {
+    "id": "cyber",
+    "family": "insurance",
+    "en": "Cyber insurance",
+    "de": "Cyberversicherung",
+    "fr": "Assurance cyber",
+    "it": "Assicurazione cyber"
+  },
+  {
+    "id": "workers-compensation",
+    "family": "insurance",
+    "en": "Workers’ compensation insurance",
+    "de": "Arbeitsunfallversicherung",
+    "fr": "Assurance accidents du travail",
+    "it": "Assicurazione infortuni sul lavoro"
+  },
+  {
+    "id": "marine",
+    "family": "insurance",
+    "en": "Marine and boat insurance",
+    "de": "Transport- und Bootsversicherung",
+    "fr": "Assurance maritime et bateaux",
+    "it": "Assicurazione marittima e natanti"
+  },
+  {
+    "id": "specialty-insurance",
+    "family": "insurance",
+    "en": "Other specialist insurance",
+    "de": "Weitere Spezialversicherungen",
+    "fr": "Autres assurances spécialisées",
+    "it": "Altre assicurazioni specialistiche"
+  },
+  {
+    "id": "mortgages",
+    "family": "credit",
+    "en": "Mortgages",
+    "de": "Hypotheken",
+    "fr": "Crédits immobiliers",
+    "it": "Mutui"
+  },
+  {
+    "id": "personal-loan",
+    "family": "credit",
+    "en": "Personal loans",
+    "de": "Privatkredite",
+    "fr": "Prêts personnels",
+    "it": "Prestiti personali"
+  },
+  {
+    "id": "vehicle-finance",
+    "family": "credit",
+    "en": "Vehicle finance",
+    "de": "Fahrzeugfinanzierung",
+    "fr": "Financement automobile",
+    "it": "Finanziamento veicoli"
+  },
+  {
+    "id": "student-loan",
+    "family": "credit",
+    "en": "Student loans",
+    "de": "Studienkredite",
+    "fr": "Prêts étudiants",
+    "it": "Prestiti studenti"
+  },
+  {
+    "id": "secured-loan",
+    "family": "credit",
+    "en": "Secured loans",
+    "de": "Besicherte Kredite",
+    "fr": "Prêts garantis",
+    "it": "Prestiti garantiti"
+  },
+  {
+    "id": "credit-card",
+    "family": "credit",
+    "en": "Credit cards",
+    "de": "Kreditkarten",
+    "fr": "Cartes de crédit",
+    "it": "Carte di credito"
+  },
+  {
+    "id": "credit-line",
+    "family": "credit",
+    "en": "Credit lines and overdrafts",
+    "de": "Kreditlinien und Überziehungen",
+    "fr": "Lignes de crédit et découverts",
+    "it": "Linee di credito e scoperti"
+  },
+  {
+    "id": "bnpl",
+    "family": "credit",
+    "en": "Buy now, pay later",
+    "de": "Kauf auf Raten",
+    "fr": "Paiement fractionné",
+    "it": "Compra ora, paga dopo"
+  },
+  {
+    "id": "business-loan",
+    "family": "credit",
+    "en": "Business loans",
+    "de": "Unternehmenskredite",
+    "fr": "Prêts professionnels",
+    "it": "Prestiti aziendali"
+  },
+  {
+    "id": "asset-finance",
+    "family": "credit",
+    "en": "Asset finance and leasing",
+    "de": "Investitionsfinanzierung und Leasing",
+    "fr": "Financement d’actifs et crédit-bail",
+    "it": "Finanziamento beni e leasing"
+  },
+  {
+    "id": "bridging-loan",
+    "family": "credit",
+    "en": "Bridging loans",
+    "de": "Überbrückungskredite",
+    "fr": "Prêts relais",
+    "it": "Prestiti ponte"
+  },
+  {
+    "id": "specialty-credit",
+    "family": "credit",
+    "en": "Other specialist credit",
+    "de": "Weitere Spezialkredite",
+    "fr": "Autres crédits spécialisés",
+    "it": "Altri crediti specialistici"
+  },
+  {
+    "id": "occupational-pension",
+    "family": "retirement",
+    "en": "Occupational pensions",
+    "de": "Berufliche Vorsorge",
+    "fr": "Prévoyance professionnelle",
+    "it": "Previdenza professionale"
+  },
+  {
+    "id": "private-pension",
+    "family": "retirement",
+    "en": "Private pensions",
+    "de": "Private Altersvorsorge",
+    "fr": "Retraite privée",
+    "it": "Previdenza privata"
+  },
+  {
+    "id": "pillar-3a",
+    "family": "retirement",
+    "en": "Swiss pillar 3a",
+    "de": "Schweizer Säule 3a",
+    "fr": "Pilier 3a suisse",
+    "it": "Pilastro 3a svizzero"
+  },
+  {
+    "id": "pillar-3b",
+    "family": "retirement",
+    "en": "Swiss pillar 3b",
+    "de": "Schweizer Säule 3b",
+    "fr": "Pilier 3b suisse",
+    "it": "Pilastro 3b svizzero"
+  },
+  {
+    "id": "annuity",
+    "family": "retirement",
+    "en": "Retirement annuities",
+    "de": "Altersrenten",
+    "fr": "Rentes de retraite",
+    "it": "Rendite pensionistiche"
+  },
+  {
+    "id": "pension-transfer",
+    "family": "retirement",
+    "en": "Pension transfers and vested benefits",
+    "de": "Pensionsübertragung und Freizügigkeit",
+    "fr": "Transferts de retraite et libre passage",
+    "it": "Trasferimenti pensionistici e libero passaggio"
+  },
+  {
+    "id": "specialty-retirement",
+    "family": "retirement",
+    "en": "Other retirement provision",
+    "de": "Weitere Vorsorgelösungen",
+    "fr": "Autres solutions de prévoyance",
+    "it": "Altre soluzioni previdenziali"
+  }
+]
